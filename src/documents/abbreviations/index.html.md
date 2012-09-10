@@ -3,7 +3,7 @@ layout: page
 title: Abbreviations
 menuOrder: 1
 ---
-Abbreviations are the heart for Emmet toolkit: these special expressions are parsed in runtime and transformed into structured code block, HTML for example. Abbreviations syntax looks like CSS selectors with a few extensions specific to code generation. So every web-developer already knows how to use it. 
+Abbreviations are the heart of the Emmet toolkit: these special expressions are parsed in runtime and transformed into structured code block, HTML for example. The abbreviation’s syntax looks like CSS selectors with a few extensions specific to code generation. So every web-developer already knows how to use it. 
 
 Here’s an example: this abbreviation
 
@@ -22,6 +22,6 @@ Here’s an example: this abbreviation
 		</ul>
 	</div>
 	
-...with	just a single key stroke. In many editors (Eclipse, Sublime Text 2, Espresso etc.) plugin will also generate proper _tabstop marks_ so you can quickly traverse between important places of generated code with Tab key.
+...with	just a single key stroke. In many editors (such as Eclipse, Sublime Text 2, Espresso etc.) plugins will also generate proper _tabstop marks_ so you can quickly traverse between important places of generated code with the Tab key.
 
-Abbreviations are optimised for, but not limited to, HTML and XML generation and makes writing tedious markup code a breeze. You can start learning [syntax](/abbreviations/syntax/) to unleash the full power of Emmet abbreviations.
+Abbreviations are optimised for, but not limited to, HTML and XML generation, and make writing tedious markup code a breeze. You can start learning [syntax](/abbreviations/syntax/) to unleash the full power of Emmet abbreviations.

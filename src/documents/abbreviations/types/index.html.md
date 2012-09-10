@@ -25,11 +25,11 @@ All Emmet elements definitions are stored in [snippets.json](https://github.com/
 		}
 	}
 
-As you can see, at first level there are syntax names for which elements are defined. Inside syntax section there are elements definitions splited across two sections: _snippets_ and _abbreviations_.
+As you can see, at first level there are syntax names for which elements are defined. Inside the syntax section there are elements definitions split across two sections: _snippets_ and _abbreviations_.
 
 ## Snippets
 
-Snippets are just plain code blocks, just like in all programmers’ editors. You can type anything there and it will be outputted “as-is”, without any transformation.
+Snippets are just blocks of plain code, just like in all programmers’ editors. You can type anything there and it will be outputted “as-is”, without any transformation.
 
 ## Abbreviations
 
@@ -43,7 +43,7 @@ Emmet parses abbreviation definition and retrieves the following data:
 * attributes’ default values;
 * should element contain closing tag.
 
-Let’s take a closer look on HTML abbreviations’ definitions above. The `link` element is defined as `<link rel="stylesheet" href="" />` (double quotes should be escaped in JSON; or use single quotes instead). This definition says that tag, generated for `link` abbreviation, should be named _link_ and should contain two attributes: _rel_ with default value “stylesheet” and _href_ with empty value (in exactly this order), and generated element should not contain closing tag.
+Let’s take a closer look on HTML abbreviations’ definitions above. The `link` element is defined as `<link rel="stylesheet" href="" />` (double quotes should be escaped in JSON; or use single quotes instead). This definition says that tag, generated for `link` abbreviation, should be named _link_ and should contain two attributes: _rel_ with default value “stylesheet” and _href_ with empty value (exactly in this order), and generated element should not contain closing tag.
 
 When the `link` abbreviation is expanded, you’ll receive the following output for HTML syntax:
 
@@ -69,7 +69,7 @@ You can add child elements as well, which forces Emmet to output closing tag:
 	
 ## Aliases
 
-In abbreviations section of `snippets.json` you can also define _aliases_: a short-hands for commonly used abbreviations. Aliases can be used to define:
+In the abbreviations section of `snippets.json` you can also define _aliases_: a short-hands for commonly used abbreviations. Aliases can be used to define:
 
 * short names for long tag names;
 * referencing commonly used abbreviations.
@@ -84,6 +84,6 @@ In `snippets.json` file, you can find the following definitions:
 		}
 	}
 
-In the example above, when you expand `bq` abbreviation, Emmet will look for `blockquote` abbreviation’s definition. Since it doesn’t exists, it will simply output `<blockquote></blockquote>` element. The `ol+` abbreviation actually outputs the same result as `ol>li` does.
+In the example above, when you expand `bq` abbreviation, Emmet will look for `blockquote` abbreviation’s definition. If it doesn’t exist, it will simply output `<blockquote></blockquote>` element. The `ol+` abbreviation actually outputs the same result as `ol>li` does.
 
-The `ol+` definition may look ambiguous since it contains `+` at the end which is also a sibling operator. Emmet correctly expandes such abbreviations and the plus sign is left here for historical reasons. Just remember that you don’t need to use plus sing to create abbreviation alias.
+The `ol+` definition may look ambiguous since it contains `+` at the end which is also a sibling operator. Emmet correctly expands such abbreviations and the plus sign is left here for historical reasons. Just remember that you don’t need to use plus sing to create abbreviation alias.

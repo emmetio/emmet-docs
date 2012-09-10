@@ -39,10 +39,10 @@ run: emmet.expand_abbreviation
 mode: text/css
 </textarea>
 
-As you can see from the example above, you can type regular gradient definition as `lg(...)` (or `linear-gradient(...)`) function and expand it as abbreviation. If you write gradient definition as a property value, Emmet will parse it and use its name as a reference for a new CSS properties.
+As you can see from the example above, you can type regular gradient definition as `lg(...)` (or `linear-gradient(...)`) function and expand it as an abbreviation. If you write the gradient definition as a property value, Emmet will parse it and use its name as a reference for new CSS properties.
 
 ## Fallback value
 
 In preferences, you can enable `css.gradient.fallback` option to produce a fallback `background-color` CSS property whenever a gradient definition for `background-*` CSS property is expanded. This fallback property will contain a first color from gradient definition.
 
-This option is off by default because it produces a `background-color` value that almost certainly need to be manually updated to make sure that content is readable on this background. If you don’t really care about old browsers, you can enable this option.
+This option is off by default because it produces a `background-color` value that almost certainly needs to be manually updated to make sure that content is readable on this background. If you don’t really care about old browsers, you can enable this option.

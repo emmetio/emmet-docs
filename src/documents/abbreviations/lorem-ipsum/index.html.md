@@ -3,13 +3,13 @@ layout: page
 title: “Lorem Ipsum” generator
 menuOrder: 4
 ---
-[“Lorem ipsum”](http://www.lipsum.com) dummy text is used by many web-developers to test how their HTML templates will look with real data. Often, developers use third-party services to generate “Lorem ipsum” text, but now you can do that right in your editor. Just expand `lorem` or `lipsum` abbreviation to get the following snippet:
+[“Lorem ipsum”](http://www.lipsum.com) dummy text is used by many web-developers to test how their HTML templates will look with real data. Often, developers use third-party services to generate “Lorem ipsum” text, but now you can do that right in your editor. Just expand `lorem` or `lipsum` abbreviations to get the following snippet:
 
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
 	
 `lorem` is not just a normal snippet—it’s actually a _generator_. Every time you expand it, it will generate a 30-words dummy text, splitted into a few sentences.
 
-You can specify how many words should be generated right in abbreviation. For example, `lorem100` will generate a 100-words dummy text.
+You can specify how many words should be generated right in the abbreviation. For example, `lorem100` will generate a 100-words dummy text.
 
 ## Repeated “Lorem ipsum”
 
@@ -20,7 +20,7 @@ You can use `lorem` generator inside repeated elements to create tags filled wit
 	<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>
 	<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?</p>
 	
-Also, `lorem` generator utilizes [implicit tag name resolver](/abbreviations/implicit-names/) when `lorem` element is self-repeated so you can shorten your abbreviations:
+Also, `lorem` generator utilizes the [implicit tag name resolver](/abbreviations/implicit-names/) when `lorem` element is self-repeated so you can shorten your abbreviations:
 
 `ul.generic-list>lorem10.item*4`
 
