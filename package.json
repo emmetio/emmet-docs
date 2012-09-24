@@ -1,0 +1,11 @@
+{
+	"name": "emmetio-docs",
+	"description": "Emmet Docs & Tutorials",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"docpad-plugin-marked": ">=2",
+		"docpad-plugin-eco": ">=2",
+		"docpad-plugin-partials": "2.x"
+	}
+}
