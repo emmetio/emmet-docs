@@ -1,30 +1,30 @@
-_ = require 'underscore'
+_ = require('underscore')
+
+reIndex = /^index\.\w+$/i
 
 class MenuItem
-	constructor: (@slug='', @document=null) ->
+	constructor: (@slug='', @document, @parent) ->
 		@children = []
-		@parent = null
+		if @parent?
+			parent.children.push @
 
-	add: (slug, document) ->
+	add: (document) ->
 		# recursively add elements to menu:
-		# split slug by '/' and create all intermediate elements
-		parts = slug.split '/'
-		if not parts[0]
-			parts.shift()
+		# split url by '/' and create all intermediate elements
+		parts = document.url.replace(/^\//, '').split('/')
+		slug = parts.pop()
+		ctx = @
 
-		childSlug = parts.shift()
-		throw "Invalid slug: #{slug}" unless childSlug
-		childItem = @childBySlug childSlug
+		while m = parts.shift()
+			item = ctx.childBySlug m
+			if not item
+				item = new MenuItem m, null, ctx
 
-		unless childItem?
-			childItem =  new MenuItem childSlug, if parts.length then document else null
-			@children.push childItem
-			childItem.parent = @
+			ctx = item
 
-		if parts.length
-			return childItem.add parts.join('/'), document
+		throw "Item duplicate: #{document.url}" if ctx.childBySlug slug
 
-		childItem
+		child = new MenuItem slug, document, ctx
 
 	childBySlug: (slug) ->
 		_.find @children, (item) ->
@@ -57,13 +57,31 @@ class MenuItem
 	activeState: (url='') ->
 		curUrl = @url()
 		return 'current' if curUrl == url
-		return 'parent'  if curUrl and curUrl.indexOf(url) == 0
+		return 'parent'  if url and url.indexOf(curUrl) == 0
 		return false
+
+	submenu: (options) ->
+		filterItems = (items) ->
+			filtered = []
+			for item in items
+				if options.optimize and reIndex.test(item.slug)
+					continue
+				if options.skipEmpty and not item.hasDocument
+					filtered = filtered.concat(filterItems item.children) if item.children?
+				else
+					filtered.push item
+					if item.children?
+						item.children = filterItems(item.children)
+
+			_.compact filtered
+
+		filterItems(item.toJSON(options) for item in @children)
 
 	toJSON: (options={}) ->
 		output = {
 			title: @title()
 			url: @url()
+			slug: @slug
 			hasDocument: @document?
 			state: @activeState options.url
 		}
@@ -74,7 +92,6 @@ class MenuItem
 			# If 'optimize' option is chosen, we should remove
 			# any leaf item that contains 'index.*' slug and
 			# mark current one that it has document
-			reIndex = /^index\.\w+$/i
 			children = _.reject children, (item) ->
 				if item.isLeaf() and reIndex.test item.slug
 					output.title = item.title()
@@ -84,7 +101,7 @@ class MenuItem
 				return false
 
 		if children.length
-			output.children = item.toJSON options for item in children
+			output.children = (item.toJSON options for item in children)
 
 		output
 
@@ -105,7 +122,36 @@ module.exports = (BasePlugin) ->
 			rootItem.add doc.url, doc for doc in docs
 
 			@docpad.log rootItem.toJSON()
-			# @docpad.log "DC collection: #{@docpad.getCollection('documents').toJSON()}"
-			# @docpad.log "Rendering #{JSON.stringify templateData}"
 
-	
+
+if not module.parent
+	# Do some tests
+	console.log "Testing"
+	data = [
+		{title: 'Main', url: '/index.html'},
+		{title: 'About', url: '/about/index.html'},
+		{title: 'About 3', url: '/about/index3.html'},
+		{title: 'Company', url: '/about/company/index.html'},
+		{title: 'Contacts', url: '/about/company/contacts.html'}
+		# {title: 'deep 1', url: '/very/deeply/nested/item/index.html'},
+	]
+
+	rootItem = new MenuItem
+	for item in data
+		rootItem.add item
+
+	json = rootItem.toJSON({})
+
+	printItem = (item, indent='') ->
+		mark = ''
+		if item.state == 'current'
+			mark = '*'
+		else if item.state
+			mark = '^'
+
+		indent + item.url + mark + '\n' + (printItem si, indent + '\t' for si in item.children || []).join('')
+
+	# console.log printItem(json)
+	for item in rootItem.submenu({skipEmpty: true, optimize: true, url: '/about/company/'})
+		console.log(printItem item)
+
