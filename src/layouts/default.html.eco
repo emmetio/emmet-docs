@@ -1,0 +1,7 @@
+<html>
+<head><title><%=@document.title%></title></head>
+<body>
+	<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
+	<%- @content %>
+</body>
+</html>

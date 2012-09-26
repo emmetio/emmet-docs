@@ -1,3 +1,18 @@
+# Menu plugin for DocPad
+# This plugin takes a plain list of document files and creates structured menu.
+# The 'templateData' object is extended with `generateMenu(url)` which
+# takes passed URL (in most cases, the URL of rendered document) and generates menu
+# aginst it. Each menu item contains `state` property that holds highlighting state
+# of item. 
+# Possible values:
+# – 'current': item is a currently viewed document
+# – 'parent': item contains currently viewed document
+# – false: regular item
+# 
+# Each document meta data can be supplied with the following properties:
+# menuTitle: String. Title of menu item. If not defined, `title` property is used
+# menuHidden: Boolean. Should current item and its children appear in menu
+# menuOrder: Number. Order of item in its parent. Sorting is ascending.
 _ = require('underscore')
 
 reIndex = /^index\.\w+$/i
@@ -5,8 +20,13 @@ reIndex = /^index\.\w+$/i
 class MenuItem
 	constructor: (@slug='', @document, @parent) ->
 		@children = []
+		@sortOrder = 0
 		if @parent?
 			parent.children.push @
+			if @document?.menuOrder?
+				@sortOrder = @document.menuOrder
+			else
+				@sortOrder = parent.children.length
 
 	add: (document) ->
 		# recursively add elements to menu:
@@ -64,16 +84,27 @@ class MenuItem
 		filterItems = (items) ->
 			filtered = []
 			for item in items
-				if options.optimize and reIndex.test(item.slug)
+				if item.hidden or (options.optimize and reIndex.test(item.slug))
 					continue
 				if options.skipEmpty and not item.hasDocument
-					filtered = filtered.concat(filterItems item.children) if item.children?
+					if item.children?
+						subitems = filterItems item.children
+						# sort items
+						subitems.sort (a, b) ->
+							a.order - b.order
+
+						subitems.forEach (si, ix) ->
+							si.order = item.order + ix / 1000
+
+						filtered = filtered.concat subitems
 				else
 					filtered.push item
 					if item.children?
 						item.children = filterItems(item.children)
 
-			_.compact filtered
+			_.compact(filtered).sort (a, b) ->
+				a.order - b.order
+
 
 		filterItems(item.toJSON(options) for item in @children)
 
@@ -84,6 +115,8 @@ class MenuItem
 			slug: @slug
 			hasDocument: @document?
 			state: @activeState options.url
+			hidden: @document?.menuHidden
+			order: @sortOrder
 		}
 
 		children = _.clone @children
@@ -108,7 +141,6 @@ class MenuItem
 	toString: (indent='') ->
 		indent + @url() + '\n' + (child.toString indent + '\t' for child in @children).join('')
 
-
 # Export Plugin
 module.exports = (BasePlugin) ->
 	# Define Plugin
@@ -116,12 +148,23 @@ module.exports = (BasePlugin) ->
 		# Plugin name
 		name: 'menu'
 
-		renderBefore: ({collection, templateData}) ->
-			docs = @docpad.getCollection('documents').toJSON()
-			rootItem = new MenuItem
-			rootItem.add doc.url, doc for doc in docs
+		config:
+			menuOptions:
+				# Optimize menu structures: items like /about/index.html will be omitted
+				# in favour of parent’s /about/ item
+				optimize: true
 
-			@docpad.log rootItem.toJSON()
+				# Remove indermediate items from menu structure that has no content
+				skipEmpty: true
+
+		extendTemplateData: ({templateData}) ->
+			docpad = @docpad
+			config = @config
+			templateData.generateMenu = (url) ->
+				rootItem = new MenuItem
+				rootItem.add doc for doc in docpad.getCollection('documents').toJSON()
+				rootItem.submenu(_.extend {url: url}, config.menuOptions)
+
 
 
 if not module.parent
@@ -132,8 +175,8 @@ if not module.parent
 		{title: 'About', url: '/about/index.html'},
 		{title: 'About 3', url: '/about/index3.html'},
 		{title: 'Company', url: '/about/company/index.html'},
-		{title: 'Contacts', url: '/about/company/contacts.html'}
-		# {title: 'deep 1', url: '/very/deeply/nested/item/index.html'},
+		{title: 'Contacts', url: '/about/company/contacts.html'},
+		{title: 'deep 1', url: '/very/deeply/nested/item/index.html'},
 	]
 
 	rootItem = new MenuItem
@@ -149,7 +192,7 @@ if not module.parent
 		else if item.state
 			mark = '^'
 
-		indent + item.url + mark + '\n' + (printItem si, indent + '\t' for si in item.children || []).join('')
+		indent + item.url + mark  + " (#{item.order})" + '\n' + (printItem si, indent + '\t' for si in item.children || []).join('')
 
 	# console.log printItem(json)
 	for item in rootItem.submenu({skipEmpty: true, optimize: true, url: '/about/company/'})
