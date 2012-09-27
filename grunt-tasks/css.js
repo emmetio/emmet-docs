@@ -1,6 +1,5 @@
 var csso = require('csso');
 var _ = require('underscore');
-var grunt = require('grunt');
 var fs = require('fs');
 var path = require('path');
 
@@ -26,21 +25,27 @@ function findImports(css) {
 			// is it @import rule?
 			var kw = findToken(token, 'atkeyword');
 			if (kw && kw[2][2].toLowerCase() == 'import') {
-				var braces = findToken(token, 'braces');
-				if (braces) {
-					var ruleStart = token[0].f;
-					var ruleEnd = token[0].l;
-					if (css.charAt(ruleEnd) == ';') {
-						ruleEnd++;
-					}
-
-					imports.push({
-						file: css.substring(braces[0].f + 1, braces[0].l).replace(/^['"]?|['"]?$/, ''),
-						start: ruleStart,
-						end: ruleEnd
-					});
-				}
+				var valueToken;
+				var urlToken = findToken(token, 'uri');
 				
+				if (urlToken) {
+					valueToken = findToken(urlToken, 'raw') || findToken(urlToken, 'string');
+				} else {
+					valueToken = findToken(urlToken, 'string');
+				}
+				if (!valueToken) return;
+
+				var ruleStart = token[0].f;
+				var ruleEnd = token[0].l;
+				if (css.charAt(ruleEnd) == ';') {
+					ruleEnd++;
+				}
+
+				imports.push({
+					file: valueToken[2].replace(/^['"]|['"]$/g, ''),
+					start: ruleStart,
+					end: ruleEnd
+				});
 			}
 		}
 	});
@@ -54,15 +59,64 @@ function findImports(css) {
  * @param {Function} pathResolver Function that will resolve paths to imported file
  * @returns {String} Content of compiled file
  */
-function compileCSSFile(file, pathResolver) {
+function compileCSSFile(file, pathResolver, alreadyImported) {
+	alreadyImported = alreadyImported || {};
+	alreadyImported[file] = true;
+
 	var originalFile = fs.readFileSync(file, 'utf8');
-	
+	var imports = findImports(originalFile);
+	if (!imports.length) {
+		return originalFile;
+	}
+
+	var replacements = [];
+	imports.forEach(function(imp) {
+		var fullPath = pathResolver(imp.file, file);
+		var replaceValue = '';
+
+		if (!(fullPath in alreadyImported)) {
+			alreadyImported[fullPath] = true;
+			try {
+				replaceValue = compileCSSFile(fullPath, pathResolver, alreadyImported);
+			} catch (e) {
+				throw 'Unable to read "' + imp.file + '" import in ' + file;
+			}
+		}
+
+		replacements.push({
+			start: imp.start,
+			end: imp.end,
+			value: replaceValue
+		});
+	});
+
+	// actually replace imports
+	while (replacements.length) {
+		var r = replacements.pop();
+		originalFile = originalFile.substring(0, r.start) + r.value + originalFile.substring(r.end);
+	}
+
+	return csso.justDoIt(originalFile, true);
 }
+
+module.exports.compileCSSFile = compileCSSFile;
 
 if (!module.parent) {
-	console.log(findImports('@import (file.css);@import("file2.css");body{color: red} .item {background: red}'));
-}
+	// console.log(findImports('@import url(file.css);@import url("file2.css");body{color: red} .item {background: red}'));
+	// return;
+	var pathResolver = function(file, originalFile) {
+		var dirname = originalFile ? path.dirname(originalFile) : __dirname;
+		if (file.charAt(0) == '/') {
+			// resolve absolute file include
+			file = file.replace(/^\/+/, '');
+			dirname = path.join(__dirname,  'test/css/webroot');
+		}
+		return path.resolve(dirname, file);
+	};
 
-// module.exports = function(grunt) {
-// 	grunt.registerHelper('')
-// }
+	var compiledCSS = compileCSSFile(pathResolver('./test/css/test.css'), pathResolver);
+	console.log('Compiled size: ', compiledCSS.length);
+
+	var minimized = csso.justDoIt(compiledCSS, true);
+	console.log('Minimized size: ', minimized.length);
+}

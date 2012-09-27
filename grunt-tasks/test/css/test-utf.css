@@ -1,0 +1,9 @@
+@import url(_utf.css);
+
+.c1_1:before {
+	content: '—';
+}
+
+.c1_2:before {
+	content: '\u00a0';
+}
