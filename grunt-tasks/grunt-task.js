@@ -148,15 +148,17 @@ module.exports = function(grunt) {
 		var resolver = createPathResolver(config.srcWebroot);
 		grunt.file.recurse(srcDir, function(abspath, rootdir, subdir, filename) {
 			if (reCSSFile.test(abspath) && !reSkip.test(filename)) {
-				var catalogName = filePathForCatalog(abspath, webroot);
-				grunt.log.writeln('\nReading ' + catalogName);
+				var destFile = path.join(destDir, subdir, filename);
+				var catalogName = filePathForCatalog(destFile, webroot);
+
+				grunt.log.writeln('\nReading ' + filePathForCatalog(abspath, config.srcWebroot));
 				var imports = {};
 				var min = cssModule.compileCSSFile(abspath, resolver, imports);
 
 				// check if we should re-save compiled file
 				// thus change its content and modification date				
 				var hash = md5(min);
-				var destFile = path.join(destDir, subdir, filename);
+				
 				if (!force && catalogName in catalog && catalog[catalogName].md5 === hash && fs.existsSync(destFile)) {
 					grunt.log.writeln('File is not modified, skipping');
 					return;

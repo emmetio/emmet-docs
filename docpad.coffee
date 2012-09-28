@@ -9,6 +9,14 @@ docpadConfig = {
 			markedOptions:
 				sanitize: false
 
+	environments:
+		debug:
+			# Enable debug mode for frontend-assets plugin:
+			# generates files with '-debug' suffix with
+			# assets sources
+			frontendDebug: true
+
+
 	# events:
 	# 	extendTemplateData: ({templateData}) ->
 	# 		templateData.menu = 'menu sample'

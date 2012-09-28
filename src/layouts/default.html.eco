@@ -1,3 +1,6 @@
+---
+css_1: "main.js"
+---
 <html>
 <head><title><%=@document.title%></title></head>
 <body>
