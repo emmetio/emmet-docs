@@ -89,10 +89,11 @@ module.exports = function(grunt) {
 		if (ctx.args && ~ctx.args.indexOf('force'))
 			force = true;
 
-		return {
+		return _.extend(config, {
 			force: force,
-			webroot: makeAbsPath(config.webroot)
-		};
+			webroot: makeAbsPath(config.webroot),
+			srcWebroot: makeAbsPath(config.srcWebroot || config.webroot)
+		});
 	}
 
 	function shouldCompileJSFile(file, deps, catalog, config) {
@@ -144,7 +145,7 @@ module.exports = function(grunt) {
 		// read all css files
 		var reCSSFile = /\.css$/i;
 		var reSkip = config.skipNames || reSkipCSSFileName;
-		var resolver = createPathResolver(webroot);
+		var resolver = createPathResolver(config.srcWebroot);
 		grunt.file.recurse(srcDir, function(abspath, rootdir, subdir, filename) {
 			if (reCSSFile.test(abspath) && !reSkip.test(filename)) {
 				var catalogName = filePathForCatalog(abspath, webroot);
@@ -160,8 +161,6 @@ module.exports = function(grunt) {
 					grunt.log.writeln('File is not modified, skipping');
 					return;
 				}
-
-				
 
 				grunt.log.writeln('Saving minified version to ' + filePathForCatalog(destFile, webroot));
 				grunt.file.write(path.join(destDir, subdir, filename), min);
