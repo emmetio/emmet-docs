@@ -1,10 +1,38 @@
 ---
-css_1: "main.js"
+css: "/c/main.css"
 ---
+<!doctype html>
 <html>
-<head><title><%=@document.title%></title></head>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<title><%= @document.title %></title>
+<% for url in @cssAssets(): %>
+<link rel="stylesheet" href="<%= url %>" />
+<% end %>
+<script src="/j/jquery-1.8.2.min.js"></script>
+<% for url in @jsAssets(): %>
+<script src="<%= url %>"></script>
+<% end %>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
 <body>
-	<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
-	<%- @content %>
+	<div class="wrapper">
+		<header class="page-header">
+			<h1>Emmet Documentation</h1>
+			<nav><%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %></nav>
+		</header>
+		<section class="page-content">
+			<%- @content %>
+		</section>
+		<footer class="page-footer">
+			<p>This project is maintained by <a	href="http://github.com/orderedlist">Steve Smith</a></p>
+			<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
+			</p>
+		</footer>
+	</div>
 </body>
 </html>

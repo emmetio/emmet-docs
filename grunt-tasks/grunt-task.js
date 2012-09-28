@@ -150,6 +150,7 @@ module.exports = function(grunt) {
 			if (reCSSFile.test(abspath) && !reSkip.test(filename)) {
 				var destFile = path.join(destDir, subdir, filename);
 				var catalogName = filePathForCatalog(destFile, webroot);
+				var srcCatalogName = filePathForCatalog(abspath, config.srcWebroot);
 
 				grunt.log.writeln('\nReading ' + filePathForCatalog(abspath, config.srcWebroot));
 				var imports = {};
@@ -170,9 +171,7 @@ module.exports = function(grunt) {
 				catalog[catalogName] = {
 					md5: hash,
 					date: timestamp(),
-					files: _.map(imports, function(v, k) {
-						return filePathForCatalog(k, webroot);
-					})
+					files: [srcCatalogName]
 				};
 			}
 		});

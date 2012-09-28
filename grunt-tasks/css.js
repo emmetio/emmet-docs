@@ -70,7 +70,11 @@ function compileCSSFile(file, pathResolver, alreadyImported) {
 	}
 
 	var replacements = [];
+	var reExternal = /^\w+\:\/\//;
 	imports.forEach(function(imp) {
+		if (reExternal.test(imp.file))
+			return;
+		
 		var fullPath = pathResolver(imp.file, file);
 		var replaceValue = '';
 

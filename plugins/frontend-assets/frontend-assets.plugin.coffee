@@ -3,6 +3,17 @@ fs = require 'fs'
 
 catalogFile = '.build-catalog.json'
 
+catalog = null
+
+getCatalog = () ->
+	return catalog if catalog
+	if fs.existsSync catalogFile
+		try
+			catalog = JSON.parse fs.readFileSync catalogFile, 'utf8'
+		catch e
+
+	return catalog
+
 # Splits string into array
 makeList = (str) ->
 	if _.isString str
@@ -80,22 +91,20 @@ module.exports = (BasePlugin) ->
 
 			next()
 
+		generateBefore: (opts, next) ->
+			catalog = null
+			next()
 
 
 		extendTemplateData: ({templateData}) ->
 			docpad = @docpad
 			config = @config.frontendAssetsOptions
 
-			catalog = {}
-			if fs.existsSync catalogFile
-				try
-					catalog = JSON.parse fs.readFileSync catalogFile, 'utf8'
-				catch e
-
 			getAssets = (model, prefix) ->
 				res = collectResources model, prefix
 				cacheToken = config.cacheReset or ''
 				isDebug = docpad.getConfig().frontendDebug
+				catalog = getCatalog()
 
 				_.flatten res.map (item) ->
 					if item of catalog

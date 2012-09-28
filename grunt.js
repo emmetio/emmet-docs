@@ -3,22 +3,26 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		frontendConfig: {
-			webroot: './grunt-tasks/test'
+			srcWebroot: './src/files',
+			webroot: './out'
 		},
+
+		copy: {
+			'./out/j/': './src/files/js/jquery-*.js'
+		},
+
 		frontend: {
 			css: {
-				src: './grunt-tasks/test/css',
-				dest: './grunt-tasks/test/c'
-			},
-			js: {
-				'./grunt-tasks/test/j/f1.js': ['./grunt-tasks/test/file1.js', './grunt-tasks/test/file2.js']
+				src: './src/files/css',
+				dest: './out/c'
 			}
 		}
 	});
 
-	// Load tasks from "grunt-sample" grunt plugin installed via Npm.
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadTasks('grunt-tasks');
 
+
 	// Default task.
-	grunt.registerTask('default', 'frontend');
+	grunt.registerTask('default', 'copy frontend');
 };

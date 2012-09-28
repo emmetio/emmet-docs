@@ -1,3 +1,5 @@
+exec = require('child_process').exec
+
 docpadConfig = {
 	templateData:
 		site:
@@ -16,13 +18,20 @@ docpadConfig = {
 			# assets sources
 			frontendDebug: true
 
+	events:
+		# Regenerate assets each time resources are changed
+		generateBefore: (opts, next) ->
+			proc = exec 'grunt', {cwd: process.cwd()}, (error, stdout, stderr) ->
+				console.log stdout
+				process.exit() if error
 
-	# events:
-	# 	extendTemplateData: ({templateData}) ->
-	# 		templateData.menu = 'menu sample'
-	# 		console.log 'Extending data', templateData
-	# 		@
+			proc.on 'exit', next
 
+		# Extend server so it can respond to cache-reset assets
+		serverAfter: ({server}) ->
+			server.get /^\/\d+\/(c|j)\//, (req, res, next) ->
+				req.url = req.url.replace /^\/\d+\//, '/'
+				next()
 }
 
 module.exports = docpadConfig
