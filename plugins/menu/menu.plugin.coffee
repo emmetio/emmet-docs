@@ -83,8 +83,11 @@ class MenuItem
 	submenu: (options) ->
 		filterItems = (items) ->
 			filtered = []
+
 			for item in items
 				if item.hidden or (options.optimize and reIndex.test(item.slug))
+					continue
+				if options.skipFiles.test(item.slug)
 					continue
 				if options.skipEmpty and not item.hasDocument
 					if item.children?
@@ -156,6 +159,9 @@ module.exports = (BasePlugin) ->
 
 				# Remove indermediate items from menu structure that has no content
 				skipEmpty: true
+
+				# Regular expression to skip files
+				skipFiles: /index\-debug\./i
 
 		extendTemplateData: ({templateData}) ->
 			docpad = @docpad

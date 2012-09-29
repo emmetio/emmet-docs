@@ -22,8 +22,9 @@ makeList = (str) ->
 
 grabResources = (collection, prefix) ->
 	res = {}
+	re = new RegExp('^' + prefix + '(_?\d+)?$')
 	for k, v of collection
-		if k.indexOf(prefix) == 0
+		if re.test k
 			res[k] = v
 	return res
 
@@ -120,11 +121,7 @@ module.exports = (BasePlugin) ->
 
 					item
 
-			# list of CSS assets
-			templateData.cssAssets = () ->
-				getAssets @documentModel, 'css'
-
-			# list of JS assets
-			templateData.jsAssets = () ->
-				getAssets @documentModel, 'js'
+			# list of specified assets: css, js etc
+			templateData.assets = (type) ->
+				getAssets @documentModel, type
 
