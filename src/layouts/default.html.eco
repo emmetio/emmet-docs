@@ -1,5 +1,6 @@
 ---
 css: "/c/main.css"
+js:  "/j/movie.js"
 ---
 <!doctype html>
 <html>

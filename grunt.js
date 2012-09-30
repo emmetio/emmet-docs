@@ -15,6 +15,20 @@ module.exports = function(grunt) {
 			css: {
 				src: './src/files/css',
 				dest: './out/c'
+			},
+			js: {
+				'./out/j/movie.js': [
+					'./src/files/codemirror-movie/src/codemirror2/codemirror.js',
+					'./src/files/codemirror-movie/src/codemirror2/css.js',
+					'./src/files/codemirror-movie/src/codemirror2/xml.js',
+					'./src/files/codemirror-movie/src/lib/underscore.js',
+					'./src/files/codemirror-movie/src/lib/tween.js',
+					'./src/files/codemirror-movie/src/lib/emmet.min.js',
+					'./src/files/codemirror-movie/src/scenario.js',
+					'./src/files/codemirror-movie/src/scenario.outline.js',
+					'./src/files/codemirror-movie/src/scenario.tooltip.js',
+					'./src/files/js/movie-definition.js'
+				]
 			}
 		}
 	});

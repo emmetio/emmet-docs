@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 			// compare lib content and file order
 			if (!shouldCompile) {
 				shouldCompile = !!_.reject(deps, function(f, i) {
-					var cf = filePathForCatalog(makeAbsPath(f), config.webroot);
+					var cf = filePathForCatalog(makeAbsPath(f), config.srcWebroot);
 					return cf === prevList[i].file;
 				}).length;
 			}
@@ -231,7 +231,7 @@ module.exports = function(grunt) {
 				date: timestamp(),
 				files: _.map(files, function(f) {
 					return {
-						file: filePathForCatalog(makeAbsPath(f), config.webroot),
+						file: filePathForCatalog(makeAbsPath(f), config.srcWebroot),
 						md5: md5(grunt.file.read(f))
 					};
 				})

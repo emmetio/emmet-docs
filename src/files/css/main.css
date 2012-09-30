@@ -1,2 +1,31 @@
 @import url(assets/_normalize.css);
 @import url(assets/_layout.css);
+
+/* CodeMirror Movie */
+@import url(../codemirror-movie/src/bootstrap/css/bootstrap.css);
+@import url(../codemirror-movie/src/codemirror2/codemirror.css);
+@import url(../codemirror-movie/src/cm-espresso.css);
+@import url(../codemirror-movie/src/scenario.css);
+
+.CodeMirror {
+	font-size: 12px;
+	background: #f5f5f5;
+	border: 1px solid #e3e3e3;
+}
+
+.movie-def {
+	display: none;
+}
+
+.CodeMirror-movie_with-outline .CodeMirror-scroll {
+	margin-right: 150px;
+}
+
+.CodeMirror-movie_with-outline .CodeMirror-scrollbar {
+	right: 150px;
+}
+
+.CodeMirror-outline {
+	width: 150px;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

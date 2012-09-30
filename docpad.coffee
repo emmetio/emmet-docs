@@ -21,6 +21,10 @@ docpadConfig = {
 	events:
 		# Regenerate assets each time resources are changed
 		generateBefore: (opts, next) ->
+			# do not re-buid assets in debug mode, save resources
+			if @docpad.getConfig().frontendDebug
+				return next()
+
 			proc = exec 'grunt', {cwd: process.cwd()}, (error, stdout, stderr) ->
 				console.log stdout
 				process.exit() if error
