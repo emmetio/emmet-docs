@@ -1,14 +1,17 @@
+<% renderMenu = (items) => %>
 <ul class="nav">
-	<% for item in @menuItems: %>
+	<% for item in items: %>
 		<li class="nav__item<% if item.state: %> nav__item_selected<% end %>">
 			<% if item.state != 'current': %>
 				<a href="<%= item.url %>"><%= item.title %></a>
 			<% else: %>
 				<strong><%= item.title %></strong>
 			<% end %>
-			<% if item.state and item.children: %>
-				<%- @partial('menu.html.eco', {menuItems: item.children}) %>
+			<% if item.children: %>
+				<%- renderMenu(item.children) %>
 			<% end %>
 		</li>
 	<% end %>
 </ul>	
+<% end %>
+<%= renderMenu @menuItems %>

@@ -1,0 +1,12 @@
+/* XML syntax */
+.highlighted .xml .tag {
+	color: #2F6F9F;
+}
+
+.highlighted .xml .tag .attribute {
+	color: #4F9FCF;
+}
+
+.highlighted .xml .tag .value {
+	color: #d44950;
+}

@@ -76,7 +76,8 @@ class MenuItem
 	# 'parent' — item contains currently viewed document
 	activeState: (url='') ->
 		curUrl = @url()
-		return 'current' if curUrl == url
+
+		return 'current' if curUrl == url || @document?.url == url
 		return 'parent'  if url and url.indexOf(curUrl) == 0
 		return false
 
@@ -167,6 +168,9 @@ module.exports = (BasePlugin) ->
 			docpad = @docpad
 			config = @config
 			templateData.generateMenu = (url) ->
+				if config.menuOptions.optimize
+					url = url.replace /\/index\.\w+$/i, '/'
+
 				rootItem = new MenuItem
 				rootItem.add doc for doc in docpad.getCollection('documents').toJSON()
 				rootItem.submenu(_.extend {url: url}, config.menuOptions)
