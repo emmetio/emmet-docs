@@ -22,7 +22,7 @@ Here’s an example: this abbreviation
 			<li><a href="">Item 5</a></li>
 		</ul>
 	</div>
-
+	
 ...with	just a single key stroke. In many editors (Eclipse, Sublime Text 2, Espresso etc.) plugin will also generate proper _tabstop marks_ so you can quickly traverse between important places of generated code with Tab key.
 
-Abbreviations are optimised for, but not limited to, HTML and XML generation and makes writing tedious markup code a breeze. You can learning [syntax](/abbreviations/syntax/) to unleash the full power of Emmet abbreviations.
+Abbreviations are optimised for, but not limited to, HTML and XML generation and makes writing tedious markup code a breeze. You can start learning [syntax](/abbreviations/syntax/) to unleash the full power of Emmet abbreviations.

@@ -1,4 +1,5 @@
 exec = require('child_process').exec
+hljs = require './plugins/highlight.js'
 
 docpadConfig = {
 	templateData:
@@ -10,6 +11,10 @@ docpadConfig = {
 		marked:
 			markedOptions:
 				sanitize: false
+				highlight: (text, lang) ->
+					result = if lang then hljs.highlight(lang, text) else hljs.highlightAuto(text)
+					"<span class=\"#{result.language}\">#{result.value}</span>"
+					
 
 	environments:
 		debug:
