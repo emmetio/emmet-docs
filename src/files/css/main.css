@@ -34,3 +34,7 @@
 	width: 150px;
 	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.CodeMirror-tooltip strong {
+	color: #fff;
+}

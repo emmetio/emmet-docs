@@ -10,3 +10,7 @@
 .xml .tag .value {
 	color: #d44950;
 }
+
+.xml .comment {
+	color: #999;
+}
