@@ -95,7 +95,7 @@ class MenuItem
 						subitems = filterItems item.children
 						# sort items
 						subitems.sort (a, b) ->
-							a.order - b.order
+							b.order - a.order
 
 						subitems.forEach (si, ix) ->
 							si.order = item.order + ix / 1000
@@ -107,7 +107,7 @@ class MenuItem
 						item.children = filterItems(item.children)
 
 			_.compact(filtered).sort (a, b) ->
-				a.order - b.order
+				b.order - a.order
 
 
 		filterItems(item.toJSON(options) for item in @children)
@@ -120,7 +120,7 @@ class MenuItem
 			hasDocument: @document?
 			state: @activeState options.url
 			hidden: @document?.menuHidden
-			order: @sortOrder
+			order: parseInt @sortOrder
 		}
 
 		children = _.clone @children

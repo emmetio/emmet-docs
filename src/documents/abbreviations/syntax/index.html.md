@@ -2,6 +2,7 @@
 layout: page
 title: Abbreviations Syntax
 menuTitle: Syntax
+menuOrder: 1
 ---
 # Abbreviations Syntax
 
