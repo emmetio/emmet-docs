@@ -4,8 +4,6 @@ title: Abbreviations Syntax
 menuTitle: Syntax
 menuOrder: 1
 ---
-# Abbreviations Syntax
-
 Emmet uses syntax similar to CSS selectors for describing elements positions inside generated tree and elements’ attributes.
 
 ## Nesting operators

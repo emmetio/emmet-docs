@@ -23,10 +23,9 @@ class MenuItem
 		@sortOrder = 0
 		if @parent?
 			parent.children.push @
-			if @document?.menuOrder?
-				@sortOrder = @document.menuOrder
-			else
-				@sortOrder = parent.children.length
+
+		if @document?.menuOrder?
+			@sortOrder = parseInt @document.menuOrder
 
 	add: (document) ->
 		# recursively add elements to menu:
@@ -95,7 +94,7 @@ class MenuItem
 						subitems = filterItems item.children
 						# sort items
 						subitems.sort (a, b) ->
-							b.order - a.order
+							a.order - b.order
 
 						subitems.forEach (si, ix) ->
 							si.order = item.order + ix / 1000
@@ -107,7 +106,7 @@ class MenuItem
 						item.children = filterItems(item.children)
 
 			_.compact(filtered).sort (a, b) ->
-				b.order - a.order
+				a.order - b.order
 
 
 		filterItems(item.toJSON(options) for item in @children)
@@ -120,7 +119,7 @@ class MenuItem
 			hasDocument: @document?
 			state: @activeState options.url
 			hidden: @document?.menuHidden
-			order: parseInt @sortOrder
+			order: @sortOrder
 		}
 
 		children = _.clone @children
@@ -133,6 +132,7 @@ class MenuItem
 				if item.isLeaf() and reIndex.test item.slug
 					output.title = item.title()
 					output.hasDocument = item.document?
+					output.order = item.sortOrder
 					return true
 
 				return false

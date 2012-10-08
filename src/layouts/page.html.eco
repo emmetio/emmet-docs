@@ -1,4 +1,5 @@
 ---
 layout: default
 ---
+<h1><%= @document.documentTitle or @document.title %></h1>
 <%- @content %>
