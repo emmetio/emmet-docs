@@ -41,4 +41,31 @@ tooltip: Expanding abbreviation inside list, default tag name is *li*
 run: emmet.expand_abbreviation
 </div>
 
-As you can see from the example above, Emmet looks at parent tag name every time you’re expanding abbreviation with implicit tag name. 
+As you can see from the example above, Emmet looks at parent tag name every time you’re expanding abbreviation with implicit name. Here’s how it resolves names for some parent elements:
+
+* `li` for `ul` and `ol`
+* `tr` for `table`, `tbody`, `thead` and `tfoot`
+* `td` for `tr`
+* `option` for `select` and `optgroup`
+
+Take a look at some abbreviations equivalents with implicit and explicit tag names:
+
+<table>
+	<tr>
+		<td>`.wrap>.content`</td>
+		<td>`div.wrap>div.content`</td>
+	</tr>
+	<tr>
+		<td>`em>.info`</td>
+		<td>`em>span.info`</td>
+	</tr>
+	<tr>
+		<td>`ul>.item*3`</td>
+		<td>`ul>li.item*3`</td>
+	</tr>
+	<tr>
+		<td>`table>#row$*4>[colspan=2]`</td>
+		<td>`table>tr#row*4>td[colspan=2]`</td>
+	</tr>
+</table>
+
