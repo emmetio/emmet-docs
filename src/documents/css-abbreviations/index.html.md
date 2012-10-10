@@ -1,6 +1,7 @@
 ---
 layout: page
 title: CSS Abbreviations
+menuOrder: 2
 ---
 While Emmet abbreviations are good for generating HTML, XML or any other structured markup, it may look useless for CSS. You don’t want to write CSS selectors and transform them to CSS selectors, right? The only thing Emmet can do for you is to provide shorthands for CSS properties, but editors with native snippets and autocomplete can help you way better.
 
@@ -48,8 +49,3 @@ You can use aliases instead of full units:
 Some CSS properties are defied as _unit-less_, e.g. no unit suffix will be outputted: `lh2` → `line-height: 2;`, `fw400` → `font-weight: 400;`.
 
 These values are: `'z-index`, `line-height`, `opacity` and `font-weight` but you can override them with `css.unitlessProperties` preferences.
-
-## Preferences
-
-CSS resolver has a number of preferences that you can use to fine-tune generated output.
-
