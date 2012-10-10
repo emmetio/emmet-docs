@@ -79,7 +79,9 @@ $(function() {
 		var reOutline = /\s+:::\s+(.+)$/;
 		var scenario = [];
 		var outline = {};
+		var editorOptions = {};
 
+		// read movie definition
 		_.each(readLines(parts[1]), function(line) {
 			if (line.charAt(0) == '#') // it’s a comment, skip the line
 				return;
@@ -105,10 +107,25 @@ $(function() {
 			scenario.push(sd[1] + ':' + unescape(sd[2]));
 		});
 
+		// read editor options
+		if (parts[2]) {
+			_.each(readLines(parts[2]), function(line) {
+				if (line.charAt(0) == '#') // it’s a comment, skip the line
+					return;
+
+				var sd = line.match(reDef);
+				if (sd) {
+					editorOptions[sd[1]] = sd[2];
+				}
+			});
+		}
+		
+
 		return {
 			code: unescape(trim(parts[0])),
 			scenario: scenario,
-			outline: _.keys(outline).length ? outline : null
+			outline: _.keys(outline).length ? outline : null,
+			editorOptions: editorOptions
 		};
 	}
 
@@ -118,7 +135,7 @@ $(function() {
 		// console.log(options);
 		var ta = $('<textarea>').val(options.code).insertBefore(source);
 
-		return CodeMirror.movie(ta[0], options.scenario, options.outline);
+		return CodeMirror.movie(ta[0], options.scenario, options.outline, options.editorOptions);
 	}
 
 	$('.movie-def').each(function(i) {

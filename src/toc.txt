@@ -2,9 +2,10 @@ Abbreviations
 	Syntax
 	Element types
 	Implicit tag names
+	“Lorem ipsum” generator
 CSS Abbreviations
 	Vendor prefixes
-	Gradient Generator
+	Gradient generator
 Actions
 	-- list of all actions
 Filters
