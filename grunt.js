@@ -21,6 +21,8 @@ module.exports = function(grunt) {
 					'./src/files/codemirror-movie/src/codemirror2/codemirror.js',
 					'./src/files/codemirror-movie/src/codemirror2/css.js',
 					'./src/files/codemirror-movie/src/codemirror2/xml.js',
+					'./src/files/codemirror-movie/src/codemirror2/javascript.js',
+					'./src/files/codemirror-movie/src/codemirror2/htmlmixed.js',
 					'./src/files/codemirror-movie/src/lib/underscore.js',
 					'./src/files/codemirror-movie/src/lib/tween.js',
 					'./src/files/codemirror-movie/src/lib/emmet.min.js',

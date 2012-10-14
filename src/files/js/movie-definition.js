@@ -142,3 +142,10 @@ $(function() {
 		createMovie(this);
 	});
 });
+
+// Alias for ”Wrap with Abbreviaiton” action called from CM movie
+CodeMirror._wrapWithAbbreviation = function(editor, abbr) {
+	var proxy = emmet.require('cm-editor-proxy');
+	proxy.setupContext(editor);
+	emmet.require('actions').run('wrap_with_abbreviation', proxy, abbr);
+}
