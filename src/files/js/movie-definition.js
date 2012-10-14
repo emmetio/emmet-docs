@@ -148,4 +148,49 @@ CodeMirror._wrapWithAbbreviation = function(editor, abbr) {
 	var proxy = emmet.require('cm-editor-proxy');
 	proxy.setupContext(editor);
 	emmet.require('actions').run('wrap_with_abbreviation', proxy, abbr);
-}
+};
+
+(function() {
+	emmet.define('file', function() {
+		return {
+			read: function(path) {
+				return 'content';
+			},
+			
+			
+			locateFile: function(editorFile, fileName) {
+				return fileName;
+			},
+			
+			createPath: function(parent, fileName) {
+				return fileName;
+			},
+			
+			save: function(file, content) {
+				
+			},
+			
+			getExt: function(file) {
+				var m = (file || '').match(/\.([\w\-]+)$/);
+				return m ? m[1].toLowerCase() : '';
+			}
+		};
+	});
+
+	// update getImageSize() method to produce fake size
+	// for demo image
+	emmet.require('actionUtils').getImageSize = function() {
+		return {
+			width: 200,
+			height: 150
+		};
+	};
+
+	CodeMirror._updateImageSize = function(editor) {
+		var proxy = emmet.require('cm-editor-proxy');
+		proxy.setupContext(editor);
+		emmet.require('actions').run('update_image_size', proxy);
+	};
+
+})();
+
