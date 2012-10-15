@@ -141,6 +141,23 @@ $(function() {
 	$('.movie-def').each(function(i) {
 		createMovie(this);
 	});
+
+	// create editor boxes in page
+	$('.cm-box').each(function() {
+		var options = {
+			theme: 'espresso',
+			mode : $(this).data('cm-mode') || 'text/html',
+			indentWithTabs: true,
+			tabSize: 4,
+			lineNumbers : true,
+			onCursorActivity: function() {
+				editor.setLineClass(hlLine, null, null);
+				hlLine = editor.setLineClass(editor.getCursor().line, null, "activeline");
+			}
+		}
+		var editor = CodeMirror.fromTextArea(this, options);
+		var hlLine = editor.setLineClass(0, 'activeline');
+	});
 });
 
 // Alias for ”Wrap with Abbreviaiton” action called from CM movie
