@@ -18,12 +18,12 @@ In CSS, place caret inside property value with `url()` function to add/update wi
 tooltip: Put caret inside &lt;img&gt; tag and run “Update Image Size” to get its size
 moveTo: 6
 wait: 1000
-run: {command: CodeMirror._updateImageSize} ::: “Update Image Size”
+run: emmet.update_image_size ::: “Update Image Size” (Shift-Cmd-U)
 wait: 1000
 tooltip: Put caret inside value with image URL to update width and height properties of the rule
 moveTo: 3:22
 wait: 1000
-run: {command: CodeMirror._updateImageSize}
+run: emmet.update_image_size
 </div>
 
 Note that action also works for absolute URLs: it will start searching for requested file from host file’s folder and then will traverse up the tree.
