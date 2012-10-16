@@ -41,7 +41,53 @@ prompt: {text: 'nav>ul.nav>li.nav-item$\*>a', title: 'Enter abbreviation'}  ::: 
 run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'nav>ul.nav>li.nav-item$\*>a');}}
 </div>
 
-Note you don’t need to add multiplier number when you’re wrapping lines (e.g. `li*5`), you have to use `*` operator _without_ number, like this: `li*`.
+Note you don’t need to add multiplier number for wrapping lines (e.g. `li*5`), you have to use `*` operator _without_ number, like this: `li*`.
+
+## Removing list markers
+
+Whenever you copy text from, let’s say, Microsoft Word, you’ll have list blocks like this:
+
+	* Unordered item 1
+	* Unordered item 2
+	* Unordered item 3
+	
+	1. Ordered item 1
+	2. Ordered item 2
+	3. Ordered item 3
+	
+If you try to wrap these lists with `ul>li*` abbreviation, you will get something like this:
+
+	<ul>
+		<li>* Unordered item 1</li>
+		<li>* Unordered item 2</li>
+		<li>* Unordered item 3</li>
+	</ul>
+	
+This is not very convenient because you have to manually remove list markers.
+
+You can let Emmet do this for you: simply add “trim“ (`|t`, pipe-t) filter to abbreviation to automatically remove list markers from wrapped content:
+
+<div class="movie-def">
+&lt;div id="page"&gt;
+	|
+	1. About
+	2. News
+	3. Products
+	4. Contacts
+	
+	Lorem ipsum dolor sit amet.
+&lt;/div&gt;
+~~~
+tooltip: Select lines you want to wrap.
+moveTo: 2:4
+select: 5:15
+wait: 1000
+tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with  <em>|t</em> filter at the end
+prompt: {text: 'ul.nav>li.nav-item$\*>a|t', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
+run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul.nav>li.nav-item$\*>a|t');}}
+</div>
+
+[Read more about filters](/filters/)
 
 ## Controlling output position
 
