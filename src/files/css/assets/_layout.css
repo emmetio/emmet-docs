@@ -22,9 +22,15 @@ h1, h2, h3 {
 	line-height: 1.1;
 }
 
+h2, h3, h4, h5, h6 {
+	margin-top: 2em;
+	margin-bottom: 0.2em;
+}
+
 h1 {
 	color: #222;
 	font-size: 2em;
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -41,7 +47,6 @@ p:last-child {
 
 a {
 	color: #39c;
-	font-weight: 400;
 	text-decoration: none;
 }
 
@@ -82,7 +87,14 @@ th, td {
 
 dt {
 	color: #444;
-	font-weight: 700;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+dd {
+	margin-left: 0;
+	padding-left: 0;
+	margin-bottom: 1.5em;
 }
 
 th {
@@ -126,17 +138,18 @@ hr {
 
 .nav .nav {
 	margin-left: 30px;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-bottom: 20px;
 	font-size: 12px;
 }
 
-.nav-item {
+.nav__item {
 	margin-bottom: 15px;
+	line-height: 1.2;
 }
 
-.nav-item .nav-item {
-	margin-bottom: 10px;
+.nav__item .nav__item {
+	margin-bottom: 5px;
 }
 
 .clear {
@@ -169,6 +182,11 @@ hr {
 	font-size: 0.8em;
 	color: #777;
 	margin-bottom: 0.7em;	
+}
+
+.site-title a {
+	color: #000;
+	text-decoration: underline;
 }
 
 @media print, screen and (max-width: 960px) {
