@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: default
 title: Emmet Documentation
-documentTitle: Welcome to Emmet Documentation and Tutorials web-site
 ---
+# Welcome to Emmet Documentation and Tutorials web-site #
+
 Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow:
 
 <div class="movie-def">

@@ -189,6 +189,12 @@ hr {
 	text-decoration: underline;
 }
 
+#disqus_thread {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 3px solid #e5e5e5;
+}
+
 @media print, screen and (max-width: 960px) {
 	body {
 		padding: 50px;
