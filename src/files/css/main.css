@@ -1,6 +1,7 @@
 @import url(assets/_normalize.css);
 @import url(assets/_layout.css);
 @import url(assets/_highlight.css);
+@import url(assets/_preferences.css);
 
 /* CodeMirror Movie */
 @import url(../codemirror-movie/src/bootstrap/css/bootstrap.css);

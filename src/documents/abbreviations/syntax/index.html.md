@@ -6,6 +6,10 @@ menuOrder: 1
 ---
 Emmet uses syntax similar to CSS selectors for describing elements positions inside generated tree and elements’ attributes.
 
+## Elements 
+
+You can use element names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
+
 ## Nesting operators
 
 Nesting operators are used to position abbreviation elements inside generated tree: whether it should be placed inside or near the context element.

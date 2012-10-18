@@ -1,0 +1,29 @@
+.emmet-preferences table {
+	margin: 0;
+}
+
+.emmet-preferences td {
+	vertical-align: top;
+}
+
+.emmet-preferences__name {
+	font-weight: bold;
+}
+
+.emmet-preferences__desc {
+	font-size: 0.85em;
+}
+
+.emmet-preferences__value {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	max-width: 16em;
+	font-size: 0.85em;
+	cursor: default;
+}
+
+.emmet-preferences__value_full {
+	white-space: normal;
+}

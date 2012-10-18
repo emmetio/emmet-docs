@@ -30,7 +30,8 @@ module.exports = function(grunt) {
 					'./src/files/codemirror-movie/src/scenario.outline.js',
 					'./src/files/codemirror-movie/src/scenario.tooltip.js',
 					'./src/files/codemirror-movie/src/scenario.prompt.js',
-					'./src/files/js/movie-definition.js'
+					'./src/files/js/movie-definition.js',
+					'./src/files/js/misc.js'
 				]
 			}
 		}

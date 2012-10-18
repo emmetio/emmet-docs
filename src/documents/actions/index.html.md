@@ -47,4 +47,7 @@ Emmet offers a very unique tools that can greatly improve your editing experienc
 <dt>[Reflect CSS Value](./reflect-css-value/)</dt>
 <dd>Automatically copies CSS value under current caret position to all vendor-prefixed variants.</dd>
 
+<dt>[Encode/Decode Image to data:URL](./base64/)</dt>
+<dd>Encodes image under caret to data:URL format and vice versa.</dd>
+
 </dl>
