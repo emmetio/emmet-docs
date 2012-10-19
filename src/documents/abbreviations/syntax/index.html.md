@@ -4,11 +4,11 @@ title: Abbreviations Syntax
 menuTitle: Syntax
 menuOrder: 1
 ---
-Emmet uses syntax similar to CSS selectors for describing elements positions inside generated tree and elements’ attributes.
+Emmet uses syntax similar to CSS selectors for describing elements’ positions inside generated tree and elements’ attributes.
 
 ## Elements 
 
-You can use element names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
+You can use elements names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
 
 ## Nesting operators
 
@@ -166,7 +166,7 @@ You can use `[attr]` notation (as in CSS) to add custom attributes to your eleme
 * You can place as many attributes as you like inside square brackets.
 * You don’t have to specify attribute values: `td[colspan title]` will produce `<td colspan="" title="">` with tabstops inside each empty attribute (if your editor supports them).
 * You can use single or double quotes for quoting attribute values.
-* You don’t need to quote values if they doesn’t contain spaces: `td[title=hello colspan=3]` will work.
+* You don’t need to quote values if they don’t contain spaces: `td[title=hello colspan=3]` will work.
 
 ### Item numbering: `$`
 
@@ -268,7 +268,7 @@ tooltip:{text: "Emmet is smart enough to understand that you’re trying to expa
 run: emmet.expand_abbreviation
 </div>
 
-This is why Emmet need some indicators (like spaces) where it should stop parsing to not expand anything that you don’t need. If you still thinking that such formatting is required for complex abbreviations to make them more readable:
+This is why Emmet needs some indicators (like spaces) where it should stop parsing to not expand anything that you don’t need. If you’re still thinking that such formatting is required for complex abbreviations to make them more readable:
 
 * Abbreviations are not a templating language, they don’t have to “readable”, they have to be “quickly expandable and removable”.
 * You don’t really need to write complex abbreviations. Stop thinking that “typing” is the slowest process in web-development. You’ll quickly find out that constructing a single complex abbreviation is much slower (and may introduce more errors) that constructing and typing a few short ones.

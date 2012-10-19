@@ -3,7 +3,7 @@ layout: page
 title: Abbreviations
 menuOrder: 1
 ---
-Abbreviations are the heart for Emmet toolkit: these special expressions are parsed in runtime and transformed into structured code block, HTML for example. Abbreviations syntax looks like CSS selectors with a few extensions specific to code generation. So every web-developer already know how to use it. 
+Abbreviations are the heart for Emmet toolkit: these special expressions are parsed in runtime and transformed into structured code block, HTML for example. Abbreviations syntax looks like CSS selectors with a few extensions specific to code generation. So every web-developer already knows how to use it. 
 
 Here’s an example: this abbreviation
 

@@ -21,13 +21,13 @@ First, it looks for a `m10` snippet definition in `snippets.json`. If it’s fou
 
 To provide best user experience, resolver doesn’t introduce any special value separator: it’s much faster to type `m5` rather than `m:5`. So it need to find a value bound: *a first occurrence of digit or hyphen is treated as a value bound*. In `m10` example, `m` is _property part_ and `10` is _value part_. 
 
-When property part is found, resolver searches for snippet definition in `snippets.json`. For `m` part, it will find `"m": "margin:|;"` definition (`|` character is used as a caret position references when snippet is expanded).
+When property part is found, resolver searches for snippet definition in `snippets.json`. For `m` part, it will find `"m": "margin:|;"` definition (`|` character is used as a caret position reference when snippet is expanded).
 
 Snippet definition looks like a CSS property (this is very important!) so Emmet is able to split it to a CSS property and value and place transformed value part at caret position (the `|` character).
 
 ## Supplying values with units
 
-By default, when you expand abbreviation with integer value Emmet outputs it with `px` unit: `m10` → `margin: 10px;`. If you’re expanding abbreviation with float value, it is outputted with `em` unit: `m1.5` → `margin: 1.5em;`. But can explicitly provide unit for value: just put any alpha characters right after value: `m1.5ex` → `margin: 1.5ex;`, `m10foo` → `margin: 10foo;`.
+By default, when you expand abbreviation with integer value Emmet outputs it with `px` unit: `m10` → `margin: 10px;`. If you’re expanding abbreviation with float value, it is outputted with `em` unit: `m1.5` → `margin: 1.5em;`. But you can explicitly provide unit name, just put any alpha characters right after value: `m1.5ex` → `margin: 1.5ex;`, `m10foo` → `margin: 10foo;`.
 
 If you’re explicitly define units, you don’t need to use hyphens to separate values anymore: `m10ex20em` → `margin: 10ex 20em;`, `m10ex-5` → `margin: 10ex -5px;`.
 
