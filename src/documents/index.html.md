@@ -20,7 +20,7 @@ Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS wo
 tooltip: Type CSS-like abbreviation
 type: ul#nav>li.item$*4>a{Item $}
 wait: 1000
-tooltip: Run “Expand Abbreviation” action to expand it ::: “Expand Abbreviation” (Tab key)
+tooltip: Run “Expand Abbreviation” action to expand it into HTML ::: “Expand Abbreviation” (Tab key)
 wait: 600
 run: emmet.expand_abbreviation
 wait: 1000
