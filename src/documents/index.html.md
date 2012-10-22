@@ -6,7 +6,7 @@ title: Emmet Documentation
 
 Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow:
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -24,7 +24,7 @@ tooltip: Run “Expand Abbreviation” action to expand it ::: “Expand Abbrevi
 wait: 600
 run: emmet.expand_abbreviation
 wait: 1000
-tooltip: Traverse between important code points with “Next/Previous Edit Point” ::: “Next Edit Point” (Ctrl-Alt-→) <br> “Previous Edit Point” (Ctrl-Alt-←)
+tooltip: Traverse between important code points with “Next/Previous Edit Point” action ::: “Next Edit Point” (Ctrl-Alt-→) <br> “Previous Edit Point” (Ctrl-Alt-←)
 wait: 1000
 run: {command: 'emmet.next_edit_point', times: 7}
 wait: 1000
@@ -39,7 +39,7 @@ moveTo: 95
 wait: 1000
 tooltip: Quickly comment full tag with “Toggle Comment” action ::: “Toggle Comment” (Cmd-/)
 run: {command: 'emmet.toggle_comment', times: 2, beforeDelay: 1000}
-</div>
+</textarea>
 
 Basically, most text editors out there allow you to store and re-use commonly used code chunks, called _“snippets”_. While snippets are good way to boost your productivity, all implementations have common pitfalls: you have to define snippet first and you can’t extend them in runtime.
 

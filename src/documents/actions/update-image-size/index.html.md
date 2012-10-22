@@ -7,7 +7,7 @@ Many web-developers forget to write _width_ and _height_ attributes  for `<img>`
 
 In CSS, place caret inside property value with `url()` function to add/update width and height properties for current rule.
 
-<div class="movie-def">
+<textarea class="movie-def">
 |&lt;img src="demo.jpg" alt="" /&gt;
 &lt;style&gt;
 .block {
@@ -24,6 +24,6 @@ tooltip: Put caret inside value with image URL to update width and height proper
 moveTo: 3:22
 wait: 1000
 run: emmet.update_image_size
-</div>
+</textarea>
 
 Note that action also works for absolute URLs: it will start searching for requested file from host file’s folder and then will traverse up the tree.

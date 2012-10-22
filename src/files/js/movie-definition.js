@@ -19,6 +19,9 @@ $(function() {
 	var pcCharMap = {
 		'cmd': 'Ctrl',
 		'control': 'Ctrl',
+		'ctrl': 'Ctrl',
+		'alt': 'Alt',
+		'shift': 'Shift',
 		'left': '←',
 		'right': '→',
 		'up': '↑',
@@ -30,7 +33,16 @@ $(function() {
 	}
 
 	function readLines(text) {
-		return _.filter(text.split(/\n|\r/), function(line) {
+		// IE fails to split string by regexp, 
+		// need to normalize newlines first
+		var nl = '\n';
+		var lines = (text || '')
+			.replace(/\r\n/g, nl)
+			.replace(/\n\r/g, nl)
+			.replace(/\r/g, nl)
+			.split(nl);
+
+		return _.filter(lines, function(line) {
 			return !!line;
 		});
 	}
@@ -131,7 +143,7 @@ $(function() {
 
 	function createMovie(source) {
 		source = $(source);
-		var options = parseMovieDefinition(source.html());
+		var options = parseMovieDefinition(source.val());
 		// console.log(options);
 		var ta = $('<textarea>').val(options.code).insertBefore(source);
 

@@ -5,7 +5,7 @@ menuOrder: 9
 ---
 Many editors has similar action: it merges selected lines into a single one. But when there’s no selection, Emmet will match context HTML tag.
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;p&gt;
 	Lorem ipsum dolor sit amet.
 	|Officiis animi consequuntur iure.
@@ -14,4 +14,4 @@ Many editors has similar action: it merges selected lines into a single one. But
 &lt;/p&gt;
 ~~~
 run: emmet.merge_lines ::: “Merge Lines” (Shift-Cmd-M)
-</div>
+</textarea>

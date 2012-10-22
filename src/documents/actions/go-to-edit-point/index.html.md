@@ -9,7 +9,7 @@ This actions works for HTML code blocks and allows you to quickly traverse betwe
 * empty attributes
 * newlines with indentation
 
-<div class="movie-def">
+<textarea class="movie-def">
 |&lt;ul&gt;
 	&lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
@@ -30,4 +30,4 @@ moveTo: 9:4
 wait: 500
 tooltip: You can use “Go to Edit Point” action in non-HTML documents too
 run: {command: 'emmet.next_edit_point', times: 4}
-</div>
+</textarea>

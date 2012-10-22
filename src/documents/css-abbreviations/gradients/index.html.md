@@ -9,7 +9,7 @@ Usually, users prefere to use third-party GUIs to generate gradients definitions
 
 Emmet has a CSS3 Gradient Generator that can do all the hard work for you:
 
-<div class="movie-def" style="height:200px">
+<textarea class="movie-def">
 div {
 	|
 }
@@ -37,7 +37,7 @@ wait: 500
 run: emmet.expand_abbreviation
 ~~~
 mode: text/css
-</div>
+</textarea>
 
 As you can see from the example above, you can type regular gradient definition as `lg(...)` (or `linear-gradient(...)`) function and expand it as abbreviation. If you write gradient definition as a property value, Emmet will parse it and use its name as a reference for a new CSS properties.
 

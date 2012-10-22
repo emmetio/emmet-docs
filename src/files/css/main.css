@@ -24,15 +24,15 @@
 }
 
 .CodeMirror-movie_with-outline .CodeMirror-scroll {
-	margin-right: 150px;
+	margin-right: 25%;
 }
 
 .CodeMirror-movie_with-outline .CodeMirror-scrollbar {
-	right: 150px;
+	right: 25%;
 }
 
 .CodeMirror-outline {
-	width: 150px;
+	width: 25%;
 	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

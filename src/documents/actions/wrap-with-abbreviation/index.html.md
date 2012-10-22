@@ -5,7 +5,7 @@ menuOrder: 3
 ---
 A very powerful tool of Emmet toolkit. It takes [abbreviation](/abbreviations/), expands it and places currently selected content in the last element of generated snippet. If there’s no selection, action will silently call [“Match Tag Pair”](/actions/match-pair/) to wrap context element.
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;div id="page"&gt;
 	&lt;p|&gt;Hello world&lt;/p&gt;
 &lt;/div&gt;
@@ -21,7 +21,7 @@ A very common use case of web-developer is wrapping text in HTML tags. You examp
 
 From [syntax](/abbreviations/syntax/) you’ve learned that you can repeat element with multiplication operator, like this: `ul>li*5`. You can use the very same operator to _mark repeating element_, e.g. tell Emmet that marked element should be repeated by the number of wrapped lines.
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;div id="page"&gt;
 	|
 	About
@@ -67,7 +67,7 @@ This is not very convenient because you have to manually remove list markers.
 
 You can let Emmet do this for you: simply add “trim“ (`|t`, pipe-t) filter to abbreviation to automatically remove list markers from wrapped content:
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;div id="page"&gt;
 	|
 	1. About
@@ -93,7 +93,7 @@ run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul.nav
 
 By default, when you wrap something, Emmet puts original content inside latest element. You can control output position with `$#` placeholder. Note that `$#` is not part of abbreviation syntax so you have to put it inside attribute value or [text node](/abbreviations/syntax/), like this: `ul>li[title=$#]*>{$#}+img[alt=$#]`.
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;div id="page"&gt;
 	|
 	About

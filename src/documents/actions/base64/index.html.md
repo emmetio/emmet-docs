@@ -9,7 +9,7 @@ But these tools has downsides: you have to spend extra time on on-line tools or 
 
 With Emmet, you can convert image to data:URL right in your editor, as well as convert it _back to external file_.
 
-<div class="movie-def">
+<textarea class="movie-def">
 body {
     background: url(demo.png);
 }
@@ -22,4 +22,4 @@ tooltip: Run “Encode/Decode Image to data:URL” action ::: “Encode/Decode I
 run: emmet.encode_decode_data_url
 ~~~
 mode: text/css
-</div>
+</textarea>

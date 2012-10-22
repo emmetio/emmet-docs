@@ -5,7 +5,7 @@ menuOrder: 8
 ---
 Quickly removes tag, found by “[Match Tag Pair](/actions/match-pair/)” from current caret position, and adjusts indentation.
 
-<div class="movie-def">
+<textarea class="movie-def">
 &lt;body&gt;
 	&lt;div |class="wrapper"&gt;
 		&lt;h1&gt;Title&lt;/h1&gt;
@@ -19,4 +19,4 @@ Quickly removes tag, found by “[Match Tag Pair](/actions/match-pair/)” from 
 tooltip: Place caret somewhere “Match Tag Pair” action can find tag definition
 wait: 1000
 run: emmet.remove_tag ::: “Remove Tag” (Cmd-K)
-</div>
+</textarea>

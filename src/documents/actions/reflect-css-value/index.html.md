@@ -4,7 +4,7 @@ title: Reflect CSS Value
 menuOrder: 13
 ---
 A very useful action for CSS developers: it takes value of CSS property under caret and copies it into vendor-prefixed variations with additional transformations, if required.
-<div class="movie-def">
+<textarea class="movie-def">
 div {
 	padding: 10px;
 	
@@ -37,4 +37,4 @@ wait: 500
 run: emmet.reflect_css_value
 ~~~
 mode: text/css
-</div>
+</textarea>

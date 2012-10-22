@@ -11,7 +11,7 @@ In many cases you can skip typing tag name and Emmet will substitute it for you.
 
 When you expand abbreviation, Emmet tries to grab parent context, e.g. the HTML element inside which you’re expanding abbreviation. If context was grabbed successfully, Emmet uses its name to resolve implicit names:
 
-<div class="movie-def" style="height:200px">
+<textarea class="movie-def">
 &lt;body&gt;
 	&lt;div&gt;
 		|
@@ -39,7 +39,7 @@ moveTo: 8:8
 type: .item
 tooltip: Expanding abbreviation inside list, default tag name is *li*
 run: emmet.expand_abbreviation
-</div>
+</textarea>
 
 As you can see from the example above, Emmet looks at parent tag name every time you’re expanding abbreviation with implicit name. Here’s how it resolves names for some parent elements:
 

@@ -245,7 +245,7 @@ But it won’t work, because space is a _stop symbol_ where Emmet stops abbrevia
 
 Many users mistakenly think that each abbreviation should be written in a new line, but they are wrong: you can type and expand abbreviation *anywhere in the text*:
 
-<div class="movie-def" style="height:200px">
+<textarea class="movie-def">
 &lt;body&gt;
 	|
 &lt;/body&gt;
@@ -266,7 +266,7 @@ type: span.info
 wait: 1000
 tooltip:{text: "Emmet is smart enough to understand that you’re trying to expand <strong>span.info</strong> abbreviation, not the <strong>li>span.info</strong> one", wait: 5000}
 run: emmet.expand_abbreviation
-</div>
+</textarea>
 
 This is why Emmet needs some indicators (like spaces) where it should stop parsing to not expand anything that you don’t need. If you’re still thinking that such formatting is required for complex abbreviations to make them more readable:
 
