@@ -6,9 +6,9 @@ menuOrder: 1
 ---
 Emmet uses syntax similar to CSS selectors for describing elements’ positions inside generated tree and elements’ attributes.
 
-## Elements 
+## Elements  ##
 
-You can use elements names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
+You can use element names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
 
 ## Nesting operators
 
@@ -216,7 +216,7 @@ Note that `{text}` is used and parsed as a separate element (like, `div`, `p` et
 	<!-- a>{click}+b{here} -->
 	<a href="">click<b>here</b></a>
 
-Notice that in second example the `<b>` element is placed _inside_ `<a>` element. And that’s the difference: when `{text}` is written right after element, it doesn’t change parent context. Here’s more complex example showing why it is important:
+In second example the `<b>` element is placed _inside_ `<a>` element. And that’s the difference: when `{text}` is written right after element, it doesn’t change parent context. Here’s more complex example showing why it is important:
 
 	p>{Click }+a{here}+{ to continue}
 	
@@ -270,5 +270,5 @@ run: emmet.expand_abbreviation
 
 This is why Emmet needs some indicators (like spaces) where it should stop parsing to not expand anything that you don’t need. If you’re still thinking that such formatting is required for complex abbreviations to make them more readable:
 
-* Abbreviations are not a templating language, they don’t have to “readable”, they have to be “quickly expandable and removable”.
-* You don’t really need to write complex abbreviations. Stop thinking that “typing” is the slowest process in web-development. You’ll quickly find out that constructing a single complex abbreviation is much slower (and may introduce more errors) that constructing and typing a few short ones.
+* Abbreviations are not a template language, they don’t have to be “readable”, they have to be “quickly expandable and removable”.
+* You don’t really need to write complex abbreviations. Stop thinking that “typing” is the slowest process in web-development. You’ll quickly find out that constructing a single complex abbreviation is much slower and error-prone than constructing and typing a few short ones.
