@@ -49,3 +49,5 @@ You can use aliases instead of full units:
 Some CSS properties are defied as _unit-less_, e.g. no unit suffix will be outputted: `lh2` → `line-height: 2;`, `fw400` → `font-weight: 400;`.
 
 These values are: `'z-index`, `line-height`, `opacity` and `font-weight` but you can override them with `css.unitlessProperties` preferences.
+
+## TODO: add section about !important

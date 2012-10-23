@@ -7,6 +7,10 @@
 emmet.define('cheatsheet', function(require, _) {
 	var dataHandlers = {};
 
+	/** Back-reference to current module */
+	var module = null;
+
+
 	/**
 	 * Returns snippet item object for specified vocabulary item
 	 * @param  {String} name Vocabulary item name
@@ -27,31 +31,7 @@ emmet.define('cheatsheet', function(require, _) {
 		};
 	}
 
-	/**
-	 * Default data handler for all sections
-	 * @param  {Object} sectionData Syntax section value
-	 * @param  {String} sectionName Syntax name
-	 * @return {Array}
-	 */
-	function defaultDataHandler(sectionData, sectionName) {
-		var output = [];
-		_.each(['abbreviations', 'snippets'], function(name) {
-			if (name in sectionData) {
-				_.each(sectionData[name], function(v, k) {
-					output.push(snippetItem(k, v, name));
-				});
-			}
-		});
-
-		return output;
-	}
-
-	// XXX a special CSS data handler that splits data across sections
-	dataHandlers.css = function(sectionData, sectionName) {
-
-	};
-
-	return {
+	return module = {
 		/**
 		 * Returns list of all available sections
 		 * @return {Array}
@@ -72,7 +52,48 @@ emmet.define('cheatsheet', function(require, _) {
 		 * @return {Array}
 		 */
 		data: function(name) {
+			var voc = require('resources').getVocabulary('system');
+			return name in dataHandlers 
+				? dataHandlers[name](voc[name], name) 
+				: this.defaultDataHandler(voc[name], name);
+		},
 
+		/**
+		 * Default data handler for all sections
+		 * @param  {Object} sectionData Syntax section value
+		 * @param  {String} sectionName Syntax name
+		 * @return {Array}
+		 */
+		defaultDataHandler: function(sectionData, sectionName) {
+			var output = [];
+			_.each(['abbreviations', 'snippets'], function(name) {
+				if (name in sectionData) {
+					_.each(sectionData[name], function(v, k) {
+						output.push(snippetItem(k, v, name));
+					});
+				}
+			});
+
+			return output;
+		},
+
+		/**
+		 * Adds custom data handler for given section/syntax name
+		 * @param {String}   name Section/syntax name
+		 * @param {Function} fn   Data handler that should return array 
+		 * of section items
+		 */
+		addDataHandler: function(name, fn) {
+			dataHandlers[name] = fn;
+		},
+
+		/**
+		 * Removes custom data handler for given section/syntax name
+		 * @param  {String} name Section/syntax name
+		 */
+		removeDataHandler: function(name) {
+			if (name in dataHandlers)
+				delete dataHandlers[name];
 		}
 	};
 });
