@@ -45,6 +45,8 @@ emmet.exec(function(require, _) {
 		}
 	];
 
+	var reCSSPropertyName = /^([a-z0-9\-]+)\s*\:/i;
+
 	/**
 	 * Creates CSS properties index for faster look-ups and grouping
 	 * @return {Object} Hash of all CSS properties and their sections
@@ -59,11 +61,16 @@ emmet.exec(function(require, _) {
 
 			_.each(section.props.split(' '), function(name, j) {
 				properties[name] = {
-					section: section.name,
+					section: section.title,
 					order: j
 				}
 			});
 		});
+
+		// add ”Others” section
+		sections['Others'] = {
+			order: 999
+		};
 
 		return {
 			sections: sections,
@@ -86,7 +93,7 @@ emmet.exec(function(require, _) {
 		}
 		
 		// check if it's a valid snippet definition
-		if (!/^[a-z0-9\-]+\s*\:/i.test(snippet)) {
+		if (!reCSSPropertyName.test(snippet)) {
 			return false;
 		}
 		
@@ -105,11 +112,36 @@ emmet.exec(function(require, _) {
 		// get plain list of snippets
 		data = cs.defaultDataHandler(data, sectionName);
 		var idx = createIndex();
-		var output = [];
+		console.log('index', idx);
+		var output = {};
 
 		// group all available CSS snippets
 		_.each(data, function(item) {
+			var sectionName = 'Others';
+			if (item.type == 'snippet' && isValidSnippet(item.value)) {
+				var propertyName = item.value.match(reCSSPropertyName)[1].toLowerCase();
+				var matchedProperty = idx.properties[propertyName];
+				if (matchedProperty) {
+					sectionName = matchedProperty.section;
+				}
 
+				if (!(sectionName in output)) {
+					output[sectionName] = _.extend({
+						name: sectionName,
+						value: [],
+						type: 'section'
+					}, idx.sections[sectionName]);
+				}
+
+				output[sectionName].value.push(_.extend({}, item, matchedProperty || {}));
+			}
 		});
+
+		output = _.map(output, function(section) {
+			section.value = _.sortBy(section.value, 'order');
+			return section;
+		});
+
+		return _.sortBy(output, 'order');
 	});
 });

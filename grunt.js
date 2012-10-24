@@ -32,6 +32,11 @@ module.exports = function(grunt) {
 					'./src/files/codemirror-movie/src/scenario.prompt.js',
 					'./src/files/js/movie-definition.js',
 					'./src/files/js/misc.js'
+				],
+
+				'./out/j/cheatsheet.js': [
+					'./src/files/js/cheatsheet.js',
+					'./src/files/js/cheatsheet-css.js'
 				]
 			}
 		}

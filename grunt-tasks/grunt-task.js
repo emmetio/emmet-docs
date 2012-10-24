@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 		var now = new Date;
 		return [now.getFullYear(), 
 			padNumber(now.getMonth() + 1),
-			padNumber(now.getDay()),
+			padNumber(now.getDate()),
 			padNumber(now.getHours()),
 			padNumber(now.getMinutes()),
 			padNumber(now.getSeconds())

@@ -22,7 +22,7 @@ makeList = (str) ->
 
 grabResources = (collection, prefix) ->
 	res = {}
-	re = new RegExp('^' + prefix + '(_?\d+)?$')
+	re = new RegExp('^' + prefix + '(\\d+)?$')
 	for k, v of collection
 		if re.test k
 			res[k] = v
@@ -32,13 +32,13 @@ grabResources = (collection, prefix) ->
 # Collects all resources from document model (transformed document and its layouts)
 # with specified prefix
 collectResources = (documentModel, prefix) ->
-	files = [grabResources documentModel.getMeta().attributes, prefix]
+	files = [grabResources documentModel.getMeta().toJSON(), prefix]
 
 	# grab resources from layouts
 	ctx = documentModel
 	while ctx.hasLayout()
 		ctx = ctx.layout
-		files.push grabResources ctx.getMeta().attributes, prefix
+		files.push grabResources ctx.getMeta().toJSON(), prefix
 
 	# merge all resource into a singe set
 	res = {}
@@ -48,7 +48,7 @@ collectResources = (documentModel, prefix) ->
 	# expand all assets
 	assets = for k, v of res
 		order = -1
-		if m = /^_(\d+)$/.test(k)
+		if m = /(\d+)$/.test(k)
 			order = parseInt m[1]
 		{
 			order: order
