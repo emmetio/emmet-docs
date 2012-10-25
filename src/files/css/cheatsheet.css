@@ -1,0 +1,96 @@
+.wrapper {
+	width: auto;
+	max-width: none;
+}
+
+.page-header {
+	float: none;
+	width: auto;
+	padding: 10px 30px;
+	margin: 0;
+	background: #000;
+	color: #fff;
+}
+
+.site-title {
+	margin: 0;
+	font-size: 1.3em;
+	padding-left: 1.5em;
+}
+
+.site-title a {
+	color: #fff;
+}
+
+.site-title a:before {
+	content: '← ';
+	display: inline-block;
+	width: 1.5em;
+	margin-left: -1.5em;
+}
+
+.nav {
+	display: none;
+}
+
+.page-content {
+	margin-left: 0;
+	padding: 30px;
+}
+
+.page-footer {
+	position: static;
+	padding: 30px;
+}
+
+.ch-snippet {
+	font-family: Monaco, Bitstream Vera Sans Mono, "Lucida Console", Terminal;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+.ch-snippet__name {
+	font-weight: bold;
+	font-size: 1em;
+	float: left;
+	padding: 0;
+	margin: 0 15px 0 0;
+	min-width: 12em;
+}
+
+.ch-snippet__value {
+	white-space: pre-wrap;
+	overflow: hidden;
+	margin: 0;
+	padding: 1px 0;
+}
+
+.ch-tabstop {
+	display: inline-block;
+	padding: 0 5px;
+	color: #fff;
+	border: 1px solid #639ce5;
+	margin: -1px 0;
+	
+	background-color: #578fe3;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#73afeb), to(#578fe3));
+	background-image: -webkit-linear-gradient(#73afeb, #578fe3);
+	background-image: -moz-linear-gradient(#73afeb, #578fe3);
+	background-image: -o-linear-gradient(#73afeb, #578fe3);
+	background-image: linear-gradient(#73afeb, #578fe3);
+	
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 9px;
+	
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	cursor: default;
+}
+
+.ch-caret {
+	display: inline-block;
+	width: 2px;
+	height: 1.2em;
+	margin-bottom: -0.1em;
+	background: black;
+}

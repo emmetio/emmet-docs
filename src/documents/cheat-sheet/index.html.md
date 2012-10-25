@@ -1,6 +1,8 @@
 ---
-layout: page
+layout: default
 title: Cheat Sheet
 menuOrder: 6
+css1: "/c/cheatsheet.css"
 js1: "/j/cheatsheet.js"
 ---
+<div id="cheatsheet"></div>

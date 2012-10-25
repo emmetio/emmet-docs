@@ -36,7 +36,8 @@ module.exports = function(grunt) {
 
 				'./out/j/cheatsheet.js': [
 					'./src/files/js/cheatsheet.js',
-					'./src/files/js/cheatsheet-css.js'
+					'./src/files/js/cheatsheet-css.js',
+					'./src/files/js/cheatsheet-controller.js'
 				]
 			}
 		}

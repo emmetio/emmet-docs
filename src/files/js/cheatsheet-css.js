@@ -112,7 +112,6 @@ emmet.exec(function(require, _) {
 		// get plain list of snippets
 		data = cs.defaultDataHandler(data, sectionName);
 		var idx = createIndex();
-		console.log('index', idx);
 		var output = {};
 
 		// group all available CSS snippets
