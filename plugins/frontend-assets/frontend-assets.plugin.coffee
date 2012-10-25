@@ -87,7 +87,7 @@ module.exports = (BasePlugin) ->
 		contextualizeBefore: ({collection}, next) ->
 			if @docpad.getConfig().frontendDebug
 				collection.forEach (file) ->
-					if file.type is 'document'
+					if file.type is 'document' and not /\-debug$/.test file.get('basename')
 						file.set('basename', file.get('basename') + '-debug')
 
 			next()

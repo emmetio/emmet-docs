@@ -41,12 +41,16 @@
 .page-footer {
 	position: static;
 	padding: 30px;
+	padding-top: 0;
 }
 
 .ch-snippet {
 	font-family: Monaco, Bitstream Vera Sans Mono, "Lucida Console", Terminal;
 	margin-bottom: 10px;
 	font-size: 11px;
+
+	-webkit-column-break-inside: avoid;
+	column-break-inside: avoid;
 }
 
 .ch-snippet__name {
@@ -66,31 +70,130 @@
 }
 
 .ch-tabstop {
+	border: 1px solid #eaeaea;
+	background: #f8f8f8;
 	display: inline-block;
 	padding: 0 5px;
-	color: #fff;
-	border: 1px solid #639ce5;
 	margin: -1px 0;
-	
-	background-color: #578fe3;
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#73afeb), to(#578fe3));
-	background-image: -webkit-linear-gradient(#73afeb, #578fe3);
-	background-image: -moz-linear-gradient(#73afeb, #578fe3);
-	background-image: -o-linear-gradient(#73afeb, #578fe3);
-	background-image: linear-gradient(#73afeb, #578fe3);
-	
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	border-radius: 9px;
-	
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-	cursor: default;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .ch-caret {
+	border-left: 2px solid #578fe3;
+	margin: 0 2px -0.1em;
 	display: inline-block;
-	width: 2px;
-	height: 1.2em;
-	margin-bottom: -0.1em;
-	background: black;
+	height: 1.1em;
+
+}
+
+.ch-section {
+	margin-bottom: 40px;
+	/*overflow: hidden;*/
+	clear: both;
+}
+
+.ch-section:last-of-type {
+	margin-bottom: 0;
+}
+
+.ch-section__content {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+
+	-webkit-column-gap: 30px;
+	-moz-column-gap: 30px;
+	column-gap: 30px;
+}
+
+.ch-section__title {
+	margin: 0 0 0.5em;
+	page-break-after: avoid;
+}
+
+.ch-subsection {
+	/*overflow: hidden;*/
+	clear: both;
+}
+
+.ch-subsection__title {
+	margin: 20px 0 5px 0;
+	page-break-after: avoid;
+}
+
+.ch-subsection:first-child .ch-subsection__title {
+	margin-top: 0;
+}
+
+.cn-snippet__alias {
+	font-size: 10px;
+	color: #ddd;
+	margin: 5px 0;
+}
+
+.cn-snippet__alias-abbr {
+	color: #555;
+}
+
+/* 
+ * For HTML and XSL sections, put snippet value right below its name
+ * to save some space
+ */
+.ch-section_syntax .ch-snippet__name,
+.ch-section_html .ch-snippet__name,
+.ch-section_xsl .ch-snippet__name {
+	float: none;
+}
+
+.ch-section_syntax .ch-snippet,
+.ch-section_html .ch-snippet,
+.ch-section_xsl .ch-snippet {
+	margin-bottom: 20px;
+}
+
+/* For CSS, shorten snippet name width */
+.ch-section_css .ch-snippet__name {
+	min-width: 7em;
+}
+
+/* Print stylesheet, pretty ugly but it’s better that nothing */
+@media print {
+	body {
+		font-family: arial, sans-serif;
+	}
+
+	.page-header, .page-footer {
+		display: none;
+	}
+
+	.page-content {
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+
+	/* 
+	 * Columns are not working in WebKit for print media, 
+	 * using good ol' floats 
+	 */
+	.ch-section__content {
+		-webkit-column-count: auto;
+		-moz-column-count: auto;
+		column-count: auto;
+	}
+
+	.ch-snippet {
+		float: left;
+		width: 30%;
+		padding-right: 3%;
+		page-break-inside: avoid;
+	}
+
+	@page {
+		size: landscape;
+		margin: 1cm;
+	}
 }

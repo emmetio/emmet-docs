@@ -18,7 +18,7 @@ emmet.define('cheatsheet', function(require, _) {
 	 * @param  {String} section   Vocabulary item section name
 	 * @return {Object}
 	 */
-	function snippetItem(name, value, section) {
+	function snippetItem(name, value, section, syntax) {
 		var itemType = 'snippet';
 		if (section == 'abbreviations') {
 			itemType = value.charAt(0) == '<' ? 'abbreviation' : 'alias';
@@ -27,7 +27,8 @@ emmet.define('cheatsheet', function(require, _) {
 		return {
 			name: name,
 			value: value,
-			type: itemType
+			type: itemType,
+			syntax: syntax
 		};
 	}
 
@@ -66,10 +67,18 @@ emmet.define('cheatsheet', function(require, _) {
 		 */
 		defaultDataHandler: function(sectionData, sectionName) {
 			var output = [];
+			var lookup = {};
 			_.each(['abbreviations', 'snippets'], function(name) {
 				if (name in sectionData) {
 					_.each(sectionData[name], function(v, k) {
-						output.push(snippetItem(k, v, name));
+						// group items that produces the same output
+						if (v in lookup) {
+							lookup[v].name += ', ' + k;
+						} else {
+							var item = snippetItem(k, v, name, sectionName);
+							lookup[v] = item;
+							output.push(item);
+						}
 					});
 				}
 			});
