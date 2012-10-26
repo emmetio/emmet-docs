@@ -46,3 +46,16 @@ Basically, most text editors out there allow you to store and re-use commonly us
 Emmet takes the snippets idea to a whole new level: you can type _CSS-like_ expressions that can be dynamically parsed, and produce output depending on what you type in the abbreviation. Emmet is developed and optimised for web-developers whose workflow depends on HTML/XML and CSS, but can be used with programming languages too. 
 
 Start learning Emmet with the [abbreviation syntax](/abbreviations/) and available [actions](/actions/).
+
+## Supported editors ##
+
+* [Eclipse/Aptana](https://github.com/emmetio/emmet-eclipse)
+* [Sublime Text 2](https://github.com/sergeche/emmet-sublime)
+* [TextMate 1.x](https://github.com/emmetio/emmet-objc/downloads)
+* [Coda 1.6 and 2.x](https://github.com/emmetio/emmet-objc/downloads)
+* [Espresso](https://github.com/emmetio/emmet-objc/downloads)
+* [Komodo Edit/IDE](https://github.com/sergeche/zen-coding/downloads)
+* [Notepad++](https://github.com/sergeche/zen-coding/downloads)
+* [PSPad](https://github.com/sergeche/zen-coding/downloads)
+* [&lt;textarea&gt;](https://github.com/sergeche/zen-coding/downloads)
+* [CodeMirror2](https://github.com/sergeche/zen-coding/downloads)
