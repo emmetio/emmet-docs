@@ -7,7 +7,7 @@ Filters are special post-processors that modifies expanded abbreviation right be
 
 Try to expand the following abbreviation in the editor below (use Tab key to expand abbreviation): `#content>p.title`
 
-<textarea class="cm-box"></textarea>
+<textarea class="cm-box" data-height="150"></textarea>
 
 As you may expect, it will be expanded into the following HTML code:
 

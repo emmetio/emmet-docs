@@ -13,7 +13,7 @@ A very powerful tool of Emmet toolkit. It takes an [abbreviation](/abbreviations
 tooltip: Place caret inside tag (or tag content) you want to wrap and run “Wrap with Abbreviation” action
 prompt: {text: '.wrapper>h1{Title}+.content', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
 run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, '.wrapper>h1{Title}+.content');}}
-</div>
+</textarea>
 
 ## Wrapping individual lines
 
@@ -39,7 +39,7 @@ wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with repeated element marked with <em>\*</em>
 prompt: {text: 'nav>ul.nav>li.nav-item$\*>a', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
 run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'nav>ul.nav>li.nav-item$\*>a');}}
-</div>
+</textarea>
 
 Note you don’t need to add multiplier number for wrapping lines (e.g. `li*5`), you have to use `*` operator _without_ number, like this: `li*`.
 
@@ -85,7 +85,7 @@ wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with  <em>|t</em> filter at the end
 prompt: {text: 'ul.nav>li.nav-item$\*>a|t', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
 run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul.nav>li.nav-item$\*>a|t');}}
-</div>
+</textarea>
 
 [Read more about filters](/filters/)
 
@@ -111,4 +111,4 @@ wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with repeated element marked with <em>\*</em> and <em>$#</em> placeholder
 prompt: {text: 'ul>li[title=$#]\*>{$#}+img[alt=$#]', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
 run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul>li[title=$#]\*>{$#}+img[alt=$#]');}}
-</div>
+</textarea>
