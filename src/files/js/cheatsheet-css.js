@@ -14,7 +14,7 @@ emmet.exec(function(require, _) {
 			props: 'box-sizing box-shadow width height max-width max-height min-width min-height'
 		}, {
 			title: 'Font',
-			props: 'font font-weight font-variant font-size font-size-adjust font-family font-effect font-emphasize font-emphasize-position font-emphasize-style font-smooth font-stretch'
+			props: 'font font-weight font-style font-variant font-size font-size-adjust font-family font-effect font-emphasize font-emphasize-position font-emphasize-style font-smooth font-stretch'
 		}, {
 			title: 'Text',
 			props: 'vertical-align text-align text-align-last text-decoration text-emphasis text-height text-indent text-justify text-outline text-replace text-transform text-wrap text-shadow line-height letter-spacing white-space white-space-collapse word-break word-spacing word-wrap'
@@ -22,23 +22,23 @@ emmet.exec(function(require, _) {
 			title: 'Background',
 			props: 'background background-color background-image background-repeat background-attachment background-position background-position-x background-position-y background-break background-clip background-origin background-size border-radius'
 		}, {
-			title: 'Border',
-			props: 'border border-break border-collapse border-color border-image border-top-image border-right-image border-bottom-image border-left-image border-corner-image border-top-left-image border-top-right-image border-bottom-right-image border-bottom-left-image border-fit border-length border-spacing border-style border-width border-top border-top-width border-top-style border-top-color border-right border-right-width border-right-style border-right-color border-bottom border-bottom-width border-bottom-style border-bottom-color border-left border-left-width border-left-style border-left-color border-radius border-top-right-radius border-top-left-radius border-bottom-right-radius border-bottom-left-radius'
-		}, {
 			title: 'Color',
 			props: 'color opacity'
 		}, {
 			title: 'Generated content',
 			props: 'content quotes counter-increment counter-reset'
 		}, {
+			title: 'Outline',
+			props: 'outline outline-offset outline-width outline-style outline-color'
+		}, {
+			title: 'Border',
+			props: 'border border-break border-collapse border-color border-image border-top-image border-right-image border-bottom-image border-left-image border-corner-image border-top-left-image border-top-right-image border-bottom-right-image border-bottom-left-image border-fit border-length border-spacing border-style border-width border-top border-top-width border-top-style border-top-color border-right border-right-width border-right-style border-right-color border-bottom border-bottom-width border-bottom-style border-bottom-color border-left border-left-width border-left-style border-left-color border-radius border-top-right-radius border-top-left-radius border-bottom-right-radius border-bottom-left-radius'
+		}, {
 			title: 'Lists',
 			props: 'list-style list-style-position list-style-type list-style-image'
 		}, {
 			title: 'Tables',
 			props: 'table-layout caption-side empty-cells'
-		}, {
-			title: 'Outline',
-			props: 'outline outline-offset outline-width outline-style outline-color'
 		}, {
 			title: 'Print',
 			props: 'page-break-before page-break-inside page-break-after orphans widows'
@@ -137,7 +137,7 @@ emmet.exec(function(require, _) {
 		});
 
 		output = _.map(output, function(section) {
-			section.value = _.sortBy(section.value, 'order');
+			section.value = _.sortBy(section.value, section.name == 'Others' ? 'name' : 'order');
 			return section;
 		});
 
