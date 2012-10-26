@@ -2,7 +2,7 @@
 layout: default
 title: Emmet Documentation
 ---
-# Emmet — the essential tool for web-developers #
+# Emmet — the essential toolkit for web-developers #
 
 Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow:
 
