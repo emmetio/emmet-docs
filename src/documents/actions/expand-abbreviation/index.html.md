@@ -16,7 +16,7 @@ Expands [CSS-like abbreviations](/abbreviations/) into HTML/XML/CSS code, depend
 &lt;/html&gt;
 ~~~
 tooltip: Type a CSS-like abbreviation
-type: #page>(#header>ul#nav>li*4>a)+(#page>h1{Hello world}+p)+#footer
+type: #page>(#header>ul#nav>li*4>a)+(#content>h1{Hello world}+p)+#footer
 wait: 1000
 tooltip: Run “Expand Abbreviation” action ::: “Expand Abbreviation” (Tab key)
 run: emmet.expand_abbreviation
