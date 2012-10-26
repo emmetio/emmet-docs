@@ -31,14 +31,14 @@ emmet.exec(function(require, _) {
 			title: 'Outline',
 			props: 'outline outline-offset outline-width outline-style outline-color'
 		}, {
+			title: 'Tables',
+			props: 'table-layout caption-side empty-cells'
+		}, {
 			title: 'Border',
 			props: 'border border-break border-collapse border-color border-image border-top-image border-right-image border-bottom-image border-left-image border-corner-image border-top-left-image border-top-right-image border-bottom-right-image border-bottom-left-image border-fit border-length border-spacing border-style border-width border-top border-top-width border-top-style border-top-color border-right border-right-width border-right-style border-right-color border-bottom border-bottom-width border-bottom-style border-bottom-color border-left border-left-width border-left-style border-left-color border-radius border-top-right-radius border-top-left-radius border-bottom-right-radius border-bottom-left-radius'
 		}, {
 			title: 'Lists',
 			props: 'list-style list-style-position list-style-type list-style-image'
-		}, {
-			title: 'Tables',
-			props: 'table-layout caption-side empty-cells'
 		}, {
 			title: 'Print',
 			props: 'page-break-before page-break-inside page-break-after orphans widows'
@@ -117,8 +117,10 @@ emmet.exec(function(require, _) {
 		// group all available CSS snippets
 		_.each(data, function(item) {
 			var sectionName = 'Others';
-			if (item.type == 'snippet' && isValidSnippet(item.value)) {
-				var propertyName = item.value.match(reCSSPropertyName)[1].toLowerCase();
+			if (item.type == 'snippet') {
+				var propertyName = isValidSnippet(item.value) 
+					? item.value.match(reCSSPropertyName)[1].toLowerCase()
+					: item.name;
 				var matchedProperty = idx.properties[propertyName];
 				if (matchedProperty) {
 					sectionName = matchedProperty.section;
