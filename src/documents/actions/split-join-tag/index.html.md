@@ -15,3 +15,7 @@ moveTo: 6
 wait: 1000
 run: emmet.split_join_tag
 </textarea>
+
+----------------
+
+“Split/Join Tag” action uses “[HTML Matcher](/actions/match-pair/)” internally so it may work in non-HTML syntaxes too.

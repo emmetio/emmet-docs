@@ -20,3 +20,8 @@ tooltip: Place caret somewhere “Match Tag Pair” action can find tag definiti
 wait: 1000
 run: emmet.remove_tag ::: “Remove Tag” (Cmd-K)
 </textarea>
+
+----------------
+
+“Remove Tag” action uses “[HTML Matcher](/actions/match-pair/)” internally so it may work in non-HTML syntaxes too.
+
