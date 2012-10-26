@@ -50,4 +50,15 @@ Some CSS properties are defined as _unit-less_, e.g. no unit suffix will be outp
 
 These values are: `'z-index`, `line-height`, `opacity` and `font-weight` but you can override them with `css.unitlessProperties` preferences.
 
-## TODO: add section about !important
+## !important modifier ##
+
+You can add `!` suffix at the end of any CSS abbreviation to get `!important` value:
+
+    p!+m10e!
+
+...will produce
+
+```css
+padding:  !important;
+margin: 10em !important;
+```
