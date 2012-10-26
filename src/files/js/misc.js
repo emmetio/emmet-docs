@@ -6,7 +6,7 @@
 			+ '<span class="emmet-preferences__name"><%= name %></span>' 
 			+ '<div class="emmet-preferences__desc"><%= description %></div>' 
 			+ '</td><td>' 
-			+ '<span class="emmet-preferences__value"><%= value %></span>' 
+			+ '<span class="emmet-preferences__value"><%- value %></span>' 
 			+ '</td></tr>');
 		var output = '<table class="emmet-preferences__list">' ;
 		_.each(prefs, function(item) {
