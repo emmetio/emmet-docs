@@ -13,6 +13,7 @@ js:  "/j/movie.js"
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 <title><%= @document.title %></title>
+<link rel="shortcut icon" href="/favicon.ico" />
 <% for url in @assets('css'): %>
 <link rel="stylesheet" href="<%= url %>" />
 <% end %>
