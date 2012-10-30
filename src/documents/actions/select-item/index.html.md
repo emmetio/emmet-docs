@@ -5,7 +5,7 @@ menuOrder: 5
 ---
 Action is similar to [“Go to Edit Point”](/actions/go-to-edit-point/), but selects important code parts.
 
-In HTML, these are tag name, full attribute and attribute value. For class attribute, it also selects distinct classes.
+In HTML, these are tag name, full attribute and attribute value. For class attribute it also selects distinct classes.
 
 <textarea class="movie-def">
 |&lt;section&gt;

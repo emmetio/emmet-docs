@@ -3,7 +3,7 @@ layout: page
 title: Update Image Size
 menuOrder: 10
 ---
-Many web-developers forget to write _width_ and _height_ attributes  for `<img>` tags which leads to poor UX. This action helps you automate this process: simply place caret inside `<img>` tag and run this action to add/update width and height attributes.
+Many web-developers forget to write _width_ and _height_ attributes  for `<img>` tags which leads to poor UX. This action helps you to automate this process: simply place caret inside `<img>` tag and run this action to add/update width and height attributes.
 
 In CSS, place caret inside property value with `url()` function to add/update width and height properties for current rule.
 
@@ -26,4 +26,4 @@ wait: 1000
 run: emmet.update_image_size
 </textarea>
 
-Note that action also works for absolute URLs: it will start searching for requested file from host file’s folder and then will traverse up the tree.
+Note that this action also works for absolute URLs: it will start searching for requested file from host file’s folder and then will traverse up the tree.

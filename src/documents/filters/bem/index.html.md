@@ -18,7 +18,7 @@ The `bem` filter allows you to make abbreviation a bit sorter:
 	
 ## How it works
 
-BEM filter introduces a few class name prefixes for concept types: `__` or `-` as _element prefix_ and `_` as _modifier prefix_. Whenever you begin class name with one of these prefixes, filter will resolve the rest parts for you:
+BEM filter introduces a few class name prefixes for concept types: `__` or `-` as _element prefix_ and `_` as _modifier prefix_. Whenever you begin the class name with one of these prefixes, filter will resolve the rest parts for you:
 
 * if you start class name element prefix, filter will resolve _block name_ from _parent_ node;
 * if you start class name with modifier prefix, filter will resolve _block name_ and/or _element name_ from _current or parent_ nodes;

@@ -3,7 +3,7 @@ layout: page
 title: Go to Edit Point
 menuOrder: 4
 ---
-This actions works for HTML code blocks and allows you to quickly traverse between important code points:
+This action works for HTML code blocks and allows you to quickly traverse between important code points:
 
 * between tags
 * empty attributes

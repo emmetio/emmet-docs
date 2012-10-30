@@ -3,7 +3,7 @@ layout: page
 title: "snippets.json"
 menuOrder: 1
 ---
-Create `snippets.json` file in in extensions folder to add or override snippets. The structure of this file is the same a [original one](https://github.com/sergeche/zen-coding/blob/v0.7.1/snippets.json): on the top level you define _syntax name_ your snippets belong to, the second level is `abbreviations` or `snippets`, depending on item type you want to create. When loaded, users’ `snippets.json` in _recursively merged_ with the original one, adding or updating abbreviations and snippets.
+Create `snippets.json` file in extensions folder to add or override snippets. The structure of this file is the same as the [original one](https://github.com/sergeche/zen-coding/blob/v0.7.1/snippets.json): on the top level you define _syntax name_ your snippets belong to, the second level is `abbreviations` or `snippets`, depending on item type you want to create. When loaded, users’ `snippets.json` in _recursively merged_ with the original one, adding or updating abbreviations and snippets.
 
 You should read [Element type](/abbreviations/types/) section before creating `snippets.json` file.
 
@@ -14,7 +14,7 @@ In `snippets` section of syntax definition, you create plain text snippets, pret
 * `$1` or `${1}`
 * `${1:hello world}` — tabstop with placeholder
 
-Note that `${0}` or `$0` tabstop has a special meaning some editors like TextMate or Eclipse and used as a final caret position after leaving “tabstops mode” so you’d better use tabstops staring from 1.
+Note that `${0}` or `$0` tabstop has a special meaning in some editors like TextMate or Eclipse and is used as a final caret position after leaving “tabstops mode” so you’d better use tabstops staring from 1.
 
 ### Variables ###
 
@@ -32,7 +32,7 @@ Example usage: `for#array.i`.
 
 ### Predefined variables ###
 
-Snippets has some predefined variable names that has special meaning to Emmet:
+Snippets have some predefined variable names that have special meaning to Emmet:
 
 * `${cursor}` or `|` are synonyms to `$0` and used as caret position in generated output.
 * `${child}` refers to a position where child abbreviations and snippets should be outputted. If not defined, children will be outputted at the end of snippet content.

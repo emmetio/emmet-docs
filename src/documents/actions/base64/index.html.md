@@ -5,7 +5,7 @@ menuOrder: 14
 ---
 HTML and CSS allows you to embed external resources right into base using [data:URL](http://en.wikipedia.org/wiki/Data_URI_scheme) scheme. Usually, image conversion to base64 is done with external on-line services or third-party assets builder. 
 
-But these tools has downsides: you have to spend extra time on on-line tools or loose control on images that should or should not be converted to base64.
+But these tools have downsides: you have to spend extra time on on-line tools or loose control on images that should or should not be converted to base64.
 
 With Emmet, you can convert image to data:URL right in your editor, as well as convert it _back to external file_.
 

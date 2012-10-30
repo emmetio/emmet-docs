@@ -8,7 +8,7 @@ Emmet uses syntax similar to CSS selectors for describing elements’ positions 
 
 ## Elements  ##
 
-You can use element names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
+You can use elements’ names like `div` or `p` to _generate_ HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: `div` → `<div></div>`, `foo` → `<foo></foo>` and so on.
 
 ## Nesting operators
 
@@ -42,7 +42,7 @@ Use `+` operator to place elements near each other, on the same level:
 	
 ### Climb-up: `^`
 
-With `>` operator you’re descending down the generated tree and positions of all sibling elements will be resolved agains the most deepest element:
+With `>` operator you’re descending down the generated tree and positions of all sibling elements will be resolved against the most deepest element:
 
 	div+div>p>span+em 
 	
@@ -95,7 +95,7 @@ With `*` operator you can define how many times element should be outputted:
 	
 ### Grouping: `()`
 
-Parenthesises are used by power Emmet users for grouping subtrees in complex abbreviations:
+Parenthesises are used by Emmets’ power users for grouping subtrees in complex abbreviations:
 
 	div>(header>ul>li*2>a)+footer>p
 	
@@ -170,7 +170,7 @@ You can use `[attr]` notation (as in CSS) to add custom attributes to your eleme
 
 ### Item numbering: `$`
 
-With multiplication `*` operator you can repeat elements, but with `$` you can _number_ them. Place `$` operator inside element’s name, attribute name or attribute value to output current number of repeated element:
+With multiplication `*` operator you can repeat elements, but with `$` you can _number_ them. Place `$` operator inside element’s name, attribute’s name or attribute’s value to output current number of repeated element:
 
 	ul>li.item$*5
 	
@@ -237,7 +237,7 @@ For comparison, here’s the same abbreviation written without child `>` operato
 	
 ## Notes on abbreviation formatting
 
-When you get familiar with Emmets’ abbreviations syntax, you may want to use some formatting to make your abbreviations more readable. For example, use spaces between elements and operators, like this:
+When you get familiar with Emmet’s abbreviations syntax, you may want to use some formatting to make your abbreviations more readable. For example, use spaces between elements and operators, like this:
 
 	(header > ul.nav > li*5) + footer
 	

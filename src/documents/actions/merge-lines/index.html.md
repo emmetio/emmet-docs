@@ -3,7 +3,7 @@ layout: page
 title: Merge Lines
 menuOrder: 9
 ---
-Many editors has similar action: it merges selected lines into a single one. But when there’s no selection, Emmet will match context HTML tag.
+Many editors have similar action: it merges selected lines into a single one. But when there’s no selection, Emmet will match context HTML tag.
 
 <textarea class="movie-def">
 &lt;p&gt;

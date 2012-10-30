@@ -3,7 +3,7 @@ layout: page
 title: Filters
 menuOrder: 4
 ---
-Filters are special post-processors that modifies expanded abbreviation right before output to the editor. To better understand how filters works, let’s walk through a simple tutorial.
+Filters are special post-processors that modify expanded abbreviation right before output to the editor. To better understand how filters work, let’s walk through a simple tutorial.
 
 Try to expand the following abbreviation in the editor below (use Tab key to expand abbreviation): `#content>p.title`
 
@@ -23,7 +23,7 @@ Now, try to expand this abbreviation: `#content>p.title|e`. You’ll have a slig
 &lt;/div&gt;
 ```
 
-We’ve just applied `e` (escape) filter by appending its name after pipe character. This filter escaped all XML-unsafe symbols with entities right before Emmet sends output to the editor. Now, try this one:  `#content>p.title|e|e`:
+We’ve just applied `e` (escape) filter by appending its name after pipe character. This filter had escaped all XML-unsafe symbols with entities right before Emmet sent output to the editor. Now, try this one:  `#content>p.title|e|e`:
 
 ```xml
 &amp;lt;div id="content"&amp;gt;
@@ -40,7 +40,7 @@ Let’s do something more interesting. Try to expand this abbreviation: `#conten
 
 Isn’t it nice? We've just expanded abbreviation as a HAML template!
 
-As you can see, filtering is a key concept of Emmet. To draw an analogy with the browser’s DOM model, every time you expand abbreviation it first gets transformed into a tree and then filter walk on each tree node and modifies its output. Filters can anything: from small tweaks as placing whitespace after CSS-rule to more complex tasks as outputting result in different syntax. Even HTML output is defined as `html` filter.
+As you can see, filtering is a key concept of Emmet. To draw an analogy with the browser’s DOM model, every time you expand abbreviation it first gets transformed into a tree and then filter walks on each tree node and modifies its output. Filters can do anything: from small tweaks as placing whitespace after CSS-rule to more complex tasks as outputting result in different syntax. Even HTML output is defined as `html` filter.
 
 ## Implicit filter call
 
@@ -76,12 +76,12 @@ Now, every time you expand abbreviation in HTML document, `html` and `e` filters
 HAML syntax filter: output abbreviation as HAML template. Applies by default for HAML files.
 
 ### HTML syntax: `html`
-HTML syntax filter: output abbreviation as HTML/XML tags. Applies by default everywhere except HAML files.
+HTML syntax filter: outputs abbreviation as HTML/XML tags. Applies by default everywhere except HAML files.
 
 ### Escape: `e`
 Escapes XML-unsafe characters: `<`, `>` and `&`. 
 
-For example, `div#header|e` will be expanded into `&lt;div id="header"&gt;&lt;/div&gt;`. This filters will be extremely useful for tech bloggers/writers who wants to show code snippets on website (if you add Emmet support into you CMS, of course).
+For example, `div#header|e` will be expanded into `&lt;div id="header"&gt;&lt;/div&gt;`. This filter will be extremely useful for tech bloggers/writers who wants to show code snippets on website (if you add Emmet support into you CMS, of course).
 
 ### Comment tags: `c`
 Add comments around important tags. By default, “important tags” are those tags with `id` and/or `class` attribute.

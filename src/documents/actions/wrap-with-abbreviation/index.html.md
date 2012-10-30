@@ -3,7 +3,7 @@ layout: page
 title: Wrap with Abbreviation
 menuOrder: 3
 ---
-A very powerful tool of Emmet toolkit. It takes an [abbreviation](/abbreviations/), expands it and places currently selected content in the last element of generated snippet. If there’s no selection, action will silently call [“Match Tag Pair”](/actions/match-pair/) to wrap context element.
+A very powerful tool of the Emmet toolkit. It takes an [abbreviation](/abbreviations/), expands it and places currently selected content in the last element of generated snippet. If there’s no selection, action will silently call [“Match Tag Pair”](/actions/match-pair/) to wrap context element.
 
 <textarea class="movie-def">
 &lt;div id="page"&gt;
@@ -91,7 +91,7 @@ run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul.nav
 
 ## Controlling output position
 
-By default, when you wrap something, Emmet puts original content inside latest element. You can control the output position with `$#` placeholder. Note that `$#` is not part of the abbreviation syntax, so you have to put it inside the attribute value or [text node](/abbreviations/syntax/), like this: `ul>li[title=$#]*>{$#}+img[alt=$#]`.
+By default, when you wrap something, Emmet puts original content inside the latest element. You can control the output position with `$#` placeholder. Note that `$#` is not part of the abbreviation syntax, so you have to put it inside the attribute value or [text node](/abbreviations/syntax/), like this: `ul>li[title=$#]*>{$#}+img[alt=$#]`.
 
 <textarea class="movie-def">
 &lt;div id="page"&gt;

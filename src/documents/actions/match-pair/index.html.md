@@ -3,7 +3,7 @@ layout: page
 title: Match Tag Pair
 menuOrder: 2
 ---
-A well-known tag balancing: search for tag or tag's content bounds from current caret position and selects it. It will expand (outward balancing) or shrink (inward balancing) selection when called multiple times. Not every editor supports both inward and outward balancing due of some implementation issues, most editors have outward balancing only.
+A well-known tag balancing: searches for tag or tag's content bounds from current caret position and selects it. It will expand (outward balancing) or shrink (inward balancing) selection when called multiple times. Not every editor supports both inward and outward balancing due of some implementation issues, most editors have outward balancing only.
 
 <textarea class="movie-def">
 &lt;div id="page"&gt;
