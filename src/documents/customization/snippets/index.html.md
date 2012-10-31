@@ -3,9 +3,13 @@ layout: page
 title: "snippets.json"
 menuOrder: 1
 ---
-Create `snippets.json` file in extensions folder to add or override snippets. The structure of this file is the same as the [original one](https://github.com/sergeche/zen-coding/blob/v0.7.1/snippets.json): on the top level you define _syntax name_ your snippets belong to, the second level is `abbreviations` or `snippets`, depending on item type you want to create. When loaded, users’ `snippets.json` in _recursively merged_ with the original one, adding or updating abbreviations and snippets.
+Create `snippets.json` file in extensions folder to add or override snippets. The structure of this file is the same as the [original one](https://github.com/sergeche/zen-coding/blob/v0.7.1/snippets.json): on the top level you define _syntax name_ your snippets belong to, and the second level has the following section:
 
-You should read [Element type](/abbreviations/types/) section before creating `snippets.json` file.
+* `abbreviations` or `snippets` contains snippets definitions of [different types](/abbreviations/types/).
+* `filters` contains a comma-separated list of [filters](/filters/) applied by default for current syntax. If this property is not defined, `html` filter is used.
+* `extends`: syntax name from which current syntax should inherit snippets definitions. For example, `sass` syntax is inherited from `css` one, but you can create your own or override some SASS-specific snippets for this syntax definition.
+
+When loaded, users’ `snippets.json` in _recursively merged_ with the original one, adding or updating abbreviations and snippets.
 
 ### Text snippets ###
 
