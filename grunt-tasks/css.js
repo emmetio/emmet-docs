@@ -44,7 +44,8 @@ function findImports(css) {
 				imports.push({
 					file: valueToken[2].replace(/^['"]|['"]$/g, ''),
 					start: ruleStart,
-					end: ruleEnd
+					end: ruleEnd,
+					value: css.substring(ruleStart, ruleEnd)
 				});
 			}
 		}
@@ -59,7 +60,8 @@ function findImports(css) {
  * @param {Function} pathResolver Function that will resolve paths to imported file
  * @returns {String} Content of compiled file
  */
-function compileCSSFile(file, pathResolver, alreadyImported) {
+function inlineCSSFile(file, pathResolver, keepImports, alreadyImported) {
+	keepImports = keepImports || [];
 	alreadyImported = alreadyImported || {};
 	alreadyImported[file] = true;
 
@@ -72,16 +74,15 @@ function compileCSSFile(file, pathResolver, alreadyImported) {
 	var replacements = [];
 	var reExternal = /^\w+\:\/\//;
 	imports.forEach(function(imp) {
-		if (reExternal.test(imp.file))
-			return;
-		
 		var fullPath = pathResolver(imp.file, file);
 		var replaceValue = '';
 
-		if (!(fullPath in alreadyImported)) {
+		if (reExternal.test(imp.file)) {
+			keepImports.push(imp);
+		} else if (!(fullPath in alreadyImported)) {
 			alreadyImported[fullPath] = true;
 			try {
-				replaceValue = compileCSSFile(fullPath, pathResolver, alreadyImported);
+				replaceValue = inlineCSSFile(fullPath, pathResolver, keepImports, alreadyImported);
 			} catch (e) {
 				throw 'Unable to read "' + imp.file + '" import in ' + file;
 			}
@@ -100,7 +101,24 @@ function compileCSSFile(file, pathResolver, alreadyImported) {
 		originalFile = originalFile.substring(0, r.start) + r.value + originalFile.substring(r.end);
 	}
 
-	return csso.justDoIt(originalFile, true);
+	return originalFile;
+}
+
+/**
+ * Compiles singe CSS file: concats all @imported file into singe one
+ * @param {String} file Absolute path to CSS file
+ * @param {Function} pathResolver Function that will resolve paths to imported file
+ * @returns {String} Content of compiled file
+ */
+function compileCSSFile(file, pathResolver, alreadyImported) {
+	var keepImports = [];
+	var inlinedContent = inlineCSSFile(file, pathResolver, keepImports, alreadyImported);
+
+	var header = _.map(keepImports, function(imp) {
+		return imp.value;
+	}).join(';\n') + '\n';
+
+	return csso.justDoIt(header + inlinedContent, true);
 }
 
 module.exports.compileCSSFile = compileCSSFile;
