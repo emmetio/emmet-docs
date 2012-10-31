@@ -32,7 +32,7 @@ tooltip: Select tags with “Match Tag Pair” action ::: “Match Pair” (Cmd-
 run: {command: 'emmet.match_pair_outward', times: 3}
 wait: 1000
 moveTo: 102
-tooltip: Select important parts with “Select Next/Previous Item” action ::: “Select Next Item” (Cmd-.) <br> “Select Previous Item” (Cmd-,)
+tooltip: Select important parts with “Select Next/Previous Item” action ::: “Select Next Item” (Shift-Cmd-.) <br> “Select Previous Item” (Shift-Cmd-,)
 run: {command: 'emmet.select_next_item', times: 7, beforeDelay: 300}
 wait: 2000
 moveTo: 95
