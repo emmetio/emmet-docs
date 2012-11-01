@@ -1,5 +1,6 @@
 body {
 	background: #2c2d32;
+	padding: 0 !important;
 }
 
 .wrapper {
@@ -40,6 +41,7 @@ body {
 .page-content {
 	margin-left: 0;
 	padding: 30px;
+	border: 0;
 }
 
 .page-footer {
@@ -56,8 +58,8 @@ body {
 }
 
 .ch-snippet__name {
-	font-weight: bold;
 	font-size: 1em;
+	font-weight: normal;
 	float: left;
 	padding: 0;
 	margin: 0 15px 0 0;
@@ -177,6 +179,31 @@ body {
 .ch-section_css .ch-snippet__name {
 	min-width: 7em;
 }
+
+@media print, screen and (max-width: 870px) {
+	.ch-section__content {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+	
+	.page-content {
+		padding: 10px;
+	}
+}
+
+@media print, screen and (max-width: 500px) {
+	.ch-section__content {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+	
+	.page-content {
+		padding: 5px;
+	}
+}
+
 
 /* Print stylesheet, pretty ugly but it’s better that nothing */
 @media print {
