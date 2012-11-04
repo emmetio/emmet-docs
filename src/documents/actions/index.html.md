@@ -14,6 +14,9 @@ Emmet offers very unique tools that can greatly improve your editing experience:
 <dt>[Match Tag Pair](./match-pair/)</dt>
 <dd>Selects content, and/or opening and closing HTML tag name from current caret position (a.k.a “balancing”). Super-awesome implementation that _works even in non-HTML syntaxes_! Implicitly used by many Emmet actions.</dd>
 
+<dt>[Go to Matching Pair](./go-to-pair/)</dt>
+<dd>Quickly traverses between opening and closing HTML tag.</dd>
+
 <dt>[Wrap with Abbreviation](./wrap-with-abbreviation/)</dt>
 <dd>Same as “Expand Abbreviation” action but intelligently wraps selected content.</dd>
 
