@@ -14,10 +14,14 @@ A well-known tag balancing: searches for tag or tag's content bounds from curren
 &lt;/div&gt;
 ~~~
 tooltip: Place caret inside tag’s content and run “Match Pair” action to select it
-run: emmet.match_pair_outward ::: “Match Pair” (Cmd-D)
+run: emmet.match_pair_outward ::: “Match Pair Outward” (Cmd-D)
 wait: 1000
 tooltip: Run action multiple times to expand selection
 run: {command: 'emmet.match_pair_outward', times: 5}
+wait: 1000
+tooltip: Run “Match Pair Inward” action to shrink selection
+wait: 1000
+run: {command: 'emmet.match_pair_inward', times: 5} ::: “Match Pair Inward (Shift-Cmd-D)
 </textarea>
 
 Emmet’s tag balancing is quite unique. Unlike other implementation, this one will search tag bounds from caret’s position, not the start of the document. It means you can use tag balancer even in non-HTML documents.

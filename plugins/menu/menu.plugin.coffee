@@ -25,7 +25,7 @@ class MenuItem
 			parent.children.push @
 
 		if @document?.menuOrder?
-			@sortOrder = parseInt @document.menuOrder
+			@sortOrder = parseFloat @document.menuOrder
 
 	add: (document) ->
 		# recursively add elements to menu:
