@@ -45,7 +45,7 @@ js:  "/j/movie.js"
 		</section>
 		<div class="clear"></div>
 		<footer class="page-footer">
-			<p class="small-text">Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gruntjs.com">Grunt.js</a><br />Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br />Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gruntjs.com">Grunt.js</a><br />Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
 			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents<%= @document.url %>.md">View page source on GitHub</a></p>
 		</footer>
 	</div>
