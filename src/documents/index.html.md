@@ -55,7 +55,7 @@ Start learning Emmet with the [abbreviation syntax](/abbreviations/) and availab
 * [Coda 1.6 and 2.x](https://github.com/emmetio/Emmet.codaplugin)
 * [Espresso](https://github.com/emmetio/Emmet.sugar)
 * [Chocolat](https://github.com/sergeche/emmet.chocmixin) (available via “Install Mixin” dialog)
-* [Komodo Edit/IDE](https://github.com/sergeche/zen-coding/downloads)
+* [Komodo Edit/IDE](https://github.com/sergeche/zen-coding/downloads) (available via Tools > Add-ons dialog)
 * [Notepad++](https://github.com/sergeche/zen-coding/downloads)
 * [PSPad](https://github.com/sergeche/zen-coding/downloads)
 * [&lt;textarea&gt;](https://github.com/sergeche/zen-coding/downloads)
