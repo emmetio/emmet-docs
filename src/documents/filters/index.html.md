@@ -46,7 +46,7 @@ As you can see, filtering is a key concept of Emmet. To draw an analogy with the
 
 You can apply filter to abbreviation explicitly, by adding pipe character and its name right after abbreviation. But filters also can be applied implicitly, depending on document type you're currently editing. You don’t want to append `|haml` every time you expand abbreviation in HAML document, right?
 
-Default filters are defined in [snippets.json](https://github.com/sergeche/zen-coding/blob/v0.7.1/snippets.json) file in `filters` section of each syntax:
+Default filters are defined in [snippets.json](https://github.com/emmetio/emmet/blob/master/snippets.json) file in `filters` section of each syntax:
 
 	{
 		...
