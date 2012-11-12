@@ -44,3 +44,9 @@ Snippets have some predefined variable names that have special meaning to Emmet:
 ### Escaping `|` and `$` characters ###
 
 The `$` character is used for tabstops and variables, the `|` character it used to indicate caret position when snippet is expanded. If you want to output these characters as-is, you should use double slash to escape them: `\\$` or `\\|`
+
+### Sharing snippets
+
+If you want to share your snippets with other users, you should put them into a file which name starts with `snippets`, for example: `snippets-foo.json`, `snippets_bar.json`, `snippetsBaz.json`. Emmet will load them on start and merge into  a single snippets set. 
+
+*Notice that snippets defined in `snippets.json` file has higher priority over ones defined in `snippets*.json`.*
