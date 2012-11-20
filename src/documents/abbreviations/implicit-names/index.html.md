@@ -65,7 +65,7 @@ Take a look at some abbreviations equivalents with implicit and explicit tag nam
 	</tr>
 	<tr>
 		<td>`table>#row$*4>[colspan=2]`</td>
-		<td>`table>tr#row*4>td[colspan=2]`</td>
+		<td>`table>tr#row$*4>td[colspan=2]`</td>
 	</tr>
 </table>
 
