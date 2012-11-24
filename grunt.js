@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadTasks('grunt-tasks');
+	grunt.loadNpmTasks('grunt-frontend');
 
 
 	// Default task.
