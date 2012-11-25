@@ -15,13 +15,20 @@
 }
 
 .emmet-preferences__value {
-	white-space: nowrap;
+	white-space: pre;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: inline-block;
 	max-width: 16em;
 	font-size: 0.85em;
 	cursor: default;
+	padding: 0 5px;
+	border: 1px solid #eaeaea;
+	background: #f8f8f8;
+	font-family: Monaco, Bitstream Vera Sans Mono, "Lucida Console", Terminal;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .emmet-preferences__value_full {
