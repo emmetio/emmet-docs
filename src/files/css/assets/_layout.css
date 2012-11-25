@@ -198,6 +198,24 @@ hr {
 	text-decoration: underline;
 }
 
+.anchor {
+	width: 1em;
+	display: inline-block;
+	position: absolute;
+	margin-left: -1em;
+	color: inherit;
+	opacity: 0;
+}
+
+.anchor:before {
+	content: '¶';
+}
+
+*:hover > .anchor,
+.anchor:hover {
+	opacity: 1;
+}
+
 #disqus_thread {
 	margin-top: 20px;
 	padding-top: 20px;
