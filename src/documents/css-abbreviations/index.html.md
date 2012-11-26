@@ -44,6 +44,18 @@ You can use aliases instead of full units:
 * `w100p` → `width: 100%`
 * `m10p30e5x` → `margin: 10% 30em 5ex`
 
+## Color values ##
+
+Emmet supports hex color values, like this: `c#3` → `color: #333;`. The `#` sign is a _value separator_ so you don’t need to use hyphen to separate it. For example, `bd5#0s` expands to `border: 5px #000 solid`: the `#` sign separates color from `5` and since `s` (alias to `solid`) is not a hexadecimal character, it can be used without `-` value separator.
+
+You can write one, two, three or six characters as color value:
+
+* `#1` → `#111111`
+* `#e0` → `#e0e0e0`
+* `#fc0` → `#ffcc00`
+
+When `css.color.short` [preference](/customization/preferences/) is enabled (by default), color values like `#ffcc00` are automatically shortened to `#fc0`. You can also automatically change character case with `css.color.case` preference.
+
 ## Unit-less properties
 
 Some CSS properties are defined as _unit-less_, e.g. no unit suffix will be outputted: `lh2` → `line-height: 2;`, `fw400` → `font-weight: 400;`.
