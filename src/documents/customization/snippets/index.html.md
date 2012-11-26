@@ -49,4 +49,4 @@ The `$` character is used for tabstops and variables, the `|` character it used 
 
 If you want to share your snippets with other users, you should put them into a file which name starts with `snippets`, for example: `snippets-foo.json`, `snippets_bar.json`, `snippetsBaz.json`. Emmet will load them on start and merge into  a single snippets set. 
 
-*Notice that snippets defined in `snippets.json` file has higher priority over ones defined in `snippets*.json`.*
+*Notice that snippets defined in `snippets.json` file has higher priority over ones defined in `snippets*.json`
