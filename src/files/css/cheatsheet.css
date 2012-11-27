@@ -72,8 +72,7 @@ body {
 	overflow: hidden;
 	margin: 0;
 	padding: 1px 0 1px 20px;
-	color: #777;
-	
+	color: #777;	
 }
 
 .ch-tabstop {
@@ -106,6 +105,14 @@ body {
 
 .ch-section:last-of-type {
 	margin-bottom: 0;
+}
+
+.ch-section__desc p {
+	margin-bottom: 0.4em;
+}
+
+.ch-section__desc code {
+	color: #eee;
 }
 
 .ch-section__content {
@@ -211,7 +218,10 @@ body {
 		font-family: arial, sans-serif;
 		color: #000;
 		background: #fff;
+	}
 
+	#cheatsheet {
+		font-size: 9px;
 	}
 
 	.page-header, .page-footer {
@@ -239,6 +249,7 @@ body {
 		width: 30%;
 		padding-right: 3%;
 		page-break-inside: avoid;
+		font-size: inherit;
 	}
 	
 	.ch-section__title, .ch-subsection__title {
@@ -249,6 +260,7 @@ body {
 	
 	.ch-snippet__name {
 		color: #333;
+		font-size: inherit;
 	}
 	
 	.ch-tabstop {
@@ -256,6 +268,10 @@ body {
 		color: #666;
 		text-shadow: none;
 		border: 1px solid #999;
+	}
+
+	.ch-snippet {
+		margin-bottom: 7px !important;
 	}
 
 	@page {

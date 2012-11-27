@@ -6,12 +6,16 @@ $(function() {
 		},
 		'html': {
 			order: 1,
-			title: 'HTML'
+			title: 'HTML',
+			description: '<p>All unknown abbreviations will be transformed to tag, e.g. <code>foo</code> → <code>&lt;foo&gt;&lt;/foo&gt;</code>.</p>'
 		}, 
 
 		'css': {
 			order: 2,
-			title: 'CSS'
+			title: 'CSS',
+			description: '<p>CSS module uses fuzzy search to find unknown abbreviations, e.g. <code>ov:h</code> == <code>ov-h</code> == <code>ovh</code> == <code>oh</code>.</p>'
+			+ '<p>If abbreviation wasn’t found, it is transformed into property name: <code>foo-bar</code> → <code>foo-bar: |;</code></p>'
+			+ '<p>You can prefix abbreviations with hyphen to produce vendor-prefixed properties: <code>-foo</code></p>'
 		}, 
 
 		'xsl': {
@@ -177,6 +181,7 @@ $(function() {
 
 	var sectionTemplate = _.template('<section class="ch-section ch-section_<%= id %>">'
 		+ '<h2 class="ch-section__title"><%= title %></h2>'
+		+ '<div class="ch-section__desc"><%= description %></div>'
 		+ '<div class="ch-section__content"><%= content %></div>'
 		+ '</section>');
 
@@ -237,6 +242,7 @@ $(function() {
 			.sortBy('order')
 			.map(function(s) {
 				return sectionTemplate(_.extend({
+					description: '',
 					content: renderSectionData(s.id == 'syntax' ? syntaxSection : cs.data(s.id))
 				}, s));
 			})
