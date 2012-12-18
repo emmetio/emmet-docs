@@ -52,7 +52,7 @@ $(function() {
 					value: '<div></div>\n<div>\n\t<p><span></span><em></em></p>\n\t<blockquote></blockquote>\n</div>',
 					type: 'snippet'
 				}, {
-					name: 'div+div>p>span+em^^^bq',
+					name: 'div+div>p>span+em^^bq',
 					value: '<div></div>\n<div>\n\t<p><span></span><em></em></p>\n</div>\n<blockquote></blockquote>',
 					type: 'snippet'
 				}
