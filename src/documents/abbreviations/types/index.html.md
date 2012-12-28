@@ -86,4 +86,4 @@ In `snippets.json` file, you can find the following definitions:
 
 In the example above, when you expand `bq` abbreviation, Emmet will look for `blockquote` abbreviation’s definition. If it doesn’t exist, it will simply output `<blockquote></blockquote>` element. The `ol+` abbreviation actually outputs the same result as `ol>li` does.
 
-The `ol+` definition may look ambiguous since it contains `+` at the end which is also a sibling operator. Emmet correctly expands such abbreviations and the plus sign is left here for historical reasons. Just remember that you don’t need to use plus sing to create abbreviation alias.
+The `ol+` definition may look ambiguous since it contains `+` at the end which is also a sibling operator. Emmet correctly expands such abbreviations and the plus sign is left here for historical reasons. Just remember that you don’t need to use plus sign to create abbreviation alias.
