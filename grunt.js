@@ -8,7 +8,10 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			'./out/j/': './src/files/js/jquery-*.js'
+			'./out/j/': [
+				'./src/files/js/jquery-*.js', 
+				'./src/files/js/zepto.min.js'
+			]
 		},
 
 		frontend: {
@@ -23,13 +26,8 @@ module.exports = function(grunt) {
 					'./src/files/codemirror-movie/src/codemirror2/xml.js',
 					'./src/files/codemirror-movie/src/codemirror2/javascript.js',
 					'./src/files/codemirror-movie/src/codemirror2/htmlmixed.js',
-					'./src/files/codemirror-movie/src/lib/underscore.js',
-					'./src/files/codemirror-movie/src/lib/tween.js',
 					'./src/files/codemirror-movie/src/lib/emmet.min.js',
-					'./src/files/codemirror-movie/src/scenario.js',
-					'./src/files/codemirror-movie/src/scenario.outline.js',
-					'./src/files/codemirror-movie/src/scenario.tooltip.js',
-					'./src/files/codemirror-movie/src/scenario.prompt.js',
+					'./src/files/codemirror-movie/dist/cm-movie-full.js',
 					'./src/files/js/movie-definition.js',
 					'./src/files/js/misc.js'
 				],

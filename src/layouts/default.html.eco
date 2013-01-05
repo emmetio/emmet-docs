@@ -16,7 +16,7 @@ js:  "/j/movie.js"
 <% for url in @assets('css'): %>
 <link rel="stylesheet" href="<%= url %>" />
 <% end %>
-<script src="/j/jquery-1.8.2.min.js"></script>
+<script>document.write('<script src="/j/' + ('__proto__' in {} ? 'zepto.min' : 'jquery-1.8.2.min') + '.js"><\/script>')</script>
 <% for url in @assets('js'): %>
 <script src="<%= url %>"></script>
 <% end %>

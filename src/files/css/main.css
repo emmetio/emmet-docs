@@ -4,10 +4,9 @@
 @import url(assets/_preferences.css);
 
 /* CodeMirror Movie */
-@import url(../codemirror-movie/src/bootstrap/css/bootstrap.css);
+@import url(assets/_movie.css);
 @import url(../codemirror-movie/src/codemirror2/codemirror.css);
-@import url(../codemirror-movie/src/cm-espresso.css);
-@import url(../codemirror-movie/src/scenario.css);
+@import url(../codemirror-movie/dist/cm-movie.css);
 
 .CodeMirror {
 	font-size: 12px;
@@ -17,10 +16,6 @@
 
 .CodeMirror-movie {
 	margin-bottom: 20px;
-}
-
-.movie-def {
-	display: none;
 }
 
 .CodeMirror-movie_with-outline .CodeMirror-scroll {
