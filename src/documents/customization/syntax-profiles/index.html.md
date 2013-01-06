@@ -17,16 +17,18 @@ In this case, you should create `syntaxProfiles.json` file in extensions folder 
 
 The content of this file is a simple key–value dictionary where the key is the syntax name as defined in `snippets.json` and the value is a name of predefined profile (`String`) or a dictionary with profile options (`Object`):
 
-    {
-        // force XHTML profile for HTML syntax
-        "html": "xhtml",
+```javascript
+{
+    // force XHTML profile for HTML syntax
+    "html": "xhtml",
 
-        // create our own profile for XML
-        "xml": {
-            "tag_case": "upper",
-            "attr_quotes": "single"
-        }
+    // create our own profile for XML
+    "xml": {
+        "tag_case": "upper",
+        "attr_quotes": "single"
     }
+}
+```
 
 ### Predefined profiles ###
 

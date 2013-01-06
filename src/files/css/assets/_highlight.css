@@ -1,5 +1,6 @@
-/* XML syntax */
-.xml .tag {
+.xml .tag,
+.css .tag,
+.json .attribute {
 	color: #2F6F9F;
 }
 
@@ -8,10 +9,13 @@
 }
 
 .xml .tag .value,
+.json .value,
+.javascript .string,
 .r .string {
 	color: #d44950;
 }
 
-.xml .comment {
+.xml .comment,
+.javascript .comment {
 	color: #999;
 }
