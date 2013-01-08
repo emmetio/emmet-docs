@@ -4,6 +4,7 @@
 @import url(assets/_preferences.css);
 
 /* CodeMirror Movie */
+@import url(assets/_movie.css);
 @import url(movie.css);
 
 .CodeMirror {

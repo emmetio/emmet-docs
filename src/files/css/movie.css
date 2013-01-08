@@ -1,4 +1,3 @@
 /* CodeMirror Movie */
-@import url(assets/_movie.css);
 @import url(../codemirror-movie/src/codemirror2/codemirror.css);
 @import url(../codemirror-movie/dist/cm-movie.css);
