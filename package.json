@@ -11,9 +11,9 @@
     "docpad-plugin-eco": ">=2",
     "docpad-plugin-partials": "2.x",
     "docpad-plugin-menu": "*",
-    "docpad-plugin-frontend": "*",
+    "docpad-plugin-frontend": ">=1.0.2",
 
     "grunt-contrib-copy": ">=0.3.x",
-    "grunt-frontend": ">=1.0.2"
+    "grunt-frontend": "*"
   }
 }
