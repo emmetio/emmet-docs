@@ -27,7 +27,10 @@ module.exports = function(grunt) {
 					'./src/files/codemirror-movie/src/codemirror2/javascript.js',
 					'./src/files/codemirror-movie/src/codemirror2/htmlmixed.js',
 					'./src/files/codemirror-movie/src/lib/emmet.min.js',
-					'./src/files/codemirror-movie/dist/cm-movie-full.js',
+					'./src/files/codemirror-movie/dist/cm-movie-full.js'
+				],
+
+				'./out/j/main.js': [
 					'./src/files/js/movie-definition.js',
 					'./src/files/js/misc.js'
 				],

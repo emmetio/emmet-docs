@@ -1,6 +1,6 @@
 ---
 css: "/c/main.css"
-js:  "/j/movie.js"
+js:  "/j/movie.js, /j/main.js"
 ---
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
