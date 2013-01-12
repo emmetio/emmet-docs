@@ -51,7 +51,7 @@ Start learning Emmet with the [abbreviation syntax](/abbreviations/) and availab
 
 * [Eclipse/Aptana](https://github.com/emmetio/emmet-eclipse)
 * [Sublime Text 2](https://github.com/sergeche/emmet-sublime)
-* [TextMate 1.x](https://github.com/emmetio/Emmet.tmbundle)
+* [TextMate 1.x](https://github.com/emmetio/Emmet.tmplugin)
 * [Coda 1.6 and 2.x](https://github.com/emmetio/Emmet.codaplugin)
 * [Espresso](https://github.com/emmetio/Emmet.sugar)
 * [Chocolat](https://github.com/sergeche/emmet.chocmixin) (available via “Install Mixin” dialog)
