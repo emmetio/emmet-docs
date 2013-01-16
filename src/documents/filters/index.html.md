@@ -99,7 +99,7 @@ Add comments around important tags. By default, “important tags” are those t
 		<!-- /#page -->
 	</div>
 	
-This filter has a number of preferences you can re-define:
+This filter has a number of [preferences](/customization/preferences/) you can re-define:
 
 * `filter.commentTrigger`: list of attributes that should trigger comment output. Default value is `id, class`
 * `filter.commentAfter`: a [ERB-style template](http://underscorejs.org/#template) of comment that should be placed right _after_ “important tag”. Default value is `\n<!-- /<%= attr("id", "#") %><%= attr("class", ".") %> -->`
