@@ -3,7 +3,9 @@ $(function() {
 	var mac = ios || /Mac/.test(navigator.platform);
 	
 	$('.movie-def').each(function(i) {
-		var scenario = CodeMirror.movie(this);
+		var scenario = CodeMirror.movie(this, {
+			sectionSeparator: /~{3}|@{3}/g
+		});
 		var editor = scenario._editor;
 
 		// create UI controls for movie

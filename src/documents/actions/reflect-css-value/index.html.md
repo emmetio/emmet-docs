@@ -17,7 +17,7 @@ div {
 	opacity: 0.6;
 	filter: alpha(opacity=60);
 }
-~~~
+@@@
 tooltip: Modify value of CSS property
 wait: 500
 run: {command: 'delCharRight', times: 2}
@@ -35,6 +35,6 @@ wait: 500
 tooltip: {text: 'Note that action knows some browser-specific differences', pos: '10:26'}
 wait: 500
 run: emmet.reflect_css_value
-~~~
+@@@
 mode: text/css
 </textarea>

@@ -10,7 +10,7 @@ body {
 	line-height: 1.7;
 	width: 100%;
 }
-~~~
+@@@
 run: {command: 'emmet.increment_number_by_1', times: 6} ::: “Increment by 1” (Ctrl-↑)<br />“Decrement by 1” (Ctrl-↓)
 wait: 1000
 moveTo: 2:20
@@ -19,6 +19,6 @@ run: {command: 'emmet.increment_number_by_01', times: 6} ::: “Increment by 0.1
 wait: 1000
 moveTo: 3:12
 run: {command: 'emmet.increment_number_by_10', times: 6} ::: “Increment by 10” (Ctrl-Alt-↑)<br />“Decrement by 10” (Ctrl-Alt-↓)
-~~~
+@@@
 mode: text/css
 </textarea>

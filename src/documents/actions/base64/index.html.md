@@ -13,13 +13,13 @@ With Emmet, you can convert image to data:URL right in your editor, as well as c
 body {
     background: url(demo.png);
 }
-~~~
+@@@
 tooltip: Move caret inside image path
 wait: 1000
 moveTo: 1:24
 wait: 1000
 tooltip: Run “Encode/Decode Image to data:URL” action ::: “Encode/Decode Image to data:URL” (Shift-Cmd-I)
 run: emmet.encode_decode_data_url
-~~~
+@@@
 mode: text/css
 </textarea>

@@ -12,7 +12,7 @@ A well-known tag balancing: searches for tag or tag's content bounds from curren
 		&lt;p&gt;Lorem ipsum |dolor sit amet.&lt;/p&gt;
 	&lt;/section&gt;
 &lt;/div&gt;
-~~~
+@@@
 tooltip: Place caret inside tag’s content and run “Match Pair” action to select it
 run: emmet.match_pair_outward ::: “Match Pair Outward” (Cmd-D)
 wait: 1000
@@ -43,10 +43,10 @@ function test(data) {
 	out += '&lt;/table&gt;';
 	return out;
 }
-~~~
+@@@
 tooltip: {text: 'Place caret somewhere between opening and closing tag. Run “Match Pair” action and, if tag definitions are consistent enough, they will match', wait: 7000}
 run: {command: 'emmet.match_pair_outward', times: 6} ::: “Match Pair” (Cmd-D)
-~~~
+@@@
 mode: text/javascript
 </textarea>
 

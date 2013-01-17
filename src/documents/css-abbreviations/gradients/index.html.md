@@ -13,7 +13,7 @@ Emmet has a CSS3 Gradient Generator that can do all the hard work for you:
 div {
 	|
 }
-~~~
+@@@
 tooltip: Type normal CSS Gradient definition as <strong>lg(...)</strong> inside CSS rule
 type: lg(left, #fc0 30%, red)
 wait: 1000
@@ -35,7 +35,7 @@ tooltip: {text: "You can modify generated gradient definition and run “Expand 
 type: black
 wait: 500
 run: emmet.expand_abbreviation
-~~~
+@@@
 mode: text/css
 </textarea>
 

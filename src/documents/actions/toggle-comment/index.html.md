@@ -11,7 +11,7 @@ body {
 	padding: 10px; color: black;
 }
 &lt;/style&gt;
-~~~
+@@@
 tooltip: {text: 'When invoked with no selection in HTML document, “Toggle Comment” action matches full tag', wait: 7000}
 wait: 500
 run: {command: 'emmet.toggle_comment', times: 2, beforeDelay: 1000} ::: “Toggle Comment” (Cmd-/)

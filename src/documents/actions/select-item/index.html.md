@@ -14,7 +14,7 @@ In HTML, these are tag name, full attribute and attribute value. For class attri
 
     &lt;script&gt;var str = '<div class="main footer"></div>';&lt;/script&gt;
 &lt;/section&gt;
-~~~
+@@@
 run: {command: 'emmet.select_next_item', times: 7} ::: “Select Next Item” (Shift-Cmd-.)
 wait: 1000
 run: {command: 'emmet.select_previous_item', times: 6} ::: “Select Previous Item” (Shift-Cmd-,)
@@ -33,10 +33,10 @@ In CSS, it matches selector, full property and property value. For complex value
 	border: 1px solid black;
 	background: url(image.jpg) #ccc no-repeat;
 }
-~~~
+@@@
 run: {command: 'emmet.select_next_item', times: 12} ::: “Select Next Item” (Shift-Cmd-.)
 wait: 1000
 run: {command: 'emmet.select_previous_item', times: 11} ::: “Select Previous Item” (Shift-Cmd-,)
-~~~
+@@@
 mode: text/css
 </textarea>
