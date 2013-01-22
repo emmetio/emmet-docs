@@ -60,4 +60,4 @@ Start learning Emmet with the [abbreviation syntax](/abbreviations/) and availab
 * [PSPad](https://github.com/emmetio/emmet/downloads)
 * [&lt;textarea&gt;](https://github.com/emmetio/emmet/downloads)
 * [CodeMirror2/3](https://github.com/emmetio/codemirror)
-* [Brackets](https://github.com/emmetio/emmet/downloads)
+* [Brackets](https://github.com/emmetio/brackets-emmet)
