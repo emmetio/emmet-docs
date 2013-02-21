@@ -94,7 +94,16 @@ $(function() {
 					name: 'ul>li.item$$$*5',
 					value: '<ul>\n\t<li class="item001"></li>\n\t<li class="item002"></li>\n\t<li class="item003"></li>\n\t<li class="item004"></li>\n\t<li class="item005"></li>\n</ul>',
 					type: 'snippet'
+				}, {
+					name: 'ul>li.item$@-*5',
+					value: '<ul>\n\t<li class="item5"></li>\n\t<li class="item4"></li>\n\t<li class="item3"></li>\n\t<li class="item2"></li>\n\t<li class="item1"></li>\n</ul>',
+					type: 'snippet'
+				}, {
+					name: 'ul>li.item$@3*5',
+					value: '<ul>\n\t<li class="item3"></li>\n\t<li class="item4"></li>\n\t<li class="item5"></li>\n\t<li class="item6"></li>\n\t<li class="item7"></li>\n</ul>',
+					type: 'snippet'
 				}
+
 			]
 		}, {
 			name: 'ID and CLASS attributes',
@@ -212,8 +221,10 @@ $(function() {
 		var prefix = '';
 		var snippet = item.value;
 		if (item.type == 'alias' || item.type == 'abbreviation') {
-			if (item.type == 'alias')
+			if (item.type == 'alias') {
 				prefix = '<p class="cn-snippet__alias">Alias of <span class="cn-snippet__alias-abbr">' + _.escape(snippet) + '</span></p>';
+			}
+			
 			snippet = emmet.expandAbbreviation(item.name.split(',')[0], item.syntax, 'xhtml');			
 		}
 
