@@ -198,6 +198,52 @@ You can use multiple `$` in a row to pad number with zeroes:
 		<li class="item005"></li>
 	</ul>
 	
+#### Changing numbering base and direction
+
+With `@` modifier, you can change numbering direction (ascending or descending) and base (e.g. start value).
+
+For example, to change direction, add `@-` after `$`:
+
+	ul>li.item$@-*5
+	
+…outputs to
+
+	<ul>
+		<li class="item5"></li>
+		<li class="item4"></li>
+		<li class="item3"></li>
+		<li class="item2"></li>
+		<li class="item1"></li>
+	</ul>
+	
+To change counter base value, add `@N` modifier to `$`:
+
+	ul>li.item$@3*5
+	
+…transforms to
+
+	<ul>
+		<li class="item3"></li>
+		<li class="item4"></li>
+		<li class="item5"></li>
+		<li class="item6"></li>
+		<li class="item7"></li>
+	</ul>
+	
+You can these modifiers together:
+
+	ul>li.item$@-3*5
+	
+…is transformed to
+
+	<ul>
+		<li class="item7"></li>
+		<li class="item6"></li>
+		<li class="item5"></li>
+		<li class="item4"></li>
+		<li class="item3"></li>
+	</ul>
+	
 ## Text: `{}`
 
 You can use curly braces to add text to element:

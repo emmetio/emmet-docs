@@ -13,7 +13,7 @@
     "docpad-plugin-menu": "*",
     "docpad-plugin-frontend": ">=1.0.2",
 
-    "grunt-contrib-copy": ">=0.3.x",
+    "grunt-contrib-copy": "~0.3.x",
     "grunt-frontend": "*"
   }
 }
