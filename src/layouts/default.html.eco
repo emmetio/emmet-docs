@@ -35,6 +35,7 @@ js:  "/j/movie.js, /j/main.js"
 				<a href="/">Emmet Documentation</a>
 			<% end %>
 			</h1>
+			<p class="back-to-main"><a href="http://emmet.io">Back to main website</a></p>
 			<nav>
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
 			</nav>

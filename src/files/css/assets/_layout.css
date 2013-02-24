@@ -216,6 +216,20 @@ hr {
 	opacity: 1;
 }
 
+.back-to-main {
+	font-size: 11px;
+	position: relative;
+	margin: 20px 0;
+	font-weight: bold;
+}
+
+.back-to-main:before {
+	content: '←';
+	position: absolute;
+	display: inline-block;
+	left: -1.5em;
+}
+
 #disqus_thread {
 	margin-top: 20px;
 	padding-top: 20px;
@@ -274,6 +288,10 @@ hr {
 @media print, screen and (max-width: 480px) {
 	body {
 		padding: 15px;
+	}
+
+	.back-to-main:before {
+		content: '';
 	}
 }
 
