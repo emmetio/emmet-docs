@@ -3,6 +3,10 @@ body {
 	padding: 0 !important;
 }
 
+.back-to-main {
+	display: none;
+}
+
 .wrapper {
 	width: auto;
 	max-width: none;
