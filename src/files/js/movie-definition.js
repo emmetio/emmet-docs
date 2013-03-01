@@ -81,7 +81,12 @@ CodeMirror._wrapWithAbbreviation = function(editor, abbr) {
 	emmet.define('file', function() {
 		return {
 			read: function(path) {
-				return emmet.require('base64').decode(demoImage);
+				var bin = emmet.require('base64').decode(demoImage);
+				var callback = _.last(arguments);
+				if (callback && _.isFunction(callback)) {
+					callback(0, bin);
+				}
+				return bin;
 			},
 			
 			locateFile: function(editorFile, fileName) {
