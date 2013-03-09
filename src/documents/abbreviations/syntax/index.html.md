@@ -230,7 +230,7 @@ To change counter base value, add `@N` modifier to `$`:
 		<li class="item7"></li>
 	</ul>
 	
-You can these modifiers together:
+You can use these modifiers together:
 
 	ul>li.item$@-3*5
 	
