@@ -230,6 +230,33 @@ hr {
 	left: -1.5em;
 }
 
+.download-main {
+	display: block;
+	font-size: 4em;
+	margin: 1em auto 0;
+	padding: 0.2em 0.6em;
+	font-weight: bold;
+	border: 1px solid #3c99cc;
+	width: 6em;
+	text-align: center;
+	line-height: 1.2;
+
+	-webkit-border-radius: 0.2em;
+	   -moz-border-radius: 0.2em;
+	        border-radius: 0.2em;
+
+}
+
+.download-main__comment {
+	font-size: 0.2em;
+	font-family: georgia, serif;
+	font-style: italic;
+	color: #ccc;
+	font-weight: normal;
+	text-align: center;
+	display: block;
+}
+
 #disqus_thread {
 	margin-top: 20px;
 	padding-top: 20px;

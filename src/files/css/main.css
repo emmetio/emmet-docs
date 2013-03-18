@@ -1,11 +1,12 @@
 @import url(assets/_normalize.css);
-@import url(assets/_layout.css);
 @import url(assets/_highlight.css);
 @import url(assets/_preferences.css);
 
 /* CodeMirror Movie */
 @import url(assets/_movie.css);
 @import url(movie.css);
+
+@import url(assets/_layout.css);
 
 .CodeMirror {
 	font-size: 12px;

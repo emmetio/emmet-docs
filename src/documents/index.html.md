@@ -47,17 +47,4 @@ Emmet takes the snippets idea to a whole new level: you can type _CSS-like_ expr
 
 Start learning Emmet with the [abbreviation syntax](/abbreviations/) and available [actions](/actions/).
 
-## Supported editors ##
-
-* [Eclipse/Aptana](https://github.com/emmetio/emmet-eclipse)
-* [Sublime Text 2](https://github.com/sergeche/emmet-sublime)
-* [TextMate 1.x](https://github.com/emmetio/Emmet.tmplugin)
-* [Coda 1.6 and 2.x](https://github.com/emmetio/Emmet.codaplugin)
-* [Espresso](https://github.com/emmetio/Emmet.sugar)
-* [Chocolat](https://github.com/sergeche/emmet.chocmixin) (available via “Install Mixin” dialog)
-* [Komodo Edit/IDE](http://community.activestate.com/xpi/zen-coding) (available via Tools > Add-ons dialog)
-* [Notepad++](https://github.com/emmetio/npp)
-* [PSPad](https://github.com/emmetio/pspad)
-* [&lt;textarea&gt;](https://github.com/emmetio/textarea)
-* [CodeMirror2/3](https://github.com/emmetio/codemirror)
-* [Brackets](https://github.com/emmetio/brackets-emmet)
+<a href="http://emmet.io/download/" class="btn btn-primary download-main">Download <span class="download-main__comment">plugin for your favourite editor</span></a>
