@@ -78,7 +78,7 @@ In `snippets.json` file, you can find the following definitions:
 
 	...
 	"html": {
-		"abbreviatoins": {
+		"abbreviations": {
 			"bq": "blockquote",
 			"ol+": "ol>li"
 		}
