@@ -257,6 +257,11 @@ hr {
 	display: block;
 }
 
+.donate .btn {
+	width: 7em;
+	font-size: 1.2em;
+}
+
 #disqus_thread {
 	margin-top: 20px;
 	padding-top: 20px;
