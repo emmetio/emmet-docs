@@ -325,6 +325,20 @@ hr {
 	.back-to-main:before {
 		content: '';
 	}
+
+	.CodeMirror-movie__splash-text {
+		font-size: 2em;
+	}
+
+	.download-main {
+		box-sizing: border-box;
+		width: 100%;
+		font-size: 2em;
+	}
+
+	.download-main__comment {
+		font-size: 10px;
+	}
 }
 
 @media print {
