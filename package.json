@@ -9,8 +9,8 @@
     "docpad-plugin-marked": ">=2",
     "docpad-plugin-eco": ">=2",
     "docpad-plugin-partials": "2.x",
-    "docpad-plugin-menu": "~2.x",
-    "docpad-plugin-frontend": "~2.x",
+    "docpad-plugin-menu": "2.x",
+    "docpad-plugin-frontend": "2.x",
     "grunt-frontend": "~1.1.2"
   },
   "devDependencies": {
