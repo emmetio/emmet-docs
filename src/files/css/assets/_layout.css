@@ -219,7 +219,7 @@ hr {
 .back-to-main {
 	font-size: 11px;
 	position: relative;
-	margin: 20px 0;
+	margin: 15px 0;
 	font-weight: bold;
 }
 
@@ -266,6 +266,13 @@ hr {
 	margin-top: 20px;
 	padding-top: 20px;
 	border-top: 3px solid #e5e5e5;
+}
+
+#carbonads-container {
+	/* float: right; */
+	/* min-height: 215px; */
+	margin: 0 -15px 15px;
+	min-height: 120px;
 }
 
 @media print, screen and (max-width: 960px) {

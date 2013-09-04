@@ -36,7 +36,7 @@ js:  "/j/movie.js, /j/main.js"
 			<% end %>
 			</h1>
 			<p class="back-to-main"><a href="http://emmet.io">Back to main website</a></p>
-			<p class="donate"><a href="http://emmet.io/donate/" class="btn btn-danger">Donate</a></p>
+			<div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/50357/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
 			<nav>
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
 			</nav>
