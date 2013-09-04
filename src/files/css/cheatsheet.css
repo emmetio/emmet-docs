@@ -205,6 +205,10 @@ body {
 	min-width: 7em;
 }
 
+#carbonads-container {
+	display: none;
+}
+
 @media print, screen and (max-width: 870px) {
 	.ch-section__content {
 		-webkit-column-count: 2;
