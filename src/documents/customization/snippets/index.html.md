@@ -3,7 +3,7 @@ layout: page
 title: "snippets.json"
 menuOrder: 1
 ---
-Create `snippets.json` file in extensions folder to add or override snippets. The structure of this file is the same as the [original one](https://github.com/emmetio/emmet/blob/master/snippets.json): on the top level you define _syntax name_ your snippets belong to, and the second level has the following section:
+Create `snippets.json` file in extensions folder to add or override snippets. The structure of this file is the same as the [original one](https://github.com/emmetio/emmet/blob/master/lib/snippets.json): on the top level you define _syntax name_ your snippets belong to, and the second level has the following section:
 
 * `abbreviations` or `snippets` contains snippets definitions of [different types](/abbreviations/types/).
 * `filters` contains a comma-separated list of [filters](/filters/) applied by default for current syntax. If this property is not defined, `html` filter is used.
