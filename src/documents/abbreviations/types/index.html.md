@@ -5,7 +5,7 @@ menuOrder: 2
 ---
 in HTML and XML documents, when you expand abbreviations, all abbreviation parts are transformed on-the-fly into HTML/XML tags. But certain elements like `a` or `img` are transformed into elements with predefined attributes: `<a href=""></a>` and `<img src="" alt="" />`. How does Emmet know when to add those attributes?
 
-All Emmet elements definitions are stored in [snippets.json](https://github.com/emmetio/emmet/blob/master/snippets.json) file in the following format:
+All Emmet elements definitions are stored in [snippets.json](https://github.com/emmetio/emmet/blob/master/lib/snippets.json) file in the following format:
 
 	{
 		"html": {
