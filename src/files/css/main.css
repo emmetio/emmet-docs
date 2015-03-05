@@ -16,6 +16,7 @@
 
 .CodeMirror-movie {
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .CodeMirror-movie_with-outline .CodeMirror-scroll {

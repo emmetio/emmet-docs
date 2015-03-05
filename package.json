@@ -16,6 +16,6 @@
   "dependencies": {
     "codemirror": "^5.0.0",
     "codemirror-movie": "git+https://github.com/sergeche/codemirror-movie.git#es6",
-    "emmet-codemirror": "^1.2.0"
+    "emmet-codemirror": "^1.2.1"
   }
 }

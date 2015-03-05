@@ -64,15 +64,15 @@ docpadConfig = {
 
 					"<#{name}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
 
-		writeAfter: (opts, next) ->
-			console.log 'Write after'
-			gulp.src('./src/files/js/*.js', base: './src/files')
-				.pipe(jsBundler standalone: true, global: true)
-				.pipe(gulp.dest './out')
-				.on('error', () -> @end())
-				.on 'end', () -> 
-					console.log 'Gulp done'
-					next()
+		# writeAfter: (opts, next) ->
+		# 	console.log 'Write after'
+		# 	gulp.src('./src/files/js/*.js', base: './src/files')
+		# 		.pipe(jsBundler standalone: true, global: true)
+		# 		.pipe(gulp.dest './out')
+		# 		.on('error', () -> @end())
+		# 		.on 'end', () -> 
+		# 			console.log 'Gulp done'
+		# 			next()
 }
 
 module.exports = docpadConfig
