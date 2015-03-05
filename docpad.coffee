@@ -1,5 +1,7 @@
 exec = require('child_process').exec
+gulp = require 'gulp'
 hljs = require './plugins/highlight.js'
+jsBundler = require 'js-bundler'
 
 docpadConfig = {
 	templateData:
@@ -25,16 +27,16 @@ docpadConfig = {
 
 	events:
 		# Regenerate assets each time resources are changed
-		generateBefore: (opts, next) ->
-			# do not re-buid assets in debug mode, save resources
-			if @docpad.getConfig().frontendDebug
-				return next()
+		# generateBefore: (opts, next) ->
+		# 	# do not re-buid assets in debug mode, save resources
+		# 	if @docpad.getConfig().frontendDebug
+		# 		return next()
 
-			proc = exec 'grunt', {cwd: process.cwd()}, (error, stdout, stderr) ->
-				console.log stdout
-				process.exit() if error
+		# 	proc = exec 'grunt', {cwd: process.cwd()}, (error, stdout, stderr) ->
+		# 		console.log stdout
+		# 		process.exit() if error
 
-			proc.on 'exit', next
+		# 	proc.on 'exit', next
 
 		# Extend server so it can respond to cache-reset assets
 		serverAfter: ({server}) ->
@@ -61,6 +63,16 @@ docpadConfig = {
 						.toLowerCase()
 
 					"<#{name}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
+
+		writeAfter: (opts, next) ->
+			console.log 'Write after'
+			gulp.src('./src/files/js/*.js', base: './src/files')
+				.pipe(jsBundler standalone: true, global: true)
+				.pipe(gulp.dest './out')
+				.on('error', () -> @end())
+				.on 'end', () -> 
+					console.log 'Gulp done'
+					next()
 }
 
 module.exports = docpadConfig

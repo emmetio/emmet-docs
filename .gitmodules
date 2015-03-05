@@ -1,3 +1,0 @@
-[submodule "src/files/codemirror-movie"]
-	path = src/files/codemirror-movie
-	url = git://github.com/sergeche/codemirror-movie.git

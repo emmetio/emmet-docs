@@ -1,6 +1,6 @@
 ---
-css: "/c/main.css"
-js:  "/j/movie.js, /j/main.js"
+css: "/css/main.css"
+js:  "/js/movie.js, /js/main.js"
 ---
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -13,17 +13,8 @@ js:  "/j/movie.js, /j/main.js"
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 <title><%= @document.title %></title>
 <link rel="shortcut icon" href="/favicon.ico" />
-<% for url in @assets('css'): %>
-<link rel="stylesheet" href="<%= url %>" />
-<% end %>
-<script>document.write('<script src="/j/' + ('__proto__' in {} ? 'zepto.min' : 'jquery-1.8.2.min') + '.js"><\/script>')</script>
-<% for url in @assets('js'): %>
-<script src="<%= url %>"></script>
-<% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+<% for url in @assets('css'): %><link rel="stylesheet" href="<%= url %>" /><% end %>
 </head>
 <body>
 	<div class="wrapper">
@@ -50,6 +41,8 @@ js:  "/j/movie.js, /j/main.js"
 			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents<%= @document.url %>.md">View page source on GitHub</a></p>
 		</footer>
 	</div>
+	
+<% for url in @assets('js'): %><script src="<%= url %>"></script><% end %>
 <script>
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-4523560-5']);
