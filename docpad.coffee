@@ -1,7 +1,7 @@
+path = require 'path'
+safeps = require 'safeps'
 exec = require('child_process').exec
-gulp = require 'gulp'
 hljs = require './plugins/highlight.js'
-jsBundler = require 'js-bundler'
 
 docpadConfig = {
 	templateData:
@@ -19,24 +19,10 @@ docpadConfig = {
 					
 
 	environments:
-		debug:
-			# Enable debug mode for frontend-assets plugin:
-			# generates files with '-debug' suffix with
-			# assets sources
-			frontendDebug: true
+		production:
+			gulpArgs: ['--production']
 
 	events:
-		# Regenerate assets each time resources are changed
-		# generateBefore: (opts, next) ->
-		# 	# do not re-buid assets in debug mode, save resources
-		# 	if @docpad.getConfig().frontendDebug
-		# 		return next()
-
-		# 	proc = exec 'grunt', {cwd: process.cwd()}, (error, stdout, stderr) ->
-		# 		console.log stdout
-		# 		process.exit() if error
-
-		# 	proc.on 'exit', next
 
 		# Extend server so it can respond to cache-reset assets
 		serverAfter: ({server}) ->
@@ -64,15 +50,14 @@ docpadConfig = {
 
 					"<#{name}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
 
-		# writeAfter: (opts, next) ->
-		# 	console.log 'Write after'
-		# 	gulp.src('./src/files/js/*.js', base: './src/files')
-		# 		.pipe(jsBundler standalone: true, global: true)
-		# 		.pipe(gulp.dest './out')
-		# 		.on('error', () -> @end())
-		# 		.on 'end', () -> 
-		# 			console.log 'Gulp done'
-		# 			next()
+		writeAfter: (opts, next) ->
+			config = @docpad.getConfig()
+			rootPath = config.rootPath
+			gulpPath = path.join(rootPath, 'node_modules', '.bin', 'gulp')
+			command = [gulpPath, 'full'].concat(config.gulpArgs or [])
+
+			safeps.spawn(command, {cwd: rootPath, output: true}, next)
+			@
 }
 
 module.exports = docpadConfig

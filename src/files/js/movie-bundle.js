@@ -8,6 +8,8 @@ import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
 
 var emmet = EmmetCodemirror.emmet;
+var EmmetEditor = EmmetCodemirror.EmmetEditor;
+
 EmmetCodemirror.setup(CodeMirror);
 window.CodeMirror = CodeMirror;
 // add 'revert' action to CodeMirror to restore original text and position
@@ -17,4 +19,9 @@ CodeMirror.commands.revert = function(editor) {
 		editor.setCursor(editor.__initial.pos);
 	}
 };
+
+CodeMirror.commands.wrapWithAbbreviation = function(editor, abbr) {
+	emmet.run('wrap_with_abbreviation', new EmmetEditor(editor), abbr);
+};
+
 export {CodeMirror, CodeMirrorMovie, EmmetCodemirror, emmet};

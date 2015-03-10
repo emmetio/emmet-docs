@@ -12,7 +12,7 @@ A very powerful tool of the Emmet toolkit. It takes an [abbreviation](/abbreviat
 ~~~
 tooltip: Place caret inside tag (or tag content) you want to wrap and run “Wrap with Abbreviation” action
 prompt: {text: '.wrapper>h1{Title}+.content', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
-run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, '.wrapper>h1{Title}+.content');}}
+run: {command: function(editor){CodeMirror.commands.wrapWithAbbreviation(editor, 'div.wrapper>h1{Title}+.content');}}
 </textarea>
 
 ## Wrapping individual lines

@@ -11,7 +11,10 @@
     "docpad-plugin-menu": "^2.1.0",
     "docpad-plugin-partials": "^2.9.2",
     "gulp": "^3.8.11",
-    "js-bundler": "git+https://github.com/sergeche/js-bundler.git#v1.0.0"
+    "gulp-gzip": "^1.0.0",
+    "gulp-minify-css": "^1.0.0",
+    "js-bundler": "git+https://github.com/sergeche/js-bundler.git#v1.0.0",
+    "safeps": "^2.2.13"
   },
   "dependencies": {
     "codemirror": "^5.0.0",
