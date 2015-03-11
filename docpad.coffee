@@ -26,8 +26,9 @@ docpadConfig = {
 
 		# Extend server so it can respond to cache-reset assets
 		serverAfter: ({server}) ->
-			server.get /^\/\d+\/(c|j)\//, (req, res, next) ->
-				req.url = req.url.replace /^\/\d+\//, '/'
+			reCache = /^\/-\/.+?\//
+			server.get reCache, (req, res, next) ->
+				req.url = req.url.replace reCache, '/'
 				next()
 
 		# Supply headers with named anchors
