@@ -1,5 +1,5 @@
 import {template, delegate} from './utils';
-import {emmet} from '../movie-bundle';
+import {emmet} from './movie';
 
 function generatePreferencesTable() {
 	var prefs = emmet.preferences.list();

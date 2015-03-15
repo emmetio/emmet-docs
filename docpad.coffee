@@ -4,6 +4,7 @@ exec = require('child_process').exec
 hljs = require './plugins/highlight.js'
 
 docpadConfig = {
+	gulpArgs: ['html']
 	templateData:
 		site:
 			author: "Sergey Chikuyonok"
@@ -20,7 +21,7 @@ docpadConfig = {
 
 	environments:
 		production:
-			gulpArgs: ['--production']
+			gulpArgs: ['full', '--production']
 
 	events:
 
@@ -28,6 +29,9 @@ docpadConfig = {
 		serverAfter: ({server}) ->
 			reCache = /^\/-\/.+?\//
 			server.get reCache, (req, res, next) ->
+				# file = req.url.replace reCache, '/'
+				# console.log res.sendFile
+				# res.sendFile file, root: __dirname + '/out/', (err) -> console.log err
 				req.url = req.url.replace reCache, '/'
 				next()
 
@@ -51,14 +55,14 @@ docpadConfig = {
 
 					"<#{name}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
 
-		writeAfter: (opts, next) ->
-			config = @docpad.getConfig()
-			rootPath = config.rootPath
-			gulpPath = path.join(rootPath, 'node_modules', '.bin', 'gulp')
-			command = [gulpPath, 'full'].concat(config.gulpArgs or [])
+		# writeAfter: (opts, next) ->
+		# 	config = @docpad.getConfig()
+		# 	rootPath = config.rootPath
+		# 	gulpPath = path.join(rootPath, 'node_modules', '.bin', 'gulp')
+		# 	command = [gulpPath].concat(config.gulpArgs or [])
 
-			safeps.spawn(command, {cwd: rootPath, output: true}, next)
-			@
+		# 	safeps.spawn(command, {cwd: rootPath, output: true}, next)
+		# 	@
 }
 
 module.exports = docpadConfig

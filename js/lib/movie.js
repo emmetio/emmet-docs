@@ -6,12 +6,14 @@ import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/xml/xml.js';
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
+import 'codemirror/addon/selection/active-line.js';
 
 var emmet = EmmetCodemirror.emmet;
 var EmmetEditor = EmmetCodemirror.EmmetEditor;
 
 EmmetCodemirror.setup(CodeMirror);
 window.CodeMirror = CodeMirror;
+window.emmet = emmet;
 // add 'revert' action to CodeMirror to restore original text and position
 CodeMirror.commands.revert = function(editor) {
 	if (editor.__initial) {

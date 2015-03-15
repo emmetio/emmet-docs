@@ -37,7 +37,7 @@ js:  "/js/main.js"
 		</section>
 		<div class="clear"></div>
 		<footer class="page-footer">
-			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br />Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gruntjs.com">Grunt.js</a><br />Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br />Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gulpjs.com">Gulp.js</a><br />Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
 			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents<%= @document.url %>.md">View page source on GitHub</a></p>
 		</footer>
 	</div>
@@ -53,6 +53,17 @@ js:  "/js/main.js"
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+	if (document.getElementById('disqus_thread')) {
+	  	var disqus_shortname = 'emmetdocs';
+		(function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+		    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			document.getElementsByTagName('head')[0].appendChild(dsq);
+		})();
+	}
 
 if (typeof NO_ADS === 'undefined') {	
   var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/50357/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);

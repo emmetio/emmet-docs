@@ -1,5 +1,5 @@
-import {CodeMirrorMovie, EmmetCodemirror} from './movie-bundle';
-import {toDom, removeElem, querySelectorAll as $} from './lib/utils';
+import {CodeMirrorMovie, EmmetCodemirror} from './lib/movie';
+import {toDom, removeElem, querySelectorAll as $, extend} from './lib/utils';
 import preferences from './lib/preferences';
 import './lib/fake-file';
 
@@ -14,10 +14,21 @@ var buttonLabels = {
 	'try_yourself': 'Try it yourself'
 };
 
+var codeMirrorOptions = {
+	theme: 'espresso',
+	indentWithTabs: true,
+	tabSize: 4,
+	lineNumbers : true,
+	indentUnit: 4,
+	styleActiveLine: true
+};
+
 export function setupMovie(elem) {
 	var movie = CodeMirrorMovie(elem, {
 		sectionSeparator: /~{3}|@{3}/g
-	});
+	}, extend({
+		mode : elem.getAttribute('data-cm-mode') || 'text/html',
+	}, codeMirrorOptions));
 	var editor = movie._editor;
 	EmmetCodemirror(editor);
 
@@ -43,6 +54,7 @@ export function setupMovie(elem) {
 	btnTry.addEventListener('click', evt => {
 		movie.stop();
 		removeSplash();
+		editor.setOption('readOnly', false);
 		editor.execCommand('revert');
 		editor.focus();
 	});
@@ -61,22 +73,14 @@ export function setupMovie(elem) {
 }
 
 export function setupEditor(elem) {
-	var editor = CodeMirror.fromTextArea(this, {
-		theme: 'espresso',
+	var editor = CodeMirror.fromTextArea(elem, extend({
 		mode : elem.getAttribute('data-cm-mode') || 'text/html',
-		indentWithTabs: true,
-		tabSize: 4,
-		lineNumbers : true,
-		onCursorActivity: function() {
-			editor.setLineClass(hlLine, null, null);
-			hlLine = editor.setLineClass(editor.getCursor().line, null, 'activeline');
-		}
-	});
-	var hlLine = editor.setLineClass(0, 'activeline');
+	}, codeMirrorOptions));
 	var height = elem.getAttribute('data-height');
 	if (height) {
 		editor.getWrapperElement().style.height = height + 'px';
 	}
+	EmmetCodemirror(editor);
 }
 
 $('.movie-def').forEach(setupMovie);

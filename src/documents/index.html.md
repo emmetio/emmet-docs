@@ -28,8 +28,8 @@ tooltip: Traverse between important code points with “Next/Previous Edit Point
 wait: 1000
 run: {command: 'emmet.next_edit_point', times: 7}
 wait: 1000
-tooltip: Select tags with “Match Tag Pair” action ::: “Match Pair” (Cmd-D)
-run: {command: 'emmet.match_pair_outward', times: 3}
+tooltip: Select tags with “Balance” action ::: “Balance” (Cmd-D)
+run: {command: 'emmet.balance_outward', times: 3}
 wait: 1000
 moveTo: 102
 tooltip: Select important parts with “Select Next/Previous Item” action ::: “Select Next Item” (Shift-Cmd-.) <br> “Select Previous Item” (Shift-Cmd-,)

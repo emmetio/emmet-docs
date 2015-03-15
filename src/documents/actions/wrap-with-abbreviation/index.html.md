@@ -38,7 +38,7 @@ select: 5:13
 wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with repeated element marked with <em>\*</em>
 prompt: {text: 'nav>ul.nav>li.nav-item$\*>a', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
-run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'nav>ul.nav>li.nav-item$\*>a');}}
+run: {command: function(editor){CodeMirror.commands.wrapWithAbbreviation(editor, 'nav>ul.nav>li.nav-item$\*>a');}}
 </textarea>
 
 Note you don’t need to add multiplier number for wrapping lines (e.g. `li*5`), you have to use `*` operator _without_ number, like this: `li*`.
@@ -84,7 +84,7 @@ select: 5:15
 wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with  <em>|t</em> filter at the end
 prompt: {text: 'ul.nav>li.nav-item$\*>a|t', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
-run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul.nav>li.nav-item$\*>a|t');}}
+run: {command: function(editor){CodeMirror.commands.wrapWithAbbreviation(editor, 'ul.nav>li.nav-item$\*>a|t');}}
 </textarea>
 
 [Read more about filters](/filters/)
@@ -110,5 +110,5 @@ select: 5:13
 wait: 1000
 tooltip: Call “Wrap with Abbreviation” action and enter abbreviation with repeated element marked with <em>\*</em> and <em>$#</em> placeholder
 prompt: {text: 'ul>li[title=$#]\*>{$#}+img[alt=$#]', title: 'Enter abbreviation'}  ::: “Wrap with Abbreviation” (Shift-Cmd-A)
-run: {command: function(editor){CodeMirror._wrapWithAbbreviation(editor, 'ul>li[title=$#]\*>{$#}+img[alt=$#]');}}
+run: {command: function(editor){CodeMirror.commands.wrapWithAbbreviation(editor, 'ul>li[title=$#]\*>{$#}+img[alt=$#]');}}
 </textarea>

@@ -4,7 +4,8 @@
 
 /* CodeMirror Movie */
 @import url(assets/_movie.css);
-@import url(movie.css);
+@import url(../node_modules/codemirror/lib/codemirror.css);
+@import url(../node_modules/codemirror-movie/dist/movie.css);
 
 @import url(assets/_layout.css);
 
@@ -19,11 +20,19 @@
 	position: relative;
 }
 
+.CodeMirror-scroll {
+	background: #fff;
+}
+
+.CodeMirror-activeline-background {
+	right: -30px;
+}
+
 .CodeMirror-movie_with-outline .CodeMirror-scroll {
 	margin-right: 25%;
 }
 
-.CodeMirror-movie_with-outline .CodeMirror-scrollbar {
+.CodeMirror-movie_with-outline .CodeMirror-vscrollbar {
 	right: 25%;
 }
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Match Tag Pair
+title: Balance
 menuOrder: 2
 ---
 A well-known tag balancing: searches for tag or tag's content bounds from current caret position and selects it. It will expand (outward balancing) or shrink (inward balancing) selection when called multiple times. Not every editor supports both inward and outward balancing due of some implementation issues, most editors have outward balancing only.
@@ -13,15 +13,15 @@ A well-known tag balancing: searches for tag or tag's content bounds from curren
 	&lt;/section&gt;
 &lt;/div&gt;
 @@@
-tooltip: Place caret inside tag’s content and run “Match Pair” action to select it
-run: emmet.match_pair_outward ::: “Match Pair Outward” (Cmd-D)
+tooltip: Place caret inside tag’s content and run “Balance” action to select it
+run: emmet.balance_outward ::: “Balance Outward” (Cmd-D)
 wait: 1000
 tooltip: Run action multiple times to expand selection
-run: {command: 'emmet.match_pair_outward', times: 5}
+run: {command: 'emmet.balance_outward', times: 5}
 wait: 1000
-tooltip: Run “Match Pair Inward” action to shrink selection
+tooltip: Run “Balance Inward” action to shrink selection
 wait: 1000
-run: {command: 'emmet.match_pair_inward', times: 5} ::: “Match Pair Inward (Shift-Cmd-D)
+run: {command: 'emmet.balance_inward', times: 5} ::: “Balance Inward (Shift-Cmd-D)
 </textarea>
 
 Emmet’s tag balancing is quite unique. Unlike other implementation, this one will search tag bounds from caret’s position, not the start of the document. It means you can use tag balancer even in non-HTML documents.
@@ -44,8 +44,8 @@ function test(data) {
 	return out;
 }
 @@@
-tooltip: {text: 'Place caret somewhere between opening and closing tag. Run “Match Pair” action and, if tag definitions are consistent enough, they will match', wait: 7000}
-run: {command: 'emmet.match_pair_outward', times: 6} ::: “Match Pair” (Cmd-D)
+tooltip: {text: 'Place caret somewhere between opening and closing tag. Run “Balance” action and, if tag definitions are consistent enough, they will match', wait: 7000}
+run: {command: 'emmet.balance_outward', times: 6} ::: Balance” (Cmd-D)
 @@@
 mode: text/javascript
 </textarea>

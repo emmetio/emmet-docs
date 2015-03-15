@@ -1,7 +1,17 @@
-export function extend(obj) {
-	return merge(obj, sliceFn.call(arguments, 1), function(key, dest, src) {
-		dest[key] = src[key];
+var escapeMap = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#x27;',
+	'`': '&#x60;'
+};
+
+export function extend(obj, ...args) {
+	args.forEach(a => {
+		a && Object.keys(a).forEach(key => obj[key] = a[key]);
 	});
+	return obj;
 }
 
 export function removeElem(elem) {
@@ -75,3 +85,39 @@ export function matchesSelector(elem, sel) {
 
 	return found;
 }
+
+export function sortBy(arr, key) {
+	return arr.map((value, index) => {
+		return {
+			value: value,
+			index: index,
+			criteria: value[key]
+		};
+	})
+	.sort((left, right) => {
+		var a = left.criteria;
+		var b = right.criteria;
+		if (a !== b) {
+			if (a > b || a === void 0) return 1;
+			if (a < b || b === void 0) return -1;
+		}
+		return left.index - right.index;
+	})
+	.map(obj => obj.value);
+}
+
+var createEscaper = function(map) {
+	var escaper = function(match) {
+		return map[match];
+	};
+
+ 
+	var source = '(?:' + Object.keys(map).join('|') + ')';
+	var testRegexp = RegExp(source);
+	var replaceRegexp = RegExp(source, 'g');
+	return function(string) {
+		string = string == null ? '' : '' + string;
+		return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+	};
+};
+export var escape = createEscaper(escapeMap);

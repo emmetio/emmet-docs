@@ -20,8 +20,8 @@ wait: 1000
 tooltip: Run “Expand Abbreviation” action to transform gradient definition ::: “Expand Abbreviation” (Tab key)
 run: emmet.expand_abbreviation
 wait: 1000
-moveTo: 5:59
-run: {command: "emmet.insert_formatted_line_break", times: 2}
+run: goCharRight
+run: {command: "newlineAndIndent", times: 2}
 wait: 500
 type: border-image: 
 tooltip: If you write <strong>lg(...)</strong> definition as property value, Emmet will inherit its property name
@@ -29,8 +29,8 @@ type: lg(left, #fc0 30%, red)
 wait: 500
 run: emmet.expand_abbreviation
 wait: 1000
-moveTo: 11:50
-select: 11:53
+moveTo: 9:51
+select: 9:54
 tooltip: {text: "You can modify generated gradient definition and run “Expand Abbreviation” action again to mirror changes to other gradients with the same CSS property name", wait: 7000}
 type: black
 wait: 500
