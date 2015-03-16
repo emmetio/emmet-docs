@@ -26,4 +26,7 @@ CodeMirror.commands.wrapWithAbbreviation = function(editor, abbr) {
 	emmet.run('wrap_with_abbreviation', new EmmetEditor(editor), abbr);
 };
 
+EmmetCodemirror.defaultKeymap['Shift-Cmd-U'] = 'emmet.update_image_size';
+EmmetCodemirror.defaultKeymap['Shift-Cmd-I'] = 'emmet.encode_decode_data_url';
+
 export {CodeMirror, CodeMirrorMovie, EmmetCodemirror, emmet};
