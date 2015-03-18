@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '0.10'
+env:
+  global:
+  - secure: lwSdNhCQiyo6HARpsRqlG2WTxmOrfXaUo3jurk4Il7yjdpZVxmMVfZx1JPQEW5qfwYmOvXZmCBeeZ+gUn0Okrhk84hQ8LPS+JA6ARKuWLKhlsh89XWx+KnxaT5w8NKKIFgtEifWQ5f0KuP5rkg5nWzw82/I/3XvszYtmwGq4mgw=
+  - secure: zuuhNibOqZnAO8lnjePqL5INz7iNuM8AVgWK1eZDM6EBz6OiLgp5APSQJkmusCwhYMtrb6cUeHs/QTHGDj+M0+tqn/I+xB4t7C7wD+Sizhiaz8NjqBSdacJ4kX/2YefEgvPiosiNQQiIDrrvMb8/+oEfYfAdTy0YVDoGDjanfzI=
+addons:
+  ssh_known_hosts:
+  - 128.199.54.7
+script: ./node_modules/.bin/docpad generate --silent --env production
+branches:
+  only:
+  - dev
+after_success:
+- apt-get -y install rsync
+- rsync -arlptz --delete --stats ./out/ $DEPLOY_USER@128.199.54.7:$DEPLOY_PATH
