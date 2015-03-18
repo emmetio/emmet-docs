@@ -3,8 +3,9 @@ node_js:
 - '0.10'
 env:
   global:
-  - secure: lwSdNhCQiyo6HARpsRqlG2WTxmOrfXaUo3jurk4Il7yjdpZVxmMVfZx1JPQEW5qfwYmOvXZmCBeeZ+gUn0Okrhk84hQ8LPS+JA6ARKuWLKhlsh89XWx+KnxaT5w8NKKIFgtEifWQ5f0KuP5rkg5nWzw82/I/3XvszYtmwGq4mgw=
-  - secure: zuuhNibOqZnAO8lnjePqL5INz7iNuM8AVgWK1eZDM6EBz6OiLgp5APSQJkmusCwhYMtrb6cUeHs/QTHGDj+M0+tqn/I+xB4t7C7wD+Sizhiaz8NjqBSdacJ4kX/2YefEgvPiosiNQQiIDrrvMb8/+oEfYfAdTy0YVDoGDjanfzI=
+  - secure: sNJQXWkB//P8JhsdLQKhFbKeCcJ2sb6FiEDpqK5UwFGMt9NRnqFCxDHVxpmr61uPB2XmJr5WdhpeOH6TXttEM31QRuBWg02XbXLEhCgQESh/wg5Ro76OSRZ71iAYXLwFxlkdJ3qgVm0hnLjLTKmYuKu7C1E5bH9/wma1S8Y4PLM=
+  - secure: kez8ylnc99MwHpXNBvUZ3iweAbiXO04NBxB/mRxpl/KF3ZBPwokmd23yoGztm5SRuBTKdpQAXSEryDF2VbE4Pqz94kxxJKqizahGRJJt9JOThZZHhdNoUt44wLz6YLh5RmiYQe/3JFwBxbdyBeEE5Vud2I8Yy7o+dR+c7aztSSk=
+  - secure: tcFLn8fgP/gxtZQC2iO70tABBOrqB/CFvAfWj9sr069mc6STaVahVol7Wo77cDr4WkrtvpMVXe/laeqsKyMe7vUVbGSuby8tJOrOK5LNuTfgmvS3OFmXCRYsyCa806ft/CLv4nw9Ld8IQGRMXUQCK1wAm6xhRLQF5MMTDQkiqiQ=
 addons:
   ssh_known_hosts:
   - 128.199.54.7
@@ -13,7 +14,5 @@ branches:
   only:
   - dev
 after_success:
-- apt-get -y -qq install rsync
-- chmod 600 ~/.ssh/id_rsa
-- ssh-add ~/.ssh/id_rsa
-- rsync -arlptz --delete --stats ./out/ $DEPLOY_USER@128.199.54.7:$DEPLOY_PATH
+- apt-get -y -qq install rsync sshpass
+- rsync -arlptz --delete --stats --rsh="sshpass -p $DEPLOY_PASSWORD ssh -l $DEPLOY_USER" ./out/ 128.199.54.7:$DEPLOY_DEST
