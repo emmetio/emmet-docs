@@ -14,5 +14,5 @@ branches:
   only:
   - dev
 after_success:
-- apt-get -y -qq install rsync sshpass
+- sudo apt-get -y -qq install rsync sshpass
 - rsync -arlptz --delete --stats --rsh="sshpass -p $DEPLOY_PASSWORD ssh -l $DEPLOY_USER" ./out/ 128.199.54.7:$DEPLOY_DEST
