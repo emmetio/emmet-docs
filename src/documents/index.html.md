@@ -4,7 +4,7 @@ title: Emmet Documentation
 ---
 # Emmet — the essential toolkit for web-developers #
 
-Emmet (previously known as _Zen Coding_) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow:
+Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow:
 
 <textarea class="movie-def">
 &lt;!doctype html&gt;
