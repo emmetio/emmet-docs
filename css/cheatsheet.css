@@ -17,8 +17,8 @@ body {
 	width: auto;
 	padding: 10px 30px;
 	margin: 0;
-	background: #000;
 	color: #fff;
+	height: 90px;
 }
 
 .site-title {
@@ -26,6 +26,8 @@ body {
 	font-size: 1.3em;
 	padding-left: 1.5em;
 	display: inline-block;
+	position: relative;
+	top: 50px;
 }
 
 .site-title a {
@@ -206,7 +208,28 @@ body {
 }
 
 #carbonads-container {
-	display: none;
+	position: absolute;
+	top: 10px;
+	right: 47px;
+	/* display: none; */
+}
+
+#carbonads-container .carbonad {
+	background: none;
+	border: 1px solid #444;
+}
+
+#carbonads-container .carbonad-text a {
+	color: #777;
+}
+
+#carbonads-container .carbonad-tag {
+	color: #555;
+}
+
+#carbonads-container .carbonad-tag a {
+	color: #555;
+	text-decoration: underline;
 }
 
 @media print, screen and (max-width: 870px) {
@@ -230,6 +253,20 @@ body {
 	
 	.page-content {
 		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#carbonads-container {
+		display: none;
+	}
+
+	.page-header {
+		height: auto;
+	}
+
+	.site-title {
+		top: auto;
 	}
 }
 
