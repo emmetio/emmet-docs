@@ -13,5 +13,7 @@ branches:
   only:
   - dev
 after_success:
-- apt-get -y install rsync
+- apt-get -y -qq install rsync
+- chmod 600 ~/.ssh/id_rsa
+- ssh-add ~/.ssh/id_rsa
 - rsync -arlptz --delete --stats ./out/ $DEPLOY_USER@128.199.54.7:$DEPLOY_PATH
