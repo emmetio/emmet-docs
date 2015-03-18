@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var jsBundler = require('js-bundler');
 var minifyCSS = require('gulp-minify-css');
 var gzip = require('gulp-gzip');
-var crc = require('crc');
 var htmlTransform = require('html-transform');
 var rewriteUrl = htmlTransform.rewriteUrl;
 var stringifyDom = htmlTransform.stringifyDom;

@@ -1,6 +1,5 @@
 path = require 'path'
 safeps = require 'safeps'
-exec = require('child_process').exec
 hljs = require './plugins/highlight.js'
 
 docpadConfig = {
@@ -24,7 +23,6 @@ docpadConfig = {
 			gulpArgs: ['full', '--production']
 
 	events:
-
 		# Extend server so it can respond to cache-reset assets
 		serverAfter: ({server}) ->
 			reCache = /^\/-\/.+?\//
