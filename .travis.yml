@@ -12,7 +12,7 @@ addons:
 script: ./node_modules/.bin/docpad generate --silent --env production
 branches:
   only:
-  - dev
+  - master
 after_success:
 - sudo apt-get -y -qq install sshpass
 - rsync -arlptzO --delete --stats --rsh="sshpass -p $DEPLOY_PASSWORD ssh -l $DEPLOY_USER" ./out/ 128.199.54.7:$DEPLOY_DEST
