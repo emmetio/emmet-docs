@@ -35,7 +35,7 @@ docpadConfig = {
 			{extension,file} = opts
 
 			if file.type is 'document' and extension is 'html'
-				opts.content = opts.content.replace /<(h\d)>(.+?)<\/\1>/g, (str, name, header) ->
+				opts.content = opts.content.replace /<(h\d)(.*?)>(.+?)<\/\1>/g, (str, name, attrs, header) ->
 					if /<a\s+[^>]*name="/.test(header)
 						return str
 
@@ -46,9 +46,10 @@ docpadConfig = {
 						.trim()
 						.replace(/\s+/g, '-')
 						.replace(/[^\w\-]/g, '')
+						.replace(/\-+$/g, '')
 						.toLowerCase()
 
-					"<#{name}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
+					"<#{name + attrs}><a name=\"#{anchor}\" href=\"\##{anchor}\" class=\"anchor\"></a>#{header}</#{name}>"
 
 		writeAfter: (opts, next) ->
 			config = @docpad.getConfig()
