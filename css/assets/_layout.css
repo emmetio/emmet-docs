@@ -212,7 +212,8 @@ hr {
 }
 
 *:hover > .anchor,
-.anchor:hover {
+.anchor:hover,
+.anchor:focus {
 	opacity: 1;
 }
 
