@@ -43,7 +43,7 @@ Snippets have some predefined variable names that have special meaning to Emmet:
 
 ### Escaping `|` and `$` characters ###
 
-The `$` character is used for tabstops and variables, the `|` character it used to indicate caret position when snippet is expanded. If you want to output these characters as-is, you should use double slash to escape them: `\\$` or `\\|`
+The `$` character is used for tabstops and variables, the `|` character it used to indicate caret position when snippet is expanded. If you want to output these characters as-is, you should use double backslash to escape them: `\\$` or `\\|`
 
 ### Sharing snippets
 
