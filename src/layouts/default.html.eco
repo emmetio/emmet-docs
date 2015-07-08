@@ -69,6 +69,7 @@ if (typeof NO_ADS === 'undefined') {
   var z = document.createElement("script");
   z.type = "text/javascript";
   z.async = true;
+  z.id = '_carbonads_js';
   z.src = "//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=emmetio";
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(z, s);
