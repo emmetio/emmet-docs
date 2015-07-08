@@ -1,12 +1,11 @@
 var fs = require('fs');
 var path = require('path');
 var gulp = require('gulp');
+var through = require('through2');
 var jsBundler = require('js-bundler');
 var minifyCSS = require('gulp-minify-css');
 var gzip = require('gulp-gzip');
 var htmlTransform = require('html-transform');
-var rewriteUrl = htmlTransform.rewriteUrl;
-var stringifyDom = htmlTransform.stringifyDom;
 
 var srcOptions = {base: './'};
 var outPath = './out';
@@ -38,13 +37,24 @@ gulp.task('css', function() {
 
 gulp.task('html', ['static'], function(next) {
 	return gulp.src('./out/**/*.html')
-		.pipe(rewriteUrl(function(url, file, ctx) {
-			if (ctx.stats) {
-				url = '/-/' + ctx.stats.hash + url;
+		.pipe(htmlTransform({
+			transformUrl: function(url, file, ctx) {
+				if (ctx.stats) {
+					url = '/-/' + ctx.stats.hash + url;
+				}
+				return url;
+			},
+			mode: 'xhtml',
+			transform: function() {
+				return through.obj(function(file, enc, next) {
+					findScripNodes(file.dom).forEach(function(node) {
+						// replace &amp; with & since CarbonAds can’t hane entities
+						node.attribs.src = node.attribs.src.replace(/&amp;/g, '&');
+					});
+					next(null, file);
+				});
 			}
-			return url;
 		}))
-		.pipe(stringifyDom('xhtml'))
 		.pipe(gulp.dest('./out'));
 });
 
@@ -65,3 +75,18 @@ gulp.task('watch', function() {
 
 gulp.task('static', ['css', 'js']);
 gulp.task('default', ['static']);
+
+function findScripNodes(nodes, out) {
+	out = out || [];
+	nodes.forEach(function(node) {
+		if (/^script$/i.test(node.name || '') && node.attribs.src) {
+			out.push(node)
+		}
+
+		if (node.children) {
+			findScripNodes(node.children, out);
+		}
+	});
+
+	return out;
+}

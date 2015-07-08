@@ -13,13 +13,14 @@
     "gulp": "^3.8.11",
     "gulp-gzip": "^1.0.0",
     "gulp-minify-css": "^1.0.0",
-    "html-transform": "git+https://github.com/sergeche/html-transform.git#v1.0.0",
+    "html-transform": "git+https://github.com/sergeche/html-transform.git#v1.1.0",
     "js-bundler": "git+https://github.com/sergeche/js-bundler.git#v1.0.0",
     "safeps": "^2.2.13"
   },
   "dependencies": {
     "codemirror": "^5.0.0",
     "codemirror-movie": "^1.2.1",
-    "emmet-codemirror": "^1.2.4"
+    "emmet-codemirror": "^1.2.4",
+    "through2": "^2.0.0"
   }
 }
