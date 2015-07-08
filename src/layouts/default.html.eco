@@ -66,7 +66,12 @@ js:  "/js/main.js"
 	}
 
 if (typeof NO_ADS === 'undefined') {	
-  var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/50357/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+  var z = document.createElement("script");
+  z.type = "text/javascript";
+  z.async = true;
+  z.src = "//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=emmetio";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(z, s);
 }
 </script>
 </body>
