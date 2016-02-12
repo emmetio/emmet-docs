@@ -22,7 +22,7 @@ js:  "/js/main.js"
 			<h1 class="site-title">
 			<% if @document.url == '/index.html': %>
 				Emmet Documentation
-			<% else: %>	
+			<% else: %>
 				<a href="/">Emmet Documentation</a>
 			<% end %>
 			</h1>
@@ -35,6 +35,23 @@ js:  "/js/main.js"
 			<nav>
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
 			</nav>
+			<div class="more-tools">
+				<p class="more-tools__title">More developer tools:</p>
+				<ul class="more-tools__list">
+					<li class="more-tools__list-item more-tools__list-item_livestyle">
+						<a href="http://livestyle.io" class="more-tools__list-item-link">
+							Emmet LiveStyle
+							<div class="more-tools__list-item-info">Real-time bi-directional edit tool for CSS, LESS and SCSS.</div>
+						</a>
+					</li>
+					<li class="more-tools__list-item more-tools__list-item_review">
+						<a href="http://re-view.emmet.io" class="more-tools__list-item-link">
+							Emmet Re:view
+							<div class="more-tools__list-item-info">Fast and easy way to test responsive design side-by-side.</div>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</header>
 		<section class="page-content">
 			<%- @content %>
@@ -45,7 +62,7 @@ js:  "/js/main.js"
 			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents<%= @document.url %>.md">View page source on GitHub</a></p>
 		</footer>
 	</div>
-	
+
 <% for url in @assets('js'): %><script src="<%= url %>"></script><% end %>
 <script>
   var _gaq = _gaq || [];
