@@ -225,6 +225,10 @@ body {
 	margin-bottom: 0;
 }
 
+#carbonads .carbon-img img {
+	vertical-align: top;
+}
+
 #carbonads .carbon-text a {
 	color: #777;
 }
