@@ -92,7 +92,7 @@ body {
 	overflow: hidden;
 	margin: 0;
 	padding: 1px 0 1px 20px;
-	color: #777;	
+	color: #777;
 }
 
 .ch-tabstop {
@@ -186,7 +186,7 @@ body {
 	color: #606064;
 }
 
-/* 
+/*
  * For HTML and XSL sections, put snippet value right below its name
  * to save some space
  */
@@ -207,29 +207,39 @@ body {
 	min-width: 7em;
 }
 
-#carbonads-container {
+#carbonads {
 	position: absolute;
 	top: 10px;
 	right: 47px;
+	background: none;
+	border: 1px solid #444;
+	width: 320px;
+	min-height: 100px;
 	/* display: none; */
 }
 
-#carbonads-container .carbonad {
-	background: none;
-	border: 1px solid #444;
+#carbonads .carbon-img {
+	float: left;
+	display: block;
+	margin-right: 10px;
+	margin-bottom: 0;
 }
 
-#carbonads-container .carbonad-text a {
+#carbonads .carbon-text a {
 	color: #777;
 }
 
-#carbonads-container .carbonad-tag {
+#carbonads .carbon-poweredby {
 	color: #555;
 }
 
-#carbonads-container .carbonad-tag a {
+#carbonads .carbon-poweredby a {
 	color: #555;
 	text-decoration: underline;
+}
+
+.more-tools {
+	display: none;
 }
 
 @media print, screen and (max-width: 870px) {
@@ -238,7 +248,7 @@ body {
 		-moz-column-count: 2;
 		column-count: 2;
 	}
-	
+
 	.page-content {
 		padding: 10px;
 	}
@@ -250,7 +260,7 @@ body {
 		-moz-column-count: 1;
 		column-count: 1;
 	}
-	
+
 	.page-content {
 		padding: 5px;
 	}
@@ -293,9 +303,9 @@ body {
 		border: 0;
 	}
 
-	/* 
-	 * Columns are not working in WebKit for print media, 
-	 * using good ol' floats 
+	/*
+	 * Columns are not working in WebKit for print media,
+	 * using good ol' floats
 	 */
 	.ch-section__content {
 		-webkit-column-count: auto;
@@ -310,18 +320,18 @@ body {
 		page-break-inside: avoid;
 		font-size: inherit;
 	}
-	
+
 	.ch-section__title, .ch-subsection__title {
 		background: transparent;
 		color: #000;
 		padding: 0;
 	}
-	
+
 	.ch-snippet__name {
 		color: #333;
 		font-size: inherit;
 	}
-	
+
 	.ch-tabstop {
 		background: transparent;
 		color: #666;
