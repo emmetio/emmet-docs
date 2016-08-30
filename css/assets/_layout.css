@@ -268,7 +268,7 @@ hr {
 	border-top: 3px solid #e5e5e5;
 }
 
-#carbonads {
+#gptong-container {
 	/* float: right; */
 	/* min-height: 215px; */
 	margin: 0 -10px 25px;
@@ -279,16 +279,19 @@ hr {
 	font-size: 0.8em;
 }
 
-.carbon-img {
+.carbon-img,
+.xrxbcfk_5-wrap img {
 	display: block;
 	margin-bottom: 10px;
 }
 
-.carbon-wrap {
+.carbon-wrap,
+.xrxbcfk_5-wrap {
 	display: block;
 	margin-bottom: 10px;
 }
 
+.xrxbcfk_5-poweredby,
 .carbon-poweredby {
 	font-style: italic;
 }
@@ -342,6 +345,33 @@ hr {
 	font-size: 0.7em;
 	color: #888;
 }
+
+#carbonads .carbon-wrap,
+#xrxbcfk_5 .xrxbcfk_5-wrap {
+	display: block;
+}
+
+#carbonads .carbon-img,
+#xrxbcfk_5 .xrxbcfk_5-img {
+	display: block;
+}
+
+#carbonads .carbon-img img,
+#xrxbcfk_5 .xrxbcfk_5-img img {
+	display: block;
+}
+
+#carbonads .carbon-text,
+#xrxbcfk_5 .xrxbcfk_5-text {
+	clear: both;
+	display: block;
+}
+
+#carbonads .carbon-poweredby,
+#xrxbcfk_5 .xrxbcfk_5-poweredby {
+	display: block;
+}
+
 
 @media print, screen and (max-width: 960px) {
 	body {
