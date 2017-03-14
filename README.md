@@ -2,7 +2,7 @@
 
 Currently, the main web-site skeleton is finished (maybe a few bugs out there), and I’m currently writing documentation for Emmet toolkit. Documentation itself is located in `src/documents` folder.
 
-The web-site uses [DocPad](https://github.com/bevry/docpad) for static site generation and [Grunt.js](http://gruntjs.com) for building front-end assets. Both of these project uses custom plugins for building and documents generation, which might be described later.
+The web-site uses [DocPad](https://github.com/bevry/docpad) for static site generation.
 
 ## Local setup
 
@@ -10,7 +10,7 @@ To run this web-site locally, you need the following dependencies:
 
 1. Node.JS >= v0.6
 2. NPM
-3. DocPad and Grunt.js installed globally: `npm install -g docpad && npm install -g grunt`
+3. DocPad installed globally: `npm install -g docpad`
 
 ### Running local web-site instance
 
