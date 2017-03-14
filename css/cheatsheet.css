@@ -1,5 +1,6 @@
 body {
 	background: #2c2d32;
+	color: #777777;
 	padding: 0 !important;
 }
 
@@ -27,7 +28,7 @@ body {
 	padding-left: 1.5em;
 	display: inline-block;
 	position: relative;
-	top: 50px;
+	top: 30px;
 }
 
 .site-title a {
@@ -66,6 +67,18 @@ body {
 
 .page-footer {
 	display: none;
+}
+
+.download-a5 {
+	position: absolute;
+	margin-top: -55px;
+	font-size: 12px;
+}
+
+.download-a5 .btn {
+	font-size: 12px;
+	background: none;
+	border: 1px solid #ccc;
 }
 
 .ch-snippet {
@@ -210,7 +223,7 @@ body {
 #gptong-container {
 	position: absolute;
 	top: 10px;
-	right: 47px;
+	right: 40px;
 	background: none;
 	border: 1px solid #444;
 	width: 320px;
@@ -265,6 +278,16 @@ body {
 
 	.page-content {
 		padding: 10px;
+	}
+
+	.download-a5 {
+		margin-top: -45px;
+	}
+}
+
+@media print, screen and (max-width: 770px) {
+	.download-a5__text {
+		display: none;
 	}
 }
 
