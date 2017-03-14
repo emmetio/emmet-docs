@@ -33,7 +33,7 @@ js:  "/js/main.js"
 			    script.src = "//" + base + "/c?r=" + Math.random();
 			    script.async = true;
 			    document.getElementsByTagName('head')[0].appendChild(script);
-			  })(window, "xrxbcfk.emmet.io");
+			  })(window, "xrxbcfk.misosoup.io");
 			</script>
 
 			<div id="gptong-container">
@@ -41,7 +41,7 @@ js:  "/js/main.js"
 					<script async src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=emmetio" id="_carbonads_js"></script>
 				</div>
 			</div>
-			
+
 			<nav>
 				<%- @partial('menu.html.eco', {menuItems: @generateMenu(@document.url)}) %>
 			</nav>
