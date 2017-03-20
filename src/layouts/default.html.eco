@@ -27,18 +27,21 @@ js:  "/js/main.js"
 			<% end %>
 			</h1>
 			<p class="back-to-main"><a href="http://emmet.io">Back to main website</a></p>
-			<script>
-			  (function(window, base) {
-			    var script = document.createElement("script");
-			    script.src = "//" + base + "/c?r=" + Math.random();
-			    script.async = true;
-			    document.getElementsByTagName('head')[0].appendChild(script);
-			  })(window, "xrxbcfk.misosoup.io");
-			</script>
-
 			<div id="gptong-container">
 				<div class="gptong">
-					<script async src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=emmetio" id="_carbonads_js"></script>
+					<script>
+					function __carbonFallback(script) {
+						var domain = 'sup.emmet.io';
+						var fallback = document.createElement('script');
+						fallback.async = true;
+						fallback.id = script.id;
+						fallback.src = script.src.replace(/^(\w+:\/\/)([^\/]+)/, '$1' + domain) + '\u0026cd=' + domain;
+
+						script.parentNode.insertBefore(fallback, script);
+						script.parentNode.removeChild(script);
+					}
+					</script>
+					<script async src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=emmetio" id="_carbonads_js" onerror="__carbonFallback(this)"></script>
 				</div>
 			</div>
 
