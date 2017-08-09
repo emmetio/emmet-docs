@@ -67,6 +67,7 @@ js:  "/js/main.js"
 			</div>
 		</header>
 		<section class="page-content">
+			<div class="bsa-cpc"></div>
 			<%- @content %>
 		</section>
 		<div class="clear"></div>
@@ -98,6 +99,20 @@ js:  "/js/main.js"
 			document.getElementsByTagName('head')[0].appendChild(dsq);
 		})();
 	}
+</script>
+<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function() {
+	if(typeof _bsa !== 'undefined') {
+		if (_bsa) {
+			_bsa.init('default', 'CKYD4K7N', 'placement:emmetio', {
+				target: '.bsa-cpc',
+				align: 'horizontal',
+				disable_css: 'true'
+			});
+		}
+	}
+})();
 </script>
 </body>
 </html>
