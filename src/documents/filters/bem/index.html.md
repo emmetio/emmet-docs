@@ -6,7 +6,7 @@ menuOrder: 1
 
 If you’re writing your HTML and CSS code in [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)-style, [Yandex’s BEM](http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/) style specifically, you will like this filter. It provides some aliases and automatic insertions of common block and element names in classes.
 
-In short, BEM introduces three concept types for CSS classes: Block, Element and Modifier. _Block_ is a some sort of a namespace for a semantic sections of HTML page, for example, `search-form`. _Element_ is a part of section, for example, `serch-form__query-string`. _Modifiers_ define variations of block and elements: `search-form_wide` or `search-form_narrow`. Elements in class names are separated with `__` (double underscore) and modifiers are separated with `_` (single underscore).
+In short, BEM introduces three concept types for CSS classes: Block, Element and Modifier. _Block_ is a some sort of a namespace for a semantic sections of HTML page, for example, `search-form`. _Element_ is a part of section, for example, `search-form__query-string`. _Modifiers_ define variations of block and elements: `search-form_wide` or `search-form_narrow`. Elements in class names are separated with `__` (double underscore) and modifiers are separated with `_` (single underscore).
 
 While BEM/OOCSS is a great way to maintain and re-use CSS, it may be very tedious to write these class names in plain HTML, even with help of Emmet abbreviations. You have to write the same block or element name in every element of abbreviation:
 
