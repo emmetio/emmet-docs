@@ -91,7 +91,7 @@ body {
 }
 
 .ch-snippet__name {
-	font-size: 1em;
+	font-size: 3em;
 	font-weight: normal;
 	float: left;
 	padding: 0;
@@ -106,6 +106,7 @@ body {
 	margin: 0;
 	padding: 1px 0 1px 20px;
 	color: #777;
+	font-size: 2em;
 }
 
 .ch-tabstop {
@@ -190,7 +191,7 @@ body {
 }
 
 .cn-snippet__alias {
-	font-size: 10px;
+	font-size: 14px;
 	color: #4c4d51;
 	margin: 5px 0;
 }
