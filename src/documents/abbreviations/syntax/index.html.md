@@ -67,7 +67,7 @@ With `^` operator, you can climb one level up the tree and change context where 
 	
 You can use as many `^` operators as you like, each operator will move one level up:
 
-	div+div>p>span+em^^^bq
+	div+div>p>span+em^^bq
 	
 ...will output to
 
