@@ -111,14 +111,14 @@ var syntaxSection = [
 		name: 'Implicit tag names',
 		value: [
 			{
-				name: '.class',
-				value: '<div class="class"></div>'
+				name: '.className',
+				value: '<div class="className"></div>'
 			}, {
-				name: 'em>.class',
-				value: '<em><span class="class"></span></em>'
+				name: 'em>.className',
+				value: '<em><span class="className"></span></em>'
 			}, {
-				name: 'ul>.class',
-				value: '<ul>\n\t<li class="class"></li>\n</ul>'
+				name: 'ul>.className',
+				value: '<ul>\n\t<li class="className"></li>\n</ul>'
 			}, {
 				name: 'table>.row>.col',
 				value: '<table>\n\t<tr class="row">\n\t\t<td class="col"></td>\n\t</tr>\n</table>'

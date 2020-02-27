@@ -160,16 +160,16 @@ $(function() {
 			name: 'Implicit tag names',
 			value: [
 				{
-					name: '.class',
-					value: '<div class="class"></div>',
+					name: '.className',
+					value: '<div class="className"></div>',
 					type: 'snippet'
 				}, {
-					name: 'em>.class',
-					value: '<em><span class="class"></span></em>',
+					name: 'em>.className',
+					value: '<em><span class="className"></span></em>',
 					type: 'snippet'
 				}, {
-					name: 'ul>.class',
-					value: '<ul>\n\t<li class="class"></li>\n</ul>',
+					name: 'ul>.className',
+					value: '<ul>\n\t<li class="className"></li>\n</ul>',
 					type: 'snippet'
 				}, {
 					name: 'table>.row>.col',
