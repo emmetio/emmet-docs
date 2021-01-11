@@ -18,7 +18,7 @@ In `snippets` section of syntax definition, you create plain text snippets, pret
 * `$1` or `${1}`
 * `${1:hello world}` — tabstop with placeholder
 
-Note that `${0}` or `$0` tabstop has a special meaning in some editors like TextMate or Eclipse and is used as a final caret position after leaving “tabstops mode” so you’d better use tabstops staring from 1.
+Note that `${0}` or `$0` tabstop has a special meaning in some editors like TextMate or Eclipse and is used as a final caret position after leaving “tabstops mode” so you should use tabstops starting from 1.
 
 ### Variables ###
 
