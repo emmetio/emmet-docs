@@ -270,7 +270,7 @@ In second example the `<b>` element is placed _inside_ `<a>` element. And that�
 
 	<p>Click <a href="">here</a> to continue</p>
 	
-In this example, to write `Click here to continue` inside `<p>` element we have explicitly move down the tree with `>` operator after `p`, but in case of `a` element we don’t have to, since we need `<a>` element with `here` word only, without changing parent context.
+In this example, to write `Click here to continue` inside `<p>` element we have explicitly moved down the tree with `>` operator after `p`, but in case of `a` element we don’t have to, since we need `<a>` element with `here` word only, without changing parent context.
 
 For comparison, here’s the same abbreviation written without child `>` operator:
 
